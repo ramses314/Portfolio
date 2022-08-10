@@ -1,0 +1,106 @@
+{% extends 'blog/base.html' %}
+
+
+
+{% block content %}
+
+
+			<div class="pre__intro">
+			<div class="intro">
+				<div class="container">
+					<div class="intro__container">
+						<div class="intro__title">
+						Все о кино.
+						</div>
+						<div class="intro__empty"></div>
+					</div>
+				</div>
+			</div>
+
+			</div>
+
+			<div class="lenta">
+				<div class="container">
+					<div class="lenta__container">
+
+						<div class="lenta__item">
+					<div class="lenta__img">
+						<img src="{{ post.image.url }}" alt="">
+					</div>
+					<div class="lenta__title">{{ post.title }}</div>
+					<div class="lenta__publish">{{ post.publish }}</div>
+				</div>
+
+				<div class="lenta__item">
+					<div class="lenta__img">
+						<img src="{{ post.image.url }}" alt="">
+					</div>
+					<div class="lenta__title">{{ post.title }}</div>
+					<div class="lenta__publish">{{ post.publish }}</div>
+				</div>
+
+				<div class="lenta__item">
+					<div class="lenta__img">
+						<img src="{{ post.image.url }}" alt="">
+					</div>
+					<div class="lenta__title">{{ post.title }}</div>
+					<div class="lenta__publish">{{ post.publish }}</div>
+				</div>
+
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="content">
+				<div class="container">
+					<div class="content__container">
+						<div class="content__left">
+
+							{% for i in posts %}
+
+								<div class="content__item">
+									<div class="content__img">
+										<img src="{{ i.image.url }}" alt="">
+									</div>
+									<div class="content__title"><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></div>
+									<div class="content__text">
+										{{ i.body }}
+									</div>
+								</div>
+
+							{% endfor %}
+
+						</div>
+						<div class="content__right">
+
+
+							{% for i in posts %}
+
+								<div class="content__item">
+									<div class="content__img">
+										<img src="{{ i.image.url }}" alt="">
+									</div>
+									<div class="content__title">{{ i.title }}</div>
+									<div class="content__text">
+										{{ i.body }}
+									</div>
+								</div>
+
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+

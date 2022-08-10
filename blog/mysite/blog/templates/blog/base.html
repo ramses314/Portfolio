@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Мой первый проект</title>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style2.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail2.css' %}">
+
+		<link rel="icon" href="{% static 'blog/img/log.jpg' %}">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			<nav class="nav">
+				<div class="container">
+					<div class="nav__items">
+						<div class="nav__logo">
+							<img  src="{% static 'blog/img/logo.png' %}" alt="">
+						</div>
+						<div class="nav__links">
+							<!-- <div class="nav__layer"> -->
+								<div class="nav__link">
+									<a href="{% url 'blog:home' %}">Главная</a>
+									<a href="">Поиск</a>
+									<a href="">Что на ютуб?</a>
+									<a href="">Контакты</a>
+
+								</div>
+							<!-- </div> -->
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			{% block content %}{% endblock %}
+
+			<div class="contact">
+				<div class="container">
+					<div class="container__else">
+
+								<div class="contact__title">Контакты</div>
+
+					<div class="contact__container">
+						<div class="contact__left">
+							<div class="contact__subtitle">
+								Наши контакты
+							</div>
+							<div class="contact__links">
+								<div class="contact__link">Позвонить: <a href="#">+7 523-244-65-34</a></div>
+								<div class="contact__link">Написать: <a href="#">forwork31415@gmail.com</a></div>
+							</div>
+
+
+						</div>
+						<div class="contact__right">
+							<div class="contact__subtitle">
+								Мы в сети
+							</div>
+							<div class="contact__links">
+								<div class="contact__link">Общаться: <a href="#">Telegram</a></div>
+							<div class="contact__link">Подпистаься: <a href="#">Youtube</a></div>
+							<div class="contact__link">Смотреть: <a href="#">Some</a></div>
+							</div>
+
+
+						</div>
+					</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div class="footer">
+				<div class="container">
+					<div class="footer__items">
+						<div class="footer__text">
+							Lorem ipsum dolor sit amet consectetur adipisicing, elit. Delectus ipsam vero labore eos, veritatis nam a possimus vitae repudiandae libero voluptatum, neque modi, dolores. Id dolores eligendi totam laudantium asperiores.
+						</div>
+						<div class="footer__search">
+							<input type="text">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

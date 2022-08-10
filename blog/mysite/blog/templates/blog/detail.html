@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+    <div class="detail">
+		<div class="container">
+			<div class="detail__items">
+				<div class="detail__img">
+					<img src="{{ post.image.url }}" alt="">
+				</div>
+				<div class="detail__title">
+					{{ post.title }}
+				</div>
+				<div class="detail__publish">
+					{{ post.publish }}
+				</div>
+				<div class="detail__body">
+					{{ post.body }}
+				</div>
+			</div>
+		</div>				
+	</div>
+
+{% endblock %}
