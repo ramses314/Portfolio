@@ -4,8 +4,12 @@
 	<head>
 		<title>Мой первый проект</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style2.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style3.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail2.css' %}">
+
+		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
 
 		<link rel="icon" href="{% static 'blog/img/log.jpg' %}">
 
@@ -25,15 +29,12 @@
 							<img  src="{% static 'blog/img/logo.png' %}" alt="">
 						</div>
 						<div class="nav__links">
-							<!-- <div class="nav__layer"> -->
-								<div class="nav__link">
+							<div class="nav__link">
 									<a href="{% url 'blog:home' %}">Главная</a>
-									<a href="">Поиск</a>
+									<a href="{% url 'blog:search' %}">Поиск</a>
 									<a href="">Что на ютуб?</a>
 									<a href="">Контакты</a>
-
-								</div>
-							<!-- </div> -->
+							</div>
 						</div>
 					</div>
 				</div>
@@ -78,21 +79,22 @@
 			</div>
 
 
-			<div class="footer">
+			<footer class="footer">
 				<div class="container">
 					<div class="footer__items">
 						<div class="footer__text">
 							Lorem ipsum dolor sit amet consectetur adipisicing, elit. Delectus ipsam vero labore eos, veritatis nam a possimus vitae repudiandae libero voluptatum, neque modi, dolores. Id dolores eligendi totam laudantium asperiores.
 						</div>
 						<div class="footer__search">
-							<input type="text">
+							<form action="." method="get">
+								{{ form.query }}
+								<input type="submit" value="поиск">
+							</form>
 						</div>
 					</div>
 				</div>
-			</div>
-
+			</footer>
 		</div>
 
 	</body>
-
 </html>

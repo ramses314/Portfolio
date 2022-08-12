@@ -1,17 +1,47 @@
+from django.contrib.postgres.search import SearchVector
+from django.core.checks import Tags
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Post
+from taggit.models import Tag
+
+from .forms import CommentForm, SearchForm
+from .models import Post, Comment
 
 
-def home(request):
+
+
+
+def home(request, tag=None):
 
     posts = Post.objects.all()
-    post = Post.objects.get(pk=1)
+    # post = Post.objects.get(pk=1)
+    tags = Tag.objects.all()
+
+    if tag:
+        print(111, tag)
+        posts = Post.objects.filter(tags__name__in=[f'{tag}'])
+
+    form = SearchForm()
+
+        # if 'query' in request.GET:
+        #     # form = SearchForm(request.GET)
+        #     query = None
+        #     results = []
+        #     search_form = SearchForm(request.GET)
+        #     if search_form.is_valid():
+        #         query = search_form.cleaned_data['query']
+        #         results = Post.object.annotate(
+        #             search=SearchVector('title', 'body')).filter(search=query)
+        #         return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+        #                                                     'tags': tags, 'search_form': search_form})
+        #
 
     context = {
         'posts' : posts,
-        'post' : post,
+        # 'post' : post,
+        'tags' : tags,
+        'form' : form,
     }
 
     return render(request, 'blog/home.html', context=context)
@@ -19,8 +49,53 @@ def home(request):
 def detail(request, slug):
 
     post = Post.objects.get(slug=slug)
+    comments = Comment.objects.filter(post=post).order_by('-created')
+    tags = Tag.objects.all()
+
+    mytags = post.tags.values_list('name', flat=True)
+    recommendations = Post.objects.filter(tags__name__in=[mytags]).exclude(slug=slug)
+
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.post = post
+            a.save()
+        else:
+            form = CommentForm(request.POST)
+    else:
+        form = CommentForm()
 
     context = {
-        'post' : post
+        'post' : post,
+        'form' : form,
+        'comments' : comments,
+        'tags' : tags,
+        'recommendations' : recommendations,
     }
     return render(request, 'blog/detail.html', context=context)
+
+
+def search(request):
+
+    search_form = SearchForm(request.GET)
+    query = None
+    results = []
+
+    if 'query' in request.GET:
+        # form = SearchForm(request.GET)
+        query = None
+        results = []
+        search_form = SearchForm(request.GET)
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.objects.annotate(
+                search=SearchVector('title', 'body')).filter(search=query)
+            return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                         'search_form': search_form})
+
+
+    return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                         'search_form': search_form})

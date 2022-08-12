@@ -15,6 +15,8 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ('status', 'publish')
 
 
-@admin.register(Comment):
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'post', 'body', 'created')
+    list_filter = ('post', 'name', 'created')
+    search_fields = ('name', 'body')

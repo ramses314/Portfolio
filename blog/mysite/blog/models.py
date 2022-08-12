@@ -19,7 +19,7 @@ class Post(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    publish = models.DateTimeField(default=timezone.now())
+    publish = models.DateTimeField(default=timezone.now)
     status = models.BooleanField(default=True)
 
     class Meta:
@@ -41,10 +41,11 @@ class Comment(models.Model):
     update = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
 
-    class Meta:
-        ordering = ('-created')
+    # class Meta:
+    #     ordering = ('created')
 
     def __str__(self):
         return self.name
+
 
 

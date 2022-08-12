@@ -18,8 +18,97 @@
 				<div class="detail__body">
 					{{ post.body }}
 				</div>
+
+				<div class="comments">
+					<div class="comments__info">
+						<p>{{ comments.count }} комментариев</p>
+					</div>
+					<div class="comments__form">
+						<form action="." method="post">
+							{% csrf_token %}
+							<div class="comments__name">
+								{{ form.name }}
+							</div>
+							<div class="comments__body">
+								{{ form.body }}
+							</div>
+
+							<div class="comments__button">
+								<input type="submit" value="ОСТАВИТЬ КОММЕНТАРИЙ">
+							</div>
+
+						</form>
+
+					</div>
+					<div class="comments__comment">
+
+
+						{% for i in comments %}
+
+							{% if forloop.counter >= 5 %}
+								<div class="comments__hidden">
+									<div class="comments__head">
+										{{ i.name }} {{ i.created }}
+									</div>
+									<div class="comments__text">
+										{{ i.body }}
+									</div>
+									<div class="comments__like">
+										<a href="">like</a>/
+										<a href="">unlike</a>
+								</div>
+								</div>	
+							{% else %}
+								<div class="comments__head">
+										{{ i.name }} {{ i.created }}
+									</div>
+									<div class="comments__text">
+										{{ i.body }}
+									</div>
+									<div class="comments__like">
+										<a href="">like</a>/
+										<a href="">unlike</a>
+								</div>
+
+							{% endif %}
+						{% endfor %}
+
+					</div>
+					<div class="comments__more">
+						⤹
+					</div>
+				</div>		
+		</div>	
+</div>
+				<div class="recomm">
+					<div class="container">
+						<div class="recomm__title">
+								РЕКОМЕНДАЦИИ ДЛЯ ВАС
+							</div>
+						<div class="recomm__items">
+							
+							{% for i in recommendations %}
+							
+								<div class="recomm__item">
+									<div class="recomm__img">
+										<img src="{{ i.image.url }}" alt="">
+									</div>
+									<div class="recomm__title">
+										{{ i.title }}
+									</div>
+									<div class="recomm__publish">
+										{{ i.created }}
+									</div>
+								</div>
+			
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+
 			</div>
-		</div>				
-	</div>
+					
+	
 
 {% endblock %}
