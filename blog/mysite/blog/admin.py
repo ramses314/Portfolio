@@ -20,3 +20,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'post', 'body', 'created')
     list_filter = ('post', 'name', 'created')
     search_fields = ('name', 'body')
+
+@admin.register(Blogger)
+class BloggerAdmin(admin.ModelAdmin):
+    list_display = ('title', 'text', 'image')
+    list_filter = ('title', 'text', 'image')
+    search_fields = ('title', 'text')

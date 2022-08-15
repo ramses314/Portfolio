@@ -6,15 +6,13 @@ from django.shortcuts import render
 from taggit.models import Tag
 
 from .forms import CommentForm, SearchForm
-from .models import Post, Comment
-
-
-
+from .models import Post, Comment, Blogger
 
 
 def home(request, tag=None):
 
     posts = Post.objects.all()
+    posts_for_lenta = posts[:3]
     # post = Post.objects.get(pk=1)
     tags = Tag.objects.all()
 
@@ -24,24 +22,25 @@ def home(request, tag=None):
 
     form = SearchForm()
 
-        # if 'query' in request.GET:
-        #     # form = SearchForm(request.GET)
-        #     query = None
-        #     results = []
-        #     search_form = SearchForm(request.GET)
-        #     if search_form.is_valid():
-        #         query = search_form.cleaned_data['query']
-        #         results = Post.object.annotate(
-        #             search=SearchVector('title', 'body')).filter(search=query)
-        #         return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
-        #                                                     'tags': tags, 'search_form': search_form})
-        #
+    if 'query' in request.GET:
+        # form = SearchForm(request.GET)
+        query = None
+        results = []
+        search_form = SearchForm(request.GET)
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.objects.annotate(
+                search=SearchVector('title', 'body')).filter(search=query)
+            return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                            'tags': tags, 'search_form': search_form})
+
 
     context = {
         'posts' : posts,
         # 'post' : post,
         'tags' : tags,
-        'form' : form,
+        'search_form' : form,
+        'post_for_lenta' : posts_for_lenta,
     }
 
     return render(request, 'blog/home.html', context=context)
@@ -54,6 +53,22 @@ def detail(request, slug):
 
     mytags = post.tags.values_list('name', flat=True)
     recommendations = Post.objects.filter(tags__name__in=[mytags]).exclude(slug=slug)
+
+
+
+    search_form = SearchForm()
+
+    if 'query' in request.GET:
+        # form = SearchForm(request.GET)
+        query = None
+        results = []
+        search_form = SearchForm(request.GET)
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.objects.annotate(
+                search=SearchVector('title', 'body')).filter(search=query)
+            return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                        'tags': tags, 'search_form': search_form})
 
 
     if request.method == 'POST':
@@ -74,6 +89,7 @@ def detail(request, slug):
         'comments' : comments,
         'tags' : tags,
         'recommendations' : recommendations,
+        'search_form' : search_form,
     }
     return render(request, 'blog/detail.html', context=context)
 
@@ -83,6 +99,28 @@ def search(request):
     search_form = SearchForm(request.GET)
     query = None
     results = []
+
+    if 'query' in request.GET:
+
+        results = []
+        search_form = SearchForm(request.GET)
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.objects.annotate(
+                search=SearchVector('title', 'body')).filter(search=query)
+            return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                         'search_form': search_form})
+
+
+    return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                         'search_form': search_form})
+
+
+def tab_for_youtube(request):
+
+    posts = Blogger.objects.all()
+
+    search_form = SearchForm()
 
     if 'query' in request.GET:
         # form = SearchForm(request.GET)
@@ -96,6 +134,9 @@ def search(request):
             return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
                                                          'search_form': search_form})
 
+    context = {
+        'posts': posts,
+        'search_form' : search_form,
+    }
 
-    return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
-                                                         'search_form': search_form})
+    return render(request, 'blog/youtube.html', context=context)

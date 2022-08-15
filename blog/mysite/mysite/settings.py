@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'taggit',
+    'django.contrib.postgres',
 
     'django.contrib.admin',
     'django.contrib.auth',

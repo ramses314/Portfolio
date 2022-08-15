@@ -4,12 +4,13 @@
 	<head>
 		<title>Мой первый проект</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style3.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style2.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail2.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/youtube.css' %}">
 
-		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="pragma" content="no-cache" />
-		<meta http-equiv="expires" content="0" />
+<!--		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />-->
+<!--		<meta http-equiv="pragma" content="no-cache" />-->
+<!--		<meta http-equiv="expires" content="0" />-->
 
 		<link rel="icon" href="{% static 'blog/img/log.jpg' %}">
 
@@ -26,14 +27,16 @@
 				<div class="container">
 					<div class="nav__items">
 						<div class="nav__logo">
-							<img  src="{% static 'blog/img/logo.png' %}" alt="">
+							<a href="{% url 'blog:home' %}">
+								<img  src="{% static 'blog/img/logo3.png' %}" alt="">
+							</a>
 						</div>
 						<div class="nav__links">
 							<div class="nav__link">
-									<a href="{% url 'blog:home' %}">Главная</a>
-									<a href="{% url 'blog:search' %}">Поиск</a>
-									<a href="">Что на ютуб?</a>
-									<a href="">Контакты</a>
+									<a class="nav__special" href="{% url 'blog:home' %}">Главная</a>
+									<a class="nav__special" href="{% url 'blog:search' %}">Поиск</a>
+									<a class="nav__special" href="{% url 'blog:youtube' %}">Что на ютуб?</a>
+									<a class="nav__special" href="">Контакты</a>
 							</div>
 						</div>
 					</div>
@@ -42,7 +45,7 @@
 
 			{% block content %}{% endblock %}
 
-			<div class="contact">
+		<div class="contact">
 				<div class="container">
 					<div class="container__else">
 
@@ -83,13 +86,21 @@
 				<div class="container">
 					<div class="footer__items">
 						<div class="footer__text">
-							Lorem ipsum dolor sit amet consectetur adipisicing, elit. Delectus ipsam vero labore eos, veritatis nam a possimus vitae repudiandae libero voluptatum, neque modi, dolores. Id dolores eligendi totam laudantium asperiores.
+							 Сайт посвящен любителям кино, теорий, обзоров.
+						</div>
+						<div class="footer__links">
+							<a class="footer__link" href="{% url 'blog:home' %}">Главная</a>
+							<a class="footer__link" href="{% url 'blog:search' %}">Поиск</a>
+							<a class="footer__link" href="{% url 'blog:youtube' %}">Что на ютуб?</a>
+							<a class="footer__link" href="">Контакты</a>
 						</div>
 						<div class="footer__search">
-							<form action="." method="get">
-								{{ form.query }}
-								<input type="submit" value="поиск">
-							</form>
+							<span class="footer__input">
+								<form action="." method="get">
+									{{ search_form.query }}
+									<input  type="submit" value="найти">
+								</form>
+							</span>
 						</div>
 					</div>
 				</div>

@@ -49,3 +49,11 @@ class Comment(models.Model):
 
 
 
+class Blogger(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    image = models.ImageField(upload_to='media/blogger/%Y/%m/%d')
+    url = models.URLField(default=False)
+
+    def __str__(self):
+        return self.title

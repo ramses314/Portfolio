@@ -5,24 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="213f8c77-6e85-4d18-a836-0449a522deff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/blog/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/youtube.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/blog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail2.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/style3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/intro20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/img/intro20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net5.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/index (копия).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +56,12 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ramses/Рабочий стол/portfolio/blog/mysite/blog/static/blog/img&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/ramses/Рабочий стол/blog-cinema&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysite/blog/static/blog" />
       <recent name="$PROJECT_DIR$/mysite/blog/static/blog/img" />
       <recent name="$PROJECT_DIR$/mysite/blog/static/blog/css" />
       <recent name="$PROJECT_DIR$/mysite/blog/templates/blog" />

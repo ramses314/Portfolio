@@ -17,35 +17,27 @@
 
 			<div class="lenta">
 				<div class="container">
+					<div class="lenta__label">
+						Топ ретро кино
+					</div>
 					<div class="lenta__container">
-
+					{% for i in post_for_lenta %}
 						<div class="lenta__item">
-					<div class="lenta__img">
-						<img src="{{ post.image.url }}" alt="">
-					</div>
-					<div class="lenta__title">{{ post.title }}</div>
-					<div class="lenta__publish">{{ post.publish }}</div>
-				</div>
-
-				<div class="lenta__item">
-					<div class="lenta__img">
-						<img src="{{ post.image.url }}" alt="">
-					</div>
-					<div class="lenta__title">{{ post.title }}</div>
-					<div class="lenta__publish">{{ post.publish }}</div>
-				</div>
-
-				<div class="lenta__item">
-					<div class="lenta__img">
-						<img src="{{ post.image.url }}" alt="">
-					</div>
-					<div class="lenta__title">{{ post.title }}</div>
-					<div class="lenta__publish">{{ post.publish }}</div>
-				</div>
+							<div class="lenta__img">
+								<a href="{{ i.get_absolute_url }}">
+									<img src="{{ i.image.url }}" alt="">
+								</a>
+							</div>
+							<div class="lenta__title">
+								<a href="{{ i.get_absolute_url }}">
+									{{ i.title }}
+								</a></div>
+							<div class="lenta__publish">{{ i.publish|date:"j.m.o"  }}</div>
+						</div>
+					{% endfor %}
 
 
 					</div>
-
 				</div>
 			</div>
 
@@ -65,19 +57,23 @@
 <!--										{{ i.body|truncatewords:10 }}-->
 <!--									</div>-->
 								</div>
-
-								<h1>Лучшее</h1>
-
+								<div class="content__left_label">
+									Новинки
+								</div>
 
 							{% for i in posts %}
 
 								<div class="content__item">
 									<div class="content__img">
-										<img src="{{ i.image.url }}" alt="">
+										<a href="{{ i.get_absolute_url }}">
+											<img src="{{ i.image.url }}" alt="">
+										</a>
 									</div>
 									<div class="content__title"><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></div>
 									<div class="content__text">
-										{{ i.body|truncatewords:10 }}
+										<a href="{{ i.get_absolute_url }}">
+											{{ i.body|truncatewords:10 }}
+										</a>
 									</div>
 								</div>
 
@@ -86,17 +82,24 @@
 						</div>
 						<div class="content__right">
 
-							<h1>Новинки</h1>
+							<div class="content__right_label">
+									Популярное
+								</div>
 
 							{% for i in posts %}
 
 								<div class="content__item">
 									<div class="content__img">
-										<img src="{{ i.image.url }}" alt="">
+										<a href="{{ i.get_absolute_url }}">
+											<img src="{{ i.image.url }}" alt="">
+										</a>
+
 									</div>
-									<div class="content__title">{{ i.title }}</div>
+									<div class="content__title"><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></div>
 									<div class="content__text">
-										{{ i.body|truncatewords:20 }}
+										<a href="{{ i.get_absolute_url }}">
+											{{ i.body|truncatewords:20 }}
+										</a>
 									</div>
 								</div>
 

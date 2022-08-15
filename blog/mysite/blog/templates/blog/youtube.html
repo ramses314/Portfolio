@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="youtube">
+        <div class="container">
+            
+            <div class="youtube__title">О кино на ютубе</div>
+            <div class="youtube__intro">
+                <p>Ютуб давно стал частью нашего времяпрепровождения. Кино тоже здесь, вот тебе подборка.</p>
+            </div>
+    {% for i in posts %}
+            <div class="youtube__subtitle">
+                {{ i.title }}<a class='youtube__link' href="{{i.url }}">подписаться</a>
+            </div>
+
+            <div class="youtube__items">
+                
+                <div class="youtube__left">
+                    <div class="youtube__img">
+                        <img src="{{ i.image.url }}" alt="">
+                    </div>
+                </div>
+                <div class="youtube__right">
+                   <!--  <div class="youtube__subtitle">
+                        {{ i.title }}
+                    </div> -->
+                    <div class="youtube__text">
+                        {{ i.text }}
+                    </div>
+                </div>   
+            </div>
+        {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
