@@ -1,8 +1,26 @@
+
 from django.contrib import admin
 
 # Register your models here.
 
 from .models import *
+
+
+
+
+
+from django import forms
+from django.contrib import admin
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from .models import Post
+class PostAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Post
+        fields = '__all__'
+
+
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -13,6 +31,7 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ('author', )
     date_hierarchy = 'publish'
     ordering = ('status', 'publish')
+    form = PostAdminForm
 
 
 @admin.register(Comment)
@@ -26,3 +45,6 @@ class BloggerAdmin(admin.ModelAdmin):
     list_display = ('title', 'text', 'image')
     list_filter = ('title', 'text', 'image')
     search_fields = ('title', 'text')
+
+
+

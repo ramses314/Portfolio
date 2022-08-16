@@ -81,29 +81,48 @@ h1, h2, h3, h4, h5, h6 {
 
 .search {
   margin: 30px;
-  height: 50vh;
+  min-height: 50vh;
+
+
 
 }
 
 .search__title{
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
   padding: 20px 0;
+  color: #008394;
 }
 
-.search__field input{
+.search__field { 
+/*background-color: #f2f2f2;*/
+/*padding: 10px;*/
+ }
 
-  border: 1px solid gray;
+.search__field input[type=text]{
+  border: 0px solid #70898c;
   padding: 7px;
-  border-radius: 6px;
+  /*border-radius: 6px;*/
   /*margin: 0 20px;*/
+  background-color: #f2f2f2;
+/*-webkit-box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;
+-moz-box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;
+box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;*/
+
+}
+
+.search__button{
+  padding: 7px;
+  background-color: #c7c7c7;
+  color: whitesmoke;
+  font-weight: 500;
 
 }
 
 .search__results {
   margin: 30px 0;
   padding: 10px;
-  border-top: 1px solid gray;
+  border-top: 2px solid #c7c7c7;
 }
 
 .search__empty {
@@ -115,159 +134,74 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .results {}
-.results__total {}
+.results__total {
+  font-weight: 700;
+  padding: 0 0 0 1em;
+  color: #636363;
+}
 .results__items {
   display: flex;
   margin: 15px 0;
+  background-color: #679399;
+
+  /*border-top-left-radius: 10px;*/
+  /*border-bottom-left-radius: 10px;*/
+  border-radius: 15px;
+  overflow: hidden;
+
+
 }
 .results__img {
-  width: 150px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  flex: 0 1 15%;
+
+  width: 100%;
+  height: 100%;
+  
   overflow: hidden;
+  /*border: 3px solid red;*/
 
 }
 .results__img img{
-  width: 150px;
+  width: 100%;
+  height: 100%;
   
 }
 .results__text {
-  background-color: gray;
-  padding: 5px;
+  flex: 0 1 85%;
+
+  padding: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 
-
   color: whitesmoke;
   font-weight: 700;
 }
+
+.results__publish {
+  font-weight: 300;
+  color: #afd6db;
+}
+
+.results__title a{
+  color: #e4f3f5;
+  margin: 5px 0;
+}
+
+.results__title:hover a{
+  color: #b8ced1;
+}
+
 .results__title {
-
-}
-.results__body {}
-.results__publish {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container{
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-
+  color: #e4f3f5;
+  margin: 5px 0;
 }
 
-
-
-.nav {
-  background-color: white;
-  height: 60px;
-  position: sticky;
-  width: 100%;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-
-  -webkit-box-shadow: 0px 3px 5px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 0px 3px 5px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 0px 3px 5px 0px rgba(34, 60, 80, 0.2);
+.results__body a {
+  color: #89edfa;
 }
 
-.nav__items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-.nav__logo {
-  flex: 0 0 10%;
-}
-.nav__logo img {
-
-  height: 50px;
-  padding: 0 0 3px 10px;
-}
-.nav__links {
-  flex: 0 1 60%;
-}
-
-
-.nav__layer {}
-
-
-.nav__link {
-  display: flex;
-  justify-content: space-around;
-}
-
-.nav__link a{
-  color: ;
-  font-size: 23px;
-  font-weight: 600;
-
-}
-
-
-
-
-.contact {}
-
-.contact__title {
-  font-size: 45px;
-  font-weight: 700;
-  margin: 40px 0;
-}
-
-.contact__subtitle {
-  font-weight: 600;
-  font-size: 25px;
-}
-
-
-.contact__container {
-  display: flex;
-  font-size: 18px;
-
-}
-.contact__container a{
-
-  color: #11cdf7;
-  font-size: 18px;
-}
-
-.contact__left {
-  flex: 0 1 45%;
-  padding: 15px;
-}
-.contact__right {
-  flex: 0 1 45%;
-  padding: 15px;
-}
-
-.contact__link{
-  padding: 5px 10px;
-}
-.contact__links{
-  padding: 10px;
-}
-
-.container__else{
-  /*background: url('../img/contact.png') -200px 0/cover no-repeat;*/
-  /*background-color: #002A33;*/
-  /*padding: 20px 0;*/
+.results__body:hover a {
+  color: #00d1ed;
 }
 
 
@@ -277,33 +211,3 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.footer {
-  background-color: #002A33;
-  height: 10vh;
-
-
-}
-.container {}
-.footer__items {
-  display: flex;
-  justify-content: space-between;
-
-}
-.footer__text {
-  flex: 0 1 50%;
-  color: whitesmoke;
-  padding: 25px;
-}
-.footer__search {
-  flex: 0 1 40%;
-  margin: 20px 0;
-
-}
-
-.footer__search input {
-  flex: 0 1 40%;
-  padding: 5px;
-  border-radius: 8px;
-
-
-}

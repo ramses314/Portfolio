@@ -6,19 +6,23 @@
     <div class="detail">
 		<div class="container">
 			<div class="detail__items">
-				<div class="detail__img">
-					<img src="{{ post.image.url }}" alt="">
-				</div>
 				<div class="detail__title">
 					{{ post.title }}
 				</div>
-				<div class="detail__publish">
-					{{ post.publish }}
+				<div class="detail__img">
+					<img src="{{ post.image.url }}" alt="">
 				</div>
 				<div class="detail__body">
-					{{ post.body }}
+					{{ post.body|safe }}
+				</div>
+				<div class="detail__publish">
+					Публикация : {{ post.publish|date:"j.m.o" }}
 				</div>
 
+
+				<div class="pre__comments">
+					Комментарии
+				</div>
 				<div class="comments">
 					<div class="comments__info">
 						<p>{{ comments.count }} комментариев</p>
@@ -48,7 +52,7 @@
 							{% if forloop.counter >= 5 %}
 								<div class="comments__hidden">
 									<div class="comments__head">
-										{{ i.name }} {{ i.created }}
+										{{ i.name }} <span class="comments__publish">{{ i.created }}</span>
 									</div>
 									<div class="comments__text">
 										{{ i.body }}
@@ -60,23 +64,27 @@
 								</div>	
 							{% else %}
 								<div class="comments__head">
-										{{ i.name }} {{ i.created }}
+										{{ i.name }} <span class="comments__publish">{{ i.created }}</span>
 									</div>
+
 									<div class="comments__text">
 										{{ i.body }}
 									</div>
-									<div class="comments__like">
+									<!-- <div class="comments__like">
 										<a href="">like</a>/
 										<a href="">unlike</a>
-								</div>
+								</div> -->
 
 							{% endif %}
 						{% endfor %}
-
 					</div>
-					<div class="comments__more">
-						⤹
-					</div>
+					{% with total=comments.count %}
+						{% if total >= 5  %}
+							<div onclick='let a = document.querySelectorAll(".comments__hidden");for (let i of a){i.style.display = "block"};' class="comments__more">
+								⤹
+							</div>
+						{% endif %}
+					{% endwith %}
 				</div>		
 		</div>	
 </div>

@@ -31,8 +31,8 @@
 							<div class="nav__link">
 									<a class="nav__special" href="{% url 'blog:home' %}">Главная</a>
 									<a class="nav__special" href="{% url 'blog:search' %}">Поиск</a>
-									<a class="nav__special" href="{% url 'blog:youtube' %}">Что на ютуб?</a>
-									<a class="nav__special" href="">Контакты</a>
+									<a class="nav__special" href="{% url 'blog:youtube' %}">Что на YouTube?</a>
+									<a class="nav__special" href="" onclick='document.querySelector(".contact").scrollIntoView(true); return false;'>Контакты</a>
 							</div>
 						</div>
 					</div>
@@ -42,17 +42,13 @@
             <div class="search">
         <div class="container">
             <div class="search__title">
-                <h1>Поиск по сайту</h1>
+                Поиск по сайту
             </div>
              <div class="search__form">
                 <form action="." method="get">
                     <div class="search__field">
-                        {{ search_form.query }}<input type="submit" value="Поиск">
-                    </div>
-                    <div class="search__button">
-                         
-                    </div>
-                   
+                        {{ search_form.query }}<input class='search__button' type="submit" value="Поиск">
+                    </div>   
                 </form>
              </div>
 
@@ -61,23 +57,29 @@
                 {% if results %}
 
                     <div class="results">
-                        <div class="results__total">{{ results.count }} Результатов</div>
+                        <div class="results__total">{{ results.count }} Результата(-ов)</div>
                     </div>
                     {% for i in results %}
                         <div class="results__items">
                             <div class="results__img">
-                                <img src="{{ i.image.url }}" alt="">
+                            	<a href="{{ i.get_absolute_url }}">
+                            		<img src="{{ i.image.url }}" alt="">
+                            	</a>
                             </div>
                             <div class="results__text">
-                                <div class="results__title">
-                                    {{ i.title }}
-                                </div>
-                                <div class="results__body">
-                                    {{ i.body }}
-                                </div>
-                                <div class="results__publish">
+                            	<div class="results__publish">
                                     {{ i.created }}
                                 </div>
+                                <div class="results__title">
+                                	<a href="{{ i.get_absolute_url }}">
+                                		{{ i.title }}
+                                	</a>
+                                </div>
+                                <div class="results__body">
+                                	<a href="{{ i.get_absolute_url }}">
+                                		{{ i.body|truncatewords:30 }}
+                                	</a>
+                                </div>  
                             </div>
                         </div>
                         
@@ -153,6 +155,9 @@
 				</div>
 			</footer>
 		</div>
+
+
+	<script src="{% static 'blog/js/base.js' %}"></script>
 
 	</body>
 </html>

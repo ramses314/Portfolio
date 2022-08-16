@@ -11,7 +11,9 @@ from .models import Post, Comment, Blogger
 
 def home(request, tag=None):
 
-    posts = Post.objects.all()
+    print(8888)
+
+    posts = Post.objects.filter(status=True)
     posts_for_lenta = posts[:3]
     # post = Post.objects.get(pk=1)
     tags = Tag.objects.all()
@@ -39,11 +41,49 @@ def home(request, tag=None):
         'posts' : posts,
         # 'post' : post,
         'tags' : tags,
+        'tag' : tag,
         'search_form' : form,
         'post_for_lenta' : posts_for_lenta,
     }
 
     return render(request, 'blog/home.html', context=context)
+
+
+def collect_tag(request, tag=None):
+
+    posts = Post.objects.all()
+    posts_for_lenta = posts[:3]
+    # post = Post.objects.get(pk=1)
+    tags = Tag.objects.all()
+
+    if tag:
+        posts = Post.objects.filter(tags__name__in=[f'{tag}'])
+
+    form = SearchForm()
+
+    if 'query' in request.GET:
+        # form = SearchForm(request.GET)
+        query = None
+        results = []
+        search_form = SearchForm(request.GET)
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.objects.annotate(
+                search=SearchVector('title', 'body')).filter(search=query)
+            return render(request, 'blog/search.html', {'form': search_form, 'query': query, 'results': results,
+                                                            'tags': tags, 'search_form': search_form})
+
+
+    context = {
+        'posts' : posts,
+        # 'post' : post,
+        'tags' : tags,
+        'tag' : tag,
+        'search_form' : form,
+        'post_for_lenta' : posts_for_lenta,
+    }
+
+    return render(request, 'blog/collect_tag.html', context=context)
 
 def detail(request, slug):
 
@@ -83,6 +123,8 @@ def detail(request, slug):
     else:
         form = CommentForm()
 
+
+    form = CommentForm()
     context = {
         'post' : post,
         'form' : form,
@@ -119,7 +161,6 @@ def search(request):
 def tab_for_youtube(request):
 
     posts = Blogger.objects.all()
-
     search_form = SearchForm()
 
     if 'query' in request.GET:

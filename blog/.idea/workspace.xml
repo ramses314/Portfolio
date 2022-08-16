@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="213f8c77-6e85-4d18-a836-0449a522deff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/youtube.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/blog/static/blog/js/base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/collect_tag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail2.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/style3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/intro20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/img/intro20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/img/net5.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +62,10 @@
       <recent name="$PROJECT_DIR$/mysite/blog/static/blog/css" />
       <recent name="$PROJECT_DIR$/mysite/blog/templates/blog" />
       <recent name="$PROJECT_DIR$/mysite/blog/static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysite/blog/templates/blog" />
+      <recent name="$PROJECT_DIR$/mysite/blog/templates/blog/del" />
     </key>
   </component>
   <component name="RunManager">

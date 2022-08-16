@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+	<div class="content__tags">
+			{% for i in tags %}
+				<a href="{% url 'blog:collect_tag' i %}">#{{ i }}</a>
+			{% endfor %}
+	</div>
+
+	<div class="content__collect">
+		Подборка по тегу #{{ tag }}
+	</div>
+
+
+    <div class="collect">
+
+    {% for i in posts %}
+        <div class="content__item">
+									<div class="content__img">
+										<a href="{{ i.get_absolute_url }}">
+											<img src="{{ i.image.url }}" alt="">
+										</a>
+									</div>
+									<div class="content__title"><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></div>
+									<div class="content__text">
+										<a href="{{ i.get_absolute_url }}">
+											{{ i.body|truncatewords:20 }}
+										</a>
+									</div>
+        </div>
+    {% endfor %}
+
+    </div>
+{% endblock %}
