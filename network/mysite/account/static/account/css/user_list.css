@@ -1,0 +1,25 @@
+
+
+.followers {
+	background-color: white;
+	padding: 20px;
+	margin: 40px;
+	border-radius: 15px;
+}
+.followers__items {
+	display: flex;
+	margin: 0 0 10px 0;
+}
+.followers__left {
+	flex: 0 1 20%;
+}
+
+.followers__img {}
+.followers__img img{
+	width: 90px;
+}
+.followers__right {
+	flex: 0 1 70%;
+}
+
+.followers__name {}

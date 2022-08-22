@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="followers">
+
+		{% for i in users %}
+
+		<div class="followers__items">
+				<div class="followers__left">
+						<div class="followers__img">
+								<img src="{{ i.profile.image.url }}" alt="">
+						</div>
+				</div>
+				<div class="followers__right">
+						<div class="followers__name">
+								{{ i }}
+						</div>
+				</div>
+		</div>
+ 	 
+
+  {% endfor %}
+	</div>
+	
+
+{% endblock %}

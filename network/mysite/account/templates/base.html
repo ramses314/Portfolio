@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>HTML теги-формы</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/base.css' %}">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'account/css/home.css' %}"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}"> -->
+
+	{% block head %}{% endblock %}
+	
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="navbar">
+			<div class="container">
+				<div class="navbar__items">
+					<div class="navbar__logo">
+						<a href="{% url 'account:home' %}">
+							<img width='49px' src="{% static 'account/img/logo.png' %}" alt="">
+						</a>
+					</div>
+					<div class="navbar__links">
+						{% if user.is_authenticated %}
+							<a href="#">
+								<img width="35px" src="{% static 'account/img/message2.png' %}" alt="">
+							</a>
+							<a href="#">
+								<img width="35px" src="{% static 'account/img/people.png.png' %}" alt="">
+							</a>
+							<div class="navbar__login">
+								<span class="navbar__hello">
+								Привет, {{ user.username }}
+							</span>
+							<a href="{% url 'account:logout' %}">Выйти</a>
+						{% else %}
+							<!-- <a href="{% url 'account:login' %}">Войти</a> -->
+						{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container">
+
+			 {% if messages %}
+				<div class="messages">
+					{% for i in messages %}
+						<div class="{{i.tags}}">
+							{{ i|safe }}
+							 <a href="#">X</a>
+							}
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+
+            {% block content %}{% endblock %}
+
+			</div>
+        </div>
+
+		<div class="footer">
+			<a href="#">Правила</a>
+			<a href="#">О нас</a>
+			<a href="#">Для бизнеса</a>
+			<a href="#">Разработчикам</a>
+			<a href="#">Английский</a>
+		</div>
+	</div>
+<!-- 
+	<script src="{% static 'js/bookmarklet.js' %}"></script>
+	<script src="{% static 'js/bookmarklet.js' %}"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+	<script>
+ 		var csrftoken = Cookies.get('csrftoken');
+ 		functioncsrfSafeMethod(method) {
+		 return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+		 }
+		 $.ajaxSetup({
+		 beforeSend: function(xhr, settings) {
+		 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+		 xhr.setRequestHeader("X-CSRFToken", csrftoken);
+		 }
+		 }
+		 });
+		$(document).ready(function())
+		 {% block domready %}{% endblock %}
+		 });
+	</script>
+ -->
+
+</body>
+</html>
+

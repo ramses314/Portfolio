@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/edit.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="edit">
+        <div class="container">
+
+            <form action="." method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="edit__title">
+                    Редактирование профиля
+                </div>
+
+                <div class="edit__img-items">
+                    <div class="edit__currentimg">
+                        <img src="{{ user.profile.image.url }}" alt="">
+                    </div>
+                    <div class="edit__change-img">
+                            <div class="loginput">
+                                {% for i in profile_form.image|slice:"-1:" %}
+                                      {{ i }}
+                                {% endfor %}
+                            </div>
+                    </div>
+                </div>
+                    
+                {% for i in user_form %}
+                    {{ i.errors }}
+                    <div class="loginput">
+                       {{ i.label_tag }} {{ i }}
+                    </div>
+                {% endfor %}
+                <div class="loginput">
+                       {{ profile_form.status.label_tag }} {{ profile_form.status }}
+                </div>
+
+
+
+                <div class="loginput">
+                    <input type="submit" value="обновить">
+                </div>
+            </form>
+
+            <div class="loginput">
+                <a href="{% url 'account:password_change' %}">Поменять пароль</a>
+            </div>
+        </div>
+    </div>
+   
+{% endblock %}

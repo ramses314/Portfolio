@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Сооздай аккаунт</h1>
+
+<div class="content__login">
+
+                  <form action="." method="post">
+                    {% csrf_token %}
+                    {% for i in form %}
+                      {{ i.errors }}
+					  <div class="loginput">
+						  {{ i }}
+					  </div>
+                    {% endfor %}
+                    <div class="content__button">
+						<input type="submit" value="Зарегистрироваться">
+					</div>
+                  </form>
+</div>
+
+
+{% endblock %}

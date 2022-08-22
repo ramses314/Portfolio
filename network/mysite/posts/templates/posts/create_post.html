@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/create_post.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="post">
+
+        <div class="post__title">
+            Создание записи
+        </div>
+        
+        <div class="post_form">
+
+            <form action="." method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for i in form %}
+                  <div class="post__input">
+                   
+                    {{ i }}
+                  </div>
+                {% endfor %}
+                <div class="post__button">
+                    <input type="submit" value="Опубликовать">
+                </div>
+            </form>
+
+        </div>
+</div>
+
+
+{% endblock %}
