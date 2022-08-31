@@ -8,24 +8,40 @@
 {% block content %}
 
 	<div class="followers">
+		<div class="followers__container">
 
-		{% for i in users %}
+			<div class="followers__title">
+				Ваши подписчики
+			</div>
+			{% for i in users %}
 
-		<div class="followers__items">
-				<div class="followers__left">
-						<div class="followers__img">
-								<img src="{{ i.profile.image.url }}" alt="">
-						</div>
-				</div>
-				<div class="followers__right">
-						<div class="followers__name">
-								{{ i }}
-						</div>
-				</div>
-		</div>
- 	 
+			<div class="followers__items">
+					<div class="followers__left">
+							<div class="followers__img">
+								<a href="{% url 'account:user_profile' i.id %}">
+									<img src="{{ i.profile.image.url }}" alt="">
+								</a>
+							</div>
+					</div>
+					<div class="followers__right">
+							<div class="followers__name">
+									<a href="{% url 'account:user_profile' i.id %}">
+									@{{ i }}</a>
+									<div class="followers__subname">
+										<a href="{% url 'account:user_profile' i.id %}">
+										{{ i.first_name }}</a>
+									</div> 
+								
+							</div>
+					</div>
+					<div class="followers__subs">
+						<a href="">Подписаться</a>
+					</div>
+			</div>
+	 	 
 
-  {% endfor %}
+	  {% endfor %}
+	  </div>
 	</div>
 	
 

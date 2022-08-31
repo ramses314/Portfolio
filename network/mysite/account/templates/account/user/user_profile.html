@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="profile">
+		<div class="profile__card">
+			<div class="card">
+				<div class="card__img">
+					<img width=200px src="{{ user.profile.image.url }}" alt="">
+				</div>
+				<div class="card__text">
+					<div class="card__firstline">
+						<div class="card__nickname">
+							@{{ profil_user.username }} 
+						</div>
+						<div class="card__follow">
+							{% if sign %}
+								<div class="sign">
+									<a  href="{% url 'account:follow' id=profil_user.id do='unfollow' %}">
+									Отписаться
+								</a>
+								</div>
+								
+							{% else %}
+								<a href="{% url 'account:follow' id=profil_user.id do='follow'%}">
+									Подписаться
+								</a>
+							{% endif %}			
+						</div>
+					</div>
+					<div class="card__subs">
+						 <a href="card__link">
+						 	{{ profil_user.post_created.all.count }}  Публикаций
+						 </a>
+						 <a href="card__link">
+						 	{{ profil_user.followers.count }} Подписчиков
+						 </a>
+						 <a href="card__link">
+						 	{{ 3 }}  Подписок
+						 </a>
+					</div>
+					<div class="card__status">
+						{{ profil_user.profile.status }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="profile__gallery">
+
+			{% with posts=profil_user.post_created.all %}
+				{% if posts.count > 0 %}
+					{% for i in posts %}
+						<!-- {{ i }} -->
+						<div class="gallery__items">
+							<div class="gallery__img">
+								<img width="500px" src="{{ i.image.url }}" alt="">
+							</div>
+							<div class="gallery__title">
+								{{ i.body }}
+							</div>
+						</div>
+						
+					{% endfor %}
+				{% else %} 
+					<div class="profile__emptypost">
+						<img width='30px' src="{% static 'account/img/nopost.png' %}" alt="">
+						<span class="profile__emptypost-text">
+							У пользователя еще нет публикаций
+						</span>
+					
+				</div>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+
+
+{% endblock %}

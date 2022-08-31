@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'posts.apps.PostsConfig',
+    'chats.apps.ChatsConfig',
 
 ]
 

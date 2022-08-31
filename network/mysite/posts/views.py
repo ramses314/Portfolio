@@ -24,3 +24,14 @@ def create_post(request):
         'form' : form,
     }
     return render(request, 'posts/create_post.html', context=context)
+
+
+def post_detail(request, id):
+
+    post = Post.objects.get(id=id)
+
+    context = {
+        'post' : post,
+    }
+
+    return render(request, 'posts/post_deyail.html', context=context)

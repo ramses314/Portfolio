@@ -2,24 +2,78 @@
 
 .followers {
 	background-color: white;
+	max-width: 800px;
+
 	padding: 20px;
-	margin: 40px;
+	margin: 40px auto;
 	border-radius: 15px;
+}
+
+.followers__container {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.followers__title {
+	padding: 20px 0;
+	font-size: 25px;
 }
 .followers__items {
 	display: flex;
+	/*justify-content: space-between;*/
 	margin: 0 0 10px 0;
 }
 .followers__left {
-	flex: 0 1 20%;
+	flex: 0 0 120px;
 }
 
-.followers__img {}
+.followers__img {
+	min-width: 100%;
+	height: 120px;
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
 .followers__img img{
-	width: 90px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
 }
 .followers__right {
-	flex: 0 1 70%;
+	flex: 0 1 40%;
+	padding: 0 0 0 30px;
+	font-size: 16px ;
+	align-self: center;
+
 }
 
-.followers__name {}
+.followers__name a {
+	color: black;
+
+}
+
+.followers__subname a{
+	color: gray;
+	font-size: 15px;
+}
+
+.followers__subs{
+	flex: 0 1 20%;
+	align-self: center;
+
+}
+
+.followers__subs a{
+	color: white;
+	padding: 10px 40px;
+	background-color: gray;
+	border-radius: 10px;
+	overflow: hidden;
+	letter-spacing: 2px;
+	font-weight: 700;
+}

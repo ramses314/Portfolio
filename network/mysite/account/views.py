@@ -95,7 +95,6 @@ def follower_list(request):
     context = {
         'users' : users
     }
-
     return render(request, 'account/follower_list.html', context = context)
 
 @login_required
@@ -108,3 +107,87 @@ def subs_list(request):
     }
 
     return render(request, 'account/follower_list.html', context = context)
+
+
+
+def user_profile(request, id):
+
+    profile_user = User.objects.get(id=id)
+
+    print(555, profile_user, profile_user.following.all())
+
+    # if request.user in profile_user.following.all():
+    try:
+        a = Contact.objects.get(user_from=request.user, user_to=profile_user)
+    except:
+        a = None
+
+    if a:
+        sign = True
+        print(111)
+    else:
+        sign = None
+        print(222)
+
+
+    context = {
+        'profil_user' : profile_user,
+        'sign' : sign,
+    }
+
+    return render(request, 'account/user/user_profile.html' , context=context)
+
+
+@login_required
+def user_list(request):
+    users = User.objects.filter(is_active=True).exclude(id=request.user.id)
+
+    context = {
+        'users' : users
+    }
+    return render(request, 'account/user_list.html', context=context)
+
+
+@login_required
+def do_follow(request, id, do):
+
+    profile_user = User.objects.get(id=id)
+
+    print(22222, do)
+    if do == 'follow':
+        Contact.objects.get_or_create(user_from=request.user, user_to=profile_user)
+        print(123)
+    else:
+        Contact.objects.filter(user_from=request.user, user_to=profile_user).delete()
+        print(321)
+
+
+    # if request.user in profile_user.following.all():
+
+    try:
+        a = Contact.objects.get(user_from=request.user, user_to=profile_user)
+    except:
+        a = None
+
+    if a:
+        sign = True
+        print(333)
+    else:
+        sign = None
+        print(444)
+    context = {
+        'profil_user': profile_user,
+        'sign': sign,
+    }
+
+    return render(request, 'account/user/user_profile.html', context=context)
+
+
+
+def users_search(request):
+
+    context = {
+
+    }
+
+    return render(request, 'account/user/user_search.html', context=context)

@@ -26,7 +26,14 @@ urlpatterns = [
     path('edit/', edit, name='edit'),
     path('follower_list/', follower_list, name='follower_list'),
     path('subs_list/', subs_list, name='subs_list'),
+    path('user_list/', user_list, name='user_list'),
+    # path('user_profile/<id>/', user_profile, name='user_profile')
+    path('user_profile/842<id>134/', user_profile, name='user_profile'),
 
+    path('follow/<id>/<do>/', do_follow, name='follow'),
+    # path('unfollow', do_follow, name='unfollow')
+
+    path('user_search', users_search, name='user_search'),
 
 
 ]

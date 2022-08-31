@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls', namespace='account')),
     path('social_auth/', include('social_django.urls', namespace='social')),
-    path('create_post/', include('posts.urls', namespace='posts'))
+    path('create_post/', include('posts.urls', namespace='posts')),
+    path('chats/', include('chats.urls', namespace='chats'))
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA__ROOT)
