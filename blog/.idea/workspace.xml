@@ -1,103 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="213f8c77-6e85-4d18-a836-0449a522deff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../network/mysite/account/static/account/css/user_profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../network/mysite/account/templates/account/user/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../network/mysite/account/templates/account/user_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../network/mysite/chats/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/static/account/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/css/base2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/static/account/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/css/pattern.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/css/pattern2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/templates/account/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/templates/account/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../network/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/mysite/urls.py" afterDir="false" />
+    <list default="true" id="ebeecb11-8d53-46c1-95fb-77f06ede75ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../network/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/.idea/network.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../network/.idea/network.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/mysite/account/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/mysite/account/migrations/0002_alter_profile_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/mysite/account/migrations/0003_contact.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/mysite/account/migrations/0004_profile_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../network/mysite/account/static/account/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/../network/mysite/account/static/account/js/base.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2D6rjtAwQm1ON0KcDM7nsCiYlDx" />
+  <component name="ProjectId" id="2EQfdj0Aacc4EB75JvEq4NOBEnz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ramses/Рабочий стол/blog-cinema&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/mysite/blog/static/blog" />
-      <recent name="$PROJECT_DIR$/mysite/blog/static/blog/img" />
-      <recent name="$PROJECT_DIR$/mysite/blog/static/blog/css" />
-      <recent name="$PROJECT_DIR$/mysite/blog/templates/blog" />
-      <recent name="$PROJECT_DIR$/mysite/blog/static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/mysite/blog/templates/blog" />
-      <recent name="$PROJECT_DIR$/mysite/blog/templates/blog/del" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="blog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="213f8c77-6e85-4d18-a836-0449a522deff" name="Changes" comment="" />
-      <created>1660030513853</created>
+      <changelist id="ebeecb11-8d53-46c1-95fb-77f06ede75ac" name="Changes" comment="" />
+      <created>1662532817738</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1660030513853</updated>
+      <updated>1662532817738</updated>
     </task>
     <servers />
   </component>
@@ -111,16 +57,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

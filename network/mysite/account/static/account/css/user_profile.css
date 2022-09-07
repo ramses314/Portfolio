@@ -71,12 +71,19 @@
 	padding: 8px 10px;
 
 	border-radius: 5px;
+
+	transition: background-color 0.25s ease-in;
 }
+
+
 
 .sign a {
 	background-color: gray;
 }
 
+.unsign a {
+	background-color: #f55d5d;
+}
 
 .card__subs {
 	display: flex;
@@ -91,14 +98,10 @@
 	font-size: 20px;
 }
 
-
-
 .card__status {
 	width: 85%;
 	margin: 0 auto;
 }
-
-
 
 
 
