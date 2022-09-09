@@ -54,7 +54,7 @@ box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
 .navbar__logo {
   flex: 0 1 10%;
-  padding: 6px 0 0 0;
+  padding: 6px 0 0 20px;
   /*border: 5px solid red;*/
 }
 

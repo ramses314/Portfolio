@@ -66,16 +66,49 @@ $(function(){
 
 	$('.card__follow').on('click', function(e){
 		let check = $('#follow-check').hasClass('sign');
+		let subs = parseInt($('#follow-subs').text())
 
 		if (check) {
 			$('#follow-check').removeClass('sign')
 			$('#follow-check').addClass('unsign')
 			$('#link-check').text('Подписаться')
+			$("#follow-subs").text(`${subs - 1} подписчиков`)
+
+
 		} else {
 			$('#follow-check').removeClass('unsign')
 			$('#follow-check').addClass('sign')
 			$('#link-check').text('Отписаться')
+			$("#follow-subs").text(`${subs + 1} подписчиков`)
+
+
+
 		}
 	})
+
+
+
+// Поиск пользователей (элемент выбора пола)
+	$('.followers__gender').on('click', function(e) {
+
+		$('.gender').css({
+			'display' : 'none',
+		})
+	})
+
+	selected = $('.followers__gender option:selected').text()
+	var listik = ['Парень', "Девушка"];
+	if (listik.includes($('.followers__gender option:selected').text())) {
+
+		$('.gender').css({
+			'display' : 'none',
+		})
+
+	} else {
+		console.log(333)
+	}
+
+
+
 
 });

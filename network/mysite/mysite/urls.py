@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('account.urls', namespace='account')),
     path('social_auth/', include('social_django.urls', namespace='social')),
     path('create_post/', include('posts.urls', namespace='posts')),
-    path('chats/', include('chats.urls', namespace='chats'))
+    path('chats/', include('chats.urls', namespace='chats')),
+    path('search/', include('search.urls', namespace='search')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA__ROOT)

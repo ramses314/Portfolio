@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'search/css/user_search.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="followers">
+
+		<div class="followers__filter">
+
+			<form action="." method="post">
+					
+				{% csrf_token %}
+
+				<div class="followers__input">
+
+					{{ form.nickname }}	
+
+				</div>
+				<div class="followers__gender">
+
+					{{ form.gender }}
+
+					<div class="gender">
+						Пол&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+					</div>
+
+				</div>
+				<div class="followers__similar">
+
+					Единомышленники <span class="followers__checkbox">{{ form.similar }}</span>
+
+				</div>
+				<div class="followers__button">
+
+					<input type="submit" value="Поиск">
+
+				</div>
+			</form>
+			
+		</div>
+
+		<div class="followers__items">
+
+			{% if users %}
+				
+				{% for i in users %}
+					<div class="followers__item">
+
+							<div class="followers__left">
+									<div class="followers__img">
+											<img src="{{ i.profile.image.url }}" alt="">
+									</div>
+							</div>
+							<div class="followers__right">
+								
+									<div class="followers__name">
+										<a href="{% url 'account:user_profile' i.id %}">
+											{{ i }} {{ i.id }}
+										</a>
+									</div>
+							</div>
+					</div>
+		  		{% endfor %}
+
+	  		{% else %}
+			 
+			 <div class="followers__empty">
+			 	По вашим фильтрам нет пользователей.
+			 </div>
+
+			 <div class="followers__more">
+			 	Смотреть дальше
+			 </div>		
+				{% for i in reserve_users %}
+					<div class="followers__item">
+
+							<div class="followers__left">
+									<div class="followers__img">
+											<img src="{{ i.profile.image.url }}" alt="">
+									</div>
+							</div>
+							<div class="followers__right">
+								
+									<div class="followers__name">
+										<a href="{% url 'account:user_profile' i.id %}">
+											{{ i }} {{ i.id }}
+										</a>
+									</div>
+							</div>
+					</div>
+		  		{% endfor %}
+
+			
+
+			{% endif %}
+  </div>
+	</div>
+
+
+
+{% endblock %}

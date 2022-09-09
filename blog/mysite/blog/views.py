@@ -11,15 +11,12 @@ from .models import Post, Comment, Blogger
 
 def home(request, tag=None):
 
-    print(8888)
-
     posts = Post.objects.filter(status=True)
     posts_for_lenta = posts[:3]
     # post = Post.objects.get(pk=1)
     tags = Tag.objects.all()
 
     if tag:
-        print(111, tag)
         posts = Post.objects.filter(tags__name__in=[f'{tag}'])
 
     form = SearchForm()

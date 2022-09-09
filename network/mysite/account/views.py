@@ -184,10 +184,3 @@ def do_follow(request, id, do):
 
 
 
-def users_search(request):
-
-    context = {
-
-    }
-
-    return render(request, 'account/user/user_search.html', context=context)

@@ -48,9 +48,10 @@ class ProfilEditForm(forms.ModelForm):
     remove_photo = forms.BooleanField(required=False)
     class Meta:
         model = Profile
-        fields = ['image', 'status']
+        fields = ['image', 'status', 'tags']
         widgets = {
             'image' : forms.FileInput(attrs={'placeholder' : 'фото профиля'}),
-            'status': forms.TextInput(attrs={'placeholder': 'статус'})
+            'status': forms.TextInput(attrs={'placeholder': 'статус'}),
+            'tags': forms.TextInput(attrs={'placeholder': 'теги'})
         }
 

@@ -33,7 +33,4 @@ urlpatterns = [
     path('follow/<id>/<do>/', do_follow, name='follow'),
     # path('unfollow', do_follow, name='unfollow')
 
-    path('user_search', users_search, name='user_search'),
-
-
 ]
