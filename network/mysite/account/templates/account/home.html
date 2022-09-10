@@ -42,14 +42,14 @@
               </div>
               <div class="right__links">
                   <div class="right__link">
-                       <a onclick='document.querySelector(".content__block2").scrollIntoView(true); return false;' href="#">{{ posts.count }} публикаwий</a>
+                       <a onclick='document.querySelector(".content__block2").scrollIntoView(true); return false;' href="#">{{ posts.count }} публикаций</a>
                   </div>
                   <div class="right__link">
 
                       <a href="{% url 'account:follower_list' %}">{{ followers.count }} подписчиков </a>
                   </div>
                   <div class="right__link">
-                      <a href="{% url 'account:subs_list' %}">{{ subs.count }} пописок </a>
+                      <a href="{% url 'account:subs_list' %}">{{ subs.count }} подписок </a>
                   </div>
               </div>
               <div class="right__status">
@@ -151,6 +151,8 @@
               </div>
               {% for i in posts %}
 
+              {% with total_likes=i.users_like.count users_like=i.users_like.all %}
+              
               {% if i.image %}
               <div class="post__items">
                   <div class="post__img">
@@ -158,13 +160,20 @@
                   </div>
 
               <div class="post__icon">
-                <a href="#">
+
+                <a href="#"  class='like' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-acton='{% if request.user in user_like %}un{% endif %}like'>
                   <img  src="{% static 'account/img/heart1.png' %}" alt="">
                 </a>
                 <a href="#">
                   <img  src="{% static 'account/img/comment1.png' %}" alt="">
                 </a>
               </div>
+              <div class="post__total-like{{  forloop.counter }}">
+ 
+                  Нравиться: {{ total_likes }}
+
+              </div>
+
               <div class="post__desc">
                 <a href="">{{ i.body }}</a>
               </div>
@@ -182,13 +191,19 @@
                      <a href="">{{ i.body }}</a>
                  </div>
                 <div class="post__icon small-icon">
-                     <a href="#">
+                     <a class='like' id='loop{{forloop.counter}}' href="#" data-id='{{ i.id }}' data-acton='{% if request.user in user_like %}un{% endif %}like' data-loop='{{ forloop.counter }}'>
                          <img  src="{% static 'account/img/heart1.png' %}" alt="">
                      </a>
                       <a href="#">
                           <img  src="{% static 'account/img/comment1.png' %}" alt="">
                      </a>
                  </div>
+  
+                 <div class="post__total-like{{  forloop.counter }}">
+ 
+                  Нравиться: {{ total_likes }}
+
+              </div>
                <div class="post__comment">
                 <a href="#">Читать комментарии</a>
               </div>
@@ -199,6 +214,7 @@
 
 
               {% endif %}
+          {% endwith %}
       {% endfor %}
             </div>
           </div>
@@ -209,5 +225,37 @@
 
 
 
+
+{% endblock %}
+
+
+
+{% block domready %}
+
+  
+  $('a.like').click(function(e) {
+    e.preventDefault();
+    $.post(
+      '{% url "posts:post_like" %}',
+      {id: $(this).data('id'), action: $(this).data('action'), loop: $(this).data('loop')},
+      function(data) {
+
+        if (data['status'] == 'ok') {
+          var previous_action = $(`#loop${loop}`).data('action');
+
+          $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
+
+          var loop = parseInt($(`.post__total-like${data['loop']}`).text().split(': ')[1])
+
+          var text = 'Нравится:' + (previous_action == 'like' ? loop + 1 : loop - 1)
+          $(`.post__total-like${data['loop']}`).text(text);
+
+
+         
+          console.log(loop, previous_action)
+        }
+      }
+    )
+  })
 
 {% endblock %}

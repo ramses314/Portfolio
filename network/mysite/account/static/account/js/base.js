@@ -13,9 +13,6 @@
 
 var b = $('.news__img')
 
-console.log(44, b.offsetParent('.news'))
-
-
 $(function(){
 
 // 	$(window).resize(function(e){
@@ -105,8 +102,10 @@ $(function(){
 		})
 
 	} else {
-		console.log(333)
+	
 	}
+
+
 
 
 
