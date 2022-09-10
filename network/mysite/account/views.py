@@ -11,6 +11,7 @@ from .models import Contact
 @login_required
 def home(request):
 
+    tags = list(request.user.profile.tags.names())
     try:
         mydata = request.user.profile
     except:
@@ -32,6 +33,7 @@ def home(request):
         'followers' : followers,
         'subs' : subs,
         'lenta' : post_from_subs,
+        'tags' : tags,
     }
 
     return render(request, 'account/home.html', context=context)

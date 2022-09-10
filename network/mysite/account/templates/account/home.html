@@ -54,8 +54,13 @@
               </div>
               <div class="right__status">
                   {{ user.profile.status }}
-                <br><br>
-                #спорт  #байк #еда
+              </div>
+              <div class="right__tags">
+                    {% for i in tags %}
+
+                        #{{ i }}
+                     
+                    {% endfor %}
               </div>
             </div>
           </div>
@@ -109,28 +114,25 @@
             </div>
 
            
-
-            {% for i in lenta %}
-            <div class="news">
-              <div class="news__img">
-                  {% if i.image %}
-                    <img width="60px" src="{{ i.image.url }}" alt="">
-                  {% endif %}
+            {% if lenta %}
+              {% for i in lenta %}
+                <div class="news">
+                  <div class="news__img">
+                      {% if i.image %}
+                        <img width="60px" src="{{ i.image.url }}" alt="">
+                      {% endif %}
+                  </div>
+                  <div class="news__text">
+                    {{i.user.username}} | {{ i.body }}
+                  </div>
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="lenta__emplty">
+                  У вас пока нет друзей, чтобы видеть их публикации.
+                  <a href="#">Заведи новых</a> 
               </div>
-              <div class="news__text">
-                {{i.user.username}} | {{ i.body }}
-              </div>
-            </div>
-            {% endfor %}
-
-            <div class="news">
-              <div class="news__img">
-                <img src="{% static 'account/img/news2.jpg' %}" alt="">
-              </div>
-              <div class="news__text">
-                Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Iste animi quisquam repudiandae.
-              </div>
-            </div>
+            {% endif %}
 
           </div>
 
@@ -148,31 +150,55 @@
               </span> -->
               </div>
               {% for i in posts %}
+
+              {% if i.image %}
               <div class="post__items">
-                
-                {% if i.image %}
                   <div class="post__img">
-                      <img width='400px' src="{{ i.image.url }}" alt=""><br>
+                      <img src="{{ i.image.url }}" alt=""><br>
                   </div>
-                {% endif %}
-              <div class="icon">
+
+              <div class="post__icon">
                 <a href="#">
-                  <img width='30px' src="{% static 'account/img/heart.png' %}" alt="">
+                  <img  src="{% static 'account/img/heart1.png' %}" alt="">
                 </a>
                 <a href="#">
-                  <img width='30px' src="{% static 'account/img/comment.png' %}" alt="">
+                  <img  src="{% static 'account/img/comment1.png' %}" alt="">
                 </a>
               </div>
               <div class="post__desc">
                 <a href="">{{ i.body }}</a>
               </div>
-              <div class="post__created">
-                {{ i.created }}
-              </div>
-              <div class="post__comment">
+               <div class="post__comment">
                 <a href="#">Читать комментарии</a>
               </div>
+              <div class="post__created">
+                {{ i.created|date:"Y.m.d" }}
+              </div>
             </div>
+              {% else %}
+
+              <div class="post__items noimg">
+                 <div class="post__desc">
+                     <a href="">{{ i.body }}</a>
+                 </div>
+                <div class="post__icon small-icon">
+                     <a href="#">
+                         <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                     </a>
+                      <a href="#">
+                          <img  src="{% static 'account/img/comment1.png' %}" alt="">
+                     </a>
+                 </div>
+               <div class="post__comment">
+                <a href="#">Читать комментарии</a>
+              </div>
+              <div class="post__created">
+                {{ i.created|date:"Y.m.d" }}
+              </div>
+            </div>
+
+
+              {% endif %}
       {% endfor %}
             </div>
           </div>

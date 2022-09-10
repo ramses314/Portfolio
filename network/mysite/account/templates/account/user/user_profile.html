@@ -60,14 +60,15 @@
 					{% for i in posts %}
 						<!-- {{ i }} -->
 						<div class="gallery__items">
+							{% if i.image %}
 							<div class="gallery__img">
-								{% if i.image %}
 								<img width="500px" src="{{ i.image.url }}" alt="">
-								{% endif %}
 							</div>
+							{% else %}
 							<div class="gallery__title">
-								{{ i.body }}
+									{{ i.body }}
 							</div>
+							{% endif %}
 						</div>
 						
 					{% endfor %}

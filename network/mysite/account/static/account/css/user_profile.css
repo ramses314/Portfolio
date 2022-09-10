@@ -112,7 +112,42 @@
 	border-radius: 20px;
 	width: 80%;
 
+	display: grid;
+	grid-template: 1fr / 1fr 1fr 1fr 1fr;
+	gap: 7px;
+
 }
+
+.gallery__items {
+	/*border: 5px solid red;*/
+	min-height: 100px;
+}
+
+.gallery__img {
+	position: relative;
+	min-height: 100px;
+	
+}
+
+.gallery__img img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.gallery__title {
+	
+	text-align: center;
+	margin: auto 0;
+	padding: 15%;
+	background-color: #f5f5f5;
+	height: 100%
+}
+
 
 .profile__emptypost {
 	margin: 20px 0;
@@ -125,3 +160,5 @@
 	padding: 10px 0 0 10px;
 	opacity: 0.6;
 }
+
+
