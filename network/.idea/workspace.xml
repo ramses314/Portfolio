@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49ad1fcc-c3ab-4b82-9f6b-2b5f6c11aff4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/search/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/search/static/search/css/user_search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/search/templates/search/user_search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/search/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/mysite/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/mysite/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/network.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/network.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/chats/templates/chats/plakat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/user_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/user_profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/user/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/user/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/user/user_search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/user_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/chats/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/chats/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/chats/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/chats/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -52,12 +33,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mysite/search/static/search/css" />
