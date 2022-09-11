@@ -2,7 +2,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from posts.models import Post
+from posts.forms import CommentCreateForm
+from posts.models import Post, Comment
 # Create your views here.
 from .forms import *
 from .models import Contact
@@ -12,12 +13,15 @@ from .models import Contact
 def home(request):
 
     tags = list(request.user.profile.tags.names())
+    form = CommentCreateForm()
     try:
         mydata = request.user.profile
     except:
         Profile.objects.create(user=request.user)
         mydata = request.user.profile
+
     posts = request.user.post_created.all().order_by('-created')
+    comments = Comment.objects.filter(post__in=posts)
     followers = request.user.followers.all()
     subs = Contact.objects.filter(user_from_id=request.user.id).values_list('id')
 
@@ -34,6 +38,8 @@ def home(request):
         'subs' : subs,
         'lenta' : post_from_subs,
         'tags' : tags,
+        'form' : form,
+        'comments' : comments
     }
 
     return render(request, 'account/home.html', context=context)

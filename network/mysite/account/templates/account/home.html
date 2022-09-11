@@ -159,18 +159,24 @@
                       <img src="{{ i.image.url }}" alt=""><br>
                   </div>
 
-              <div class="post__icon">
+                <div class="post__icon">
 
-                <a href="#"  class='like' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-acton='{% if request.user in user_like %}un{% endif %}like'>
-                  <img  src="{% static 'account/img/heart1.png' %}" alt="">
-                </a>
-                <a href="#">
-                  <img  src="{% static 'account/img/comment1.png' %}" alt="">
-                </a>
-              </div>
-              <div class="post__total-like{{  forloop.counter }}">
+                  <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
+                  
+                    {% if request.user in users_like %}
+                      <img  src="{% static 'account/img/heart3.png' %}" alt="">
+                    {% else %}
+                      <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                    {% endif %}
+                    
+                  </a>
+                  <a href="" onclick="return false;" class="comment">
+                    <img  src="{% static 'account/img/comment1.png' %}" alt="">
+                  </a>
+                </div>
+              <div class="post__total-like{{  forloop.counter }} post__total-like">
  
-                  Нравиться: {{ total_likes }}
+                  Нравится: {{ total_likes }}
 
               </div>
 
@@ -179,9 +185,26 @@
               </div>
                <div class="post__comment">
                 <a href="#">Читать комментарии</a>
+                <div class="post__comment-form">
+                  <form action="." method="post">
+                    {% csrf_token %}
+
+                    {{ request.user.username }} {{ form.body }}
+
+                    {% for k in comments %}
+                      {% if k.post == i %}
+                        {{ k.body }}
+                      {% endif %}
+
+                    {% endfor %}
+                  
+
+                    <input type="submit" value='Оставить комментарий'>
+                  </form>
+                </div>
               </div>
               <div class="post__created">
-                {{ i.created|date:"Y.m.d" }}
+                {{ i.created|date:"j.m.o" }}
               </div>
             </div>
               {% else %}
@@ -191,24 +214,28 @@
                      <a href="">{{ i.body }}</a>
                  </div>
                 <div class="post__icon small-icon">
-                     <a class='like' id='loop{{forloop.counter}}' href="#" data-id='{{ i.id }}' data-acton='{% if request.user in user_like %}un{% endif %}like' data-loop='{{ forloop.counter }}'>
-                         <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                     <a class='like' id='loop{{forloop.counter}}' href="#" data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like' data-loop='{{ forloop.counter }}'>
+                         {% if request.user in users_like %}
+                      <img  src="{% static 'account/img/heart3.png' %}" alt="">
+                    {% else %}
+                      <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                    {% endif %}
                      </a>
-                      <a href="#">
+                      <a class='comment' href="" onclick="return false;">
                           <img  src="{% static 'account/img/comment1.png' %}" alt="">
                      </a>
                  </div>
   
-                 <div class="post__total-like{{  forloop.counter }}">
+                 <div class="post__total-like{{  forloop.counter }} post__total-like">
  
-                  Нравиться: {{ total_likes }}
+                  Нравится: {{ total_likes }}
 
               </div>
                <div class="post__comment">
                 <a href="#">Читать комментарии</a>
               </div>
               <div class="post__created">
-                {{ i.created|date:"Y.m.d" }}
+                {{ i.created|date:"j.m.o" }}
               </div>
             </div>
 
@@ -241,18 +268,67 @@
       function(data) {
 
         if (data['status'] == 'ok') {
-          var previous_action = $(`#loop${loop}`).data('action');
 
-          $('a.like').data('action', previous_action == 'like' ? 'unlike' : 'like');
 
-          var loop = parseInt($(`.post__total-like${data['loop']}`).text().split(': ')[1])
+          var previous_action = $(`#loop${data['loop']}`).data('action');
+          $(`#loop${data['loop']}`).data('action', previous_action == 'like' ? 'unlike' : 'like');
 
-          var text = 'Нравится:' + (previous_action == 'like' ? loop + 1 : loop - 1)
+          var int_like = parseInt($(`.post__total-like${data['loop']}`).text().split(':')[1])
+
+          var text = 'Нравится:' + (previous_action == 'like' ? int_like + 1 : int_like - 1)
           $(`.post__total-like${data['loop']}`).text(text);
 
 
-         
-          console.log(loop, previous_action)
+
+          var some = $(`#loop${data['loop']}`).find('img')
+
+          console.log(321, data['loop'], previous_action, $(`#loop${data['loop']}`))
+
+
+          if (previous_action == 'like') {
+            some.attr('src', '{% static 'account/img/heart3.png' %}')
+          } else {
+            some.attr('src', '{% static 'account/img/heart1.png' %}')
+          }
+
+
+
+
+  <!-- $('a.comment').click(function(e) {
+    e.preventDefault();
+    $.post(
+      '{% url "posts:post_like" %}',
+      {id: $(this).data('id'), action: $(this).data('action'), loop: $(this).data('loop')},
+      function(data) {
+
+        if (data['status'] == 'ok') {
+
+
+          var previous_action = $(`#loop${data['loop']}`).data('action');
+          $(`#loop${data['loop']}`).data('action', previous_action == 'like' ? 'unlike' : 'like');
+
+          var int_like = parseInt($(`.post__total-like${data['loop']}`).text().split(':')[1])
+
+          var text = 'Нравится:' + (previous_action == 'like' ? int_like + 1 : int_like - 1)
+          $(`.post__total-like${data['loop']}`).text(text);
+
+
+
+          var some = $(`#loop${data['loop']}`).find('img')
+
+          console.log(321, data['loop'], previous_action, $(`#loop${data['loop']}`))
+
+
+          if (previous_action == 'like') {
+            some.attr('src', '{% static 'account/img/heart3.png' %}')
+          } else {
+            some.attr('src', '{% static 'account/img/heart1.png' %}')
+          }
+ -->
+
+
+
+
         }
       }
     )

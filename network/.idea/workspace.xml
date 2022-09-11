@@ -6,12 +6,10 @@
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/templates/posts/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/templates/posts/post_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

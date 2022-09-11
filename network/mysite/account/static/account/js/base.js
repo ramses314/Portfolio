@@ -106,6 +106,14 @@ $(function(){
 	}
 
 
+	$('a.comment').on('click', function(e) {
+		$('.post__comment-form').css({
+
+			'display' : 'block'
+		})
+	})
+
+
 
 
 

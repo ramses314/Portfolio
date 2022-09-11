@@ -383,10 +383,25 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 
 }
 
+.post__total-like {
+  padding: 0 15px;
+  font-weight: 600;
+}
+
+
+.post__comment-form {
+  display: none;
+}
+
 .post__comment{
     margin: 6px 15px;
+}
+
+.post__comment input {
+    border: 1px solid gray;
 
 }
+
 
 .post__comment a{
     color: gray;
