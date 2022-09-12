@@ -107,14 +107,10 @@ $(function(){
 
 
 	$('a.comment').on('click', function(e) {
-		$('.post__comment-form').css({
+		$('.post__comment-form').slideToggle()
 
-			'display' : 'block'
-		})
+		$('#id_body').focus()
 	})
-
-
-
 
 
 

@@ -1,48 +1,16 @@
-* {padding: 0;margin: 0;border: 0;}
-*, *:before, *:after {-webkit-box-sizing: border-box;box-sizing: border-box;}
-:focus, :active {outline: none;}
+* {padding: 0;margin: 0;border: 0;}*, *:before, *:after {-webkit-box-sizing: border-box;box-sizing: border-box;}:focus, :active {outline: none;}
 a:focus, a:active {outline: none;}
 nav, footer, header, aside {display: block;}
 html, body {height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: 'calibri';}
-
-input, button, textarea {
-  font-family: inherit;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: 400;
-}
-
+input, button, textarea {font-family: inherit;}
+input::-ms-clear {display: none;}
+button {cursor: pointer;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a, a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+ul li {list-style: none;}
+img {vertical-align: top;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit;font-weight: 400;}
 
 
 body {
@@ -62,18 +30,16 @@ body {
   border-radius: 10px;
   margin: 0 10px 0;
 
-/* -webkit-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
--moz-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
-*/
-
-   -webkit-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
--moz-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
-
+  -webkit-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
+
+/*Панель аватарки*/
+
 .left__items {}
+
 .left__ava {
   position: relative;
   height: 14vw;
@@ -82,7 +48,6 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .left__edit {
-  /*background-color: #bdb7b7;*/
   color: #d9d2d2;
   border-radius: 6px;
   width: 90%;
@@ -91,11 +56,7 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
   font-size: 19px;
   text-align: center;
   font-weight: 600;
-
-
 }
-
-
 
 .left__edit a{
   font-size: 14px;
@@ -110,9 +71,10 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
   top: 0;
   left: 0;
   border-radius: 50%;
-
 }
 
+
+/*Панель подписок и главной информации*/
 
 .content__right {
   flex: 0 1 58%;
@@ -120,22 +82,10 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
   border-radius: 10px;
   padding: 20px;
 
-
- /* -webkit-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
--moz-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
-box-shadow: 0px 0px 15px -5px rgba(34, 60, 80, 0.44) inset;
-*/
-
-  /* -webkit-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
--moz-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);*/
-
--webkit-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
--moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  -webkit-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
-
-
 
 .right__nickname {
   font-size: 50px;
@@ -151,7 +101,7 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 .right__links a{
-  font-size: 22px;
+  font-size: 20px;
   padding: 0 10px;
   color: black;
 }
@@ -165,21 +115,20 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 
+/*Доп. функционал (в синих кружочках)*/
+
 .content__third{
   flex: 0 1 8%;
-  /*background-color: white;*/
   border-radius: 10px;
   margin: 10px 0 0 -10px;
-/*
-   -webkit-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
--moz-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);
-box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);*/
 }
 
 
 
+/*Второй ряд (лента друзей и личные публикации)*/
+
+
 .content__block2 {
-  /*border: 4px solid red;*/
   margin: 15px auto;
   padding: 0 0 0 30px;
   max-width: 850px;
@@ -188,6 +137,9 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);*/
   align-items: flex-start;
 }
 
+
+/*Лента друзей*/
+
 .content__news {
   flex: 0 1 20%;
   background-color: white;
@@ -195,31 +147,12 @@ box-shadow: 2px 7px 8px 0px rgba(34, 60, 80, 0.2);*/
   padding: 20px;
   text-align: center;
   margin: 0 10px 0 0;
-
-
-  /*border: 5px solid blue;*/
   min-height: 400px;
 
   -webkit-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
--moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
-
-.content__pub {
-  flex: 0 1 76%;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 0 20px 0 0 ;
-
-  /*border: 5px solid black;*/
-
-  -webkit-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
--moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
-}
-
-
 
 .content__lenta-title {
   padding: 10px 0;
@@ -229,14 +162,6 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 .news {
-}
-
-.someDive{
-    width:400px;
-    height: 400px;
-    position: absolute;
-    background-color: green;
-
 }
 
 .news__img {
@@ -255,23 +180,21 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
   position: absolute;
   top: 0;
   left: 0;
-
 }
+
 .news__text {
   margin: 5px auto;
   margin-bottom: 10px;
   width: 85%;
   text-align: left;
-
 }
 
-
+ /*******************************/
+ /******************************/
+/****Разобрать****************/
 .messages{
-
     margin: 20px 50px
-
 }
-
 .success{
     background-color: #5ee575;
     padding:20px;
@@ -284,16 +207,31 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
     font-size: 15px;
     border-radius: 8px;
 }
-
-
 .logout{
     margin: 40px;
     padding: 20px;
     border: 1px solid gray;
     border-radius: 7px;
     font-size: 16px;
+}
+/****Разобрать****************/
+/*****************************/
+/*****************************/
 
 
+
+/*Личные публикации */
+
+.content__pub {
+  flex: 0 1 76%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 20px 0 0 ;
+
+  -webkit-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
+  box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 .post {
@@ -307,13 +245,11 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 .post__all {
-    /*white-space: nowrap;*/
     font-size: 20px;
     margin: 0 0 20px 0;
 }
 
 .post__button a {
-
     padding: 6px;
     border-radius: 7px;
     background-color: #A9A9A9;
@@ -324,17 +260,13 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
     margin: 15px;
     display: inline-block;
     font-size: 14px;
-
 }
-
 
 .post__items {
   margin: 0 0 20px 0;
   align-self: center;
-  /*border: 4px solid red;*/
   width: 90%
 }
-
 
 .post__img {
   width: 100%;
@@ -389,25 +321,90 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
 }
 
 
+
+/*Личные публикации: КОММЕНТАРИИ*/
+
 .post__comment-form {
   display: none;
+  margin: 15px;
 }
 
 .post__comment{
     margin: 6px 15px;
 }
 
-.post__comment input {
-    border: 1px solid gray;
-
-}
-
-
 .post__comment a{
     color: gray;
     text-decoration: underline;
+}
+
+
+.comment {}
+.comment__form form{
+  display: flex;
+  align-items: center;
+  /*justify-content: space-around;*/
+}
+.comment__user {
+  font-weight: 500;
+  /*align-self: flex-start;*/
+}
+
+.comment__input {
+  flex: 0 1 50%;
+  margin: 10px;
+}
+
+.comment__input input {
+  /*padding: 2px;*/
+  /*background-color: #faf7f7;*/
+  border-bottom: 1px solid #dedcdc;
+  width: 100%;
+  height: 100%;
+}
+
+.comment__button{
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.comment__button input{
+
+  padding: 5px 10px;
+  font-weight: 700;
+  color: white;
+  background-color: #f77c7c;
 
 }
+
+
+.comment__list {}
+
+.list {
+  margin: 5px 10px;
+}
+.list__user {
+  font-weight: 600;
+}
+.list__body {
+  margin: 0 20px;
+}
+.list__publish {}
+
+
+.list span{
+  font-size: 12px;
+  font-weight: 500;
+  color: gray;
+}
+
+
+
+
+
+
+
+
 
 .noimg {
   background-color: #f5f5f5;
@@ -415,9 +412,8 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
   padding: 20px;
 }
 
-
-
-
+/****Разобрать****************/
+/****Разобрать****************/
 .user__photo img{
   width: 100px;
   height: 100px;
@@ -433,6 +429,6 @@ box-shadow: 0px 0px 12px -3px rgba(34, 60, 80, 0.33);
   border-bottom: 1px solid gray;
   padding: 10px 0 10px 0;
 }
-
+/****Разобрать****************/
 
 

@@ -7,9 +7,7 @@
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/posts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/chats/templates/chats/plakat.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/chats/templates/chats/plakat.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
