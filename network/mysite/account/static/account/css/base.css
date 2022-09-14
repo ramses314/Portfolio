@@ -19,7 +19,10 @@ body {
   font-family: "Montserrat";
 }
 
+.wrap {
+  position: absolute;
 
+}
 .wrapper {
   display: flex;
   flex-direction: column;

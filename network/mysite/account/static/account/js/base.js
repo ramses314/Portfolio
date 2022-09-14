@@ -61,28 +61,7 @@ $(function(){
 // 	modal.css('left', (window.innerWidth - modal.width()) / 2);
 // })
 
-	$('.card__follow').on('click', function(e){
-		let check = $('#follow-check').hasClass('sign');
-		let subs = parseInt($('#follow-subs').text())
-
-		if (check) {
-			$('#follow-check').removeClass('sign')
-			$('#follow-check').addClass('unsign')
-			$('#link-check').text('Подписаться')
-			$("#follow-subs").text(`${subs - 1} подписчиков`)
-
-
-		} else {
-			$('#follow-check').removeClass('unsign')
-			$('#follow-check').addClass('sign')
-			$('#link-check').text('Отписаться')
-			$("#follow-subs").text(`${subs + 1} подписчиков`)
-
-
-
-		}
-	})
-
+	
 
 
 // Поиск пользователей (элемент выбора пола)
@@ -107,10 +86,48 @@ $(function(){
 
 
 	$('a.comment').on('click', function(e) {
+		
 		$('.post__comment-form').slideToggle()
 
 		$('#id_body').focus()
 	})
+
+
+	// Просмотр галереи подписчиков
+
+	$('.profile__gallery').on('click', function(e) {
+
+		$('.abs_wrapper').css({
+			'display' : 'block'
+		})
+		
+		// $('.profile__gallery').addClass('profile__gallery_absolute').css(
+		// {
+		// 	// 'display' : 'none'
+		// })
+
+		$('.abs_profile__gallery').slick({
+		// infinite: true,
+  // 		slidesToShow: 1,
+  // 		slidesToScroll: 1,
+  // 		// dots: true
+		}).slideDown()
+
+	})
+
+
+	$('.abs_wrapper').on('click', function(e) {
+
+		$('.abs_profile__gallery').css({'display' : 'none'}).slick('unslick');
+		$('.abs_wrapper').css({
+			'display' : 'none'
+		})
+	})
+
+
+
+
+
 
 
 

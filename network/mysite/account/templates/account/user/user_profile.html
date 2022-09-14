@@ -3,6 +3,7 @@
 
 {% block head %}
 	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_profile.css' %}">
+	 <link rel="stylesheet" type="text/css" href="{% static 'account/css/home.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -11,14 +12,15 @@
 		<div class="profile__card">
 			<div class="card">
 				<div class="card__img">
-					<img width=200px src="{{ user.profile.image.url }}" alt="">
+					<img width=200px src="{{ profil_user.profile.image.url }}" alt="">
 				</div>
 				<div class="card__text">
 					<div class="card__firstline">
 						<div class="card__nickname">
 							@{{ profil_user.username }} 
 						</div>
-						<div class="card__follow">
+
+						<div class="card__follow"  data-id='{{ profil_user.id }}' data-action="{% if request.user in profil_user.followers.all %}un{% endif %}sign">
 							{% if sign %}
 								<div id='follow-check' class="sign">
 									<a id='link-check' href="#">Отписаться</a>
@@ -28,17 +30,13 @@
 								<div id='follow-check' class="unsign">
 									<a id='link-check' href="#">Подписаться</a>
 								</div>
-								
 
-								<!-- <a href="{% url 'account:follow' id=profil_user.id do='follow'%}">
-									Подписаться
-								</a> -->
 							{% endif %}			
 						</div>
 					</div>
 					<div class="card__subs">
 						 <a href="card__link">
-						 	{{ profil_user.post_created.all.count }}  Публикаций
+						 	{{ profil_user.post_created.all.count }} Публикаций
 						 </a>
 						 <a id='follow-subs' href="card__link">
 						 	{{ profil_user.followers.count }} Подписчиков
@@ -53,6 +51,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="abs_wrapper"></div>
 		<div class="profile__gallery">
 
 			{% with posts=profil_user.post_created.all %}
@@ -83,7 +82,227 @@
 				{% endif %}
 			{% endwith %}
 		</div>
+			
+				<div class="abs_profile__gallery">
+					{% with posts=profil_user.post_created.all %}
+						{% if posts.count > 0 %}
+							{% for i in posts %}
+								<div class="abs_gallery__items">
+									<div class="abs_gallery__item">
+										{% if i.image %}
+										<div class="abs_gallery__img">
+											<img width="500px" src="{{ i.image.url }}" alt="">
+										</div>
+										{% else %}
+										<div class="abs_gallery__title">
+												{{ i.body }}
+										</div>
+										{% endif %}
+										<div class="abs_gallery__actions">
+											lol
+
+
+											  <div class="post__icon">
+
+                    <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
+  
+                      {% if request.user in users_like %}
+                        <img  src="{% static 'account/img/heart3.png' %}" alt="">
+                      {% else %}
+                        <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                      {% endif %}
+                    
+                    </a>
+                    <a href="" onclick="return false;" class="comment">
+                      <img  src="{% static 'account/img/comment1.png' %}" alt="">
+                    </a>
+                  </div>
+
+                  <div class="post__total-like{{  forloop.counter }} post__total-like">
+                      Нравится: {{ total_likes }}
+                  </div>
+
+                  <div class="post__desc">
+                    <a href="">{{ i.body }}</a>
+                  </div>
+
+                 <div class="post__comment">
+
+                    <a href="#">Читать комментарии</a>
+
+
+
+
+                    <div class="post__comment-form">
+
+                          <div class="comment__list">
+                                
+                                {% for c in comments %}
+                                  {% if c.post == i %}
+
+                                    <div class="list">
+                                      <div class="list__user">
+                                          {{ c.nickname.username }}
+                                          <span>{{ c.created }}</span>
+                                      </div>
+                                      <div class="list__body">
+                                          {{ c.body }}
+                                      </div>   
+                                    </div>
+                                    
+                                  {% endif %}
+                                {% endfor %}
+
+                            </div>
+                     
+                        <div class="comment">
+                            <div class="comment__form">
+                               <form action="." method="post">
+
+                                  {% csrf_token %}
+
+                                  <div class="comment__user">
+                                      @{{ request.user.username }}
+                                  </div>
+                                  <div class="comment__input" data-postid='{{ lolik }}'>
+
+                                        {{ form.body }}
+
+                                        <input type="hidden" name='postid' value='{{i.id}}'>
+                                  </div>
+                                  <div class="comment__button">
+                                    <input type="submit" value='Комментировать'>
+                                  </div>
+                                </form>
+
+                            </div>
+
+                          
+                        </div>
+
+      
+                    </div>
+                </div>
+
+                <div class="post__created">
+                  {{ i.created|date:"j.m.o" }}
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										</div>
+									</div>
+								</div>	
+							{% endfor %}
+						{% else %} 	
+						{% endif %}
+					{% endwith %}
+				</div>
+			
 	</div>
+
+
+{% endblock %}
+
+
+
+
+{% block domready %}
+
+
+	
+
+  $('.card__follow').click(function(e) {
+    e.preventDefault();
+    $.post(
+      '{% url "account:do_follow" %}',
+      {id: $(this).data('id'), action: $(this).data('action')},
+      function(data) {
+
+        if (data['status'] == 'ok') {
+
+        	let check = $('.card__follow').data('action')
+			let subs = parseInt($('#follow-subs').text())
+
+			if (check == 'unsign') {
+				$('#follow-check').removeClass('sign')
+				$('#follow-check').addClass('unsign')
+				$('#link-check').text('Подписаться')
+				$("#follow-subs").text(`${subs - 1} Подписчиков`)
+
+
+			} else {
+				$('#follow-check').removeClass('unsign')
+				$('#follow-check').addClass('sign')
+				$('#link-check').text('Отписаться')
+				$("#follow-subs").text(`${subs + 1} Подписчиков`)
+			}
+        	
+
+
+ 
+        	var previous_action = $('.card__follow').data('action');
+
+        	$('.card__follow').data('action', previous_action == 'sign' ? 'unsign' : 'sign');
+
+        	console.log(2, previous_action)
+
+
+        	
+
+    
+        //   var int_like = parseInt($(`.post__total-like${data['loop']}`).text().split(':')[1])
+
+        //   var text = 'Нравится:' + (previous_action == 'like' ? int_like + 1 : int_like - 1)
+        //   $(`.post__total-like${data['loop']}`).text(text);
+
+
+
+        //   var some = $(`#loop${data['loop']}`).find('img')
+
+        //   console.log(321, data['loop'], previous_action, $(`#loop${data['loop']}`))
+
+
+        //   if (previous_action == 'like') {
+        //     some.attr('src', '{% static 'account/img/heart3.png' %}')
+        //   } else {
+        //     some.attr('src', '{% static 'account/img/heart1.png' %}')
+        //   }
+
+
+
+
+        }
+      }
+    )
+  })
+
+
+
 
 
 {% endblock %}

@@ -3,6 +3,7 @@
 
 {% block head %}
 	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_list.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_profile.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -36,6 +37,21 @@
 					</div>
 					<div class="followers__subs">
 						<a href="">Подписаться</a>
+
+					<!-- 	<div class="card__follow"  data-id='{{ profil_user.id }}' data-action="{% if request.user in profil_user.followers.all %}un{% endif %}sign">
+							{% if sign %}
+								<div id='follow-check' class="sign">
+									<a id='link-check' href="#">Отписаться</a>
+								</div>
+								
+							{% else %}
+								<div id='follow-check' class="unsign">
+									<a id='link-check' href="#">Подписаться</a>
+								</div>
+
+							{% endif %}			
+						</div> -->
+
 					</div>
 			</div>
 	 	 

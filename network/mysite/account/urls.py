@@ -30,7 +30,7 @@ urlpatterns = [
     # path('user_profile/<id>/', user_profile, name='user_profile')
     path('user_profile/842<id>134/', user_profile, name='user_profile'),
 
-    path('follow/<id>/<do>/', do_follow, name='follow'),
+    path('follow/', do_follow, name='do_follow'),
     # path('unfollow', do_follow, name='unfollow')
 
 ]

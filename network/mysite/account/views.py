@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render
+from django.views.decorators.http import require_POST
 
 from posts.forms import CommentCreateForm
 from posts.models import Post, Comment
@@ -148,8 +150,6 @@ def user_profile(request, id):
 
     profile_user = User.objects.get(id=id)
 
-    print(555, profile_user, profile_user.following.all())
-
     # if request.user in profile_user.following.all():
     try:
         a = Contact.objects.get(user_from=request.user, user_to=profile_user)
@@ -183,20 +183,12 @@ def user_list(request):
 
 
 @login_required
-def do_follow(request, id, do):
+@require_POST
+def do_follow(request):
 
-    profile_user = User.objects.get(id=id)
-
-    print(22222, do)
-    if do == 'follow':
-        Contact.objects.get_or_create(user_from=request.user, user_to=profile_user)
-        print(123)
-    else:
-        Contact.objects.filter(user_from=request.user, user_to=profile_user).delete()
-        print(321)
-
-
-    # if request.user in profile_user.following.all():
+    follow_id = request.POST.get('id')
+    action = request.POST.get('action')
+    print(999, follow_id, action)
 
     try:
         a = Contact.objects.get(user_from=request.user, user_to=profile_user)
@@ -205,10 +197,26 @@ def do_follow(request, id, do):
 
     if a:
         sign = True
-        print(333)
     else:
         sign = None
-        print(444)
+
+    if follow_id and action:
+        try:
+            profile_user = User.objects.get(id=follow_id)
+            if action == 'sign':
+                Contact.objects.get_or_create(user_from=request.user, user_to=profile_user)
+                print('sub', 33)
+            else:
+                Contact.objects.filter(user_from=request.user, user_to=profile_user).delete()
+                print('unsub', 33)
+            return JsonResponse({'status': 'ok', 'sign' : sign})
+        except:
+            pass
+    return JsonResponse({'status': 'ok', 'sign' : sign})
+
+
+
+
     context = {
         'profil_user': profile_user,
         'sign': sign,
@@ -217,4 +225,6 @@ def do_follow(request, id, do):
     return render(request, 'account/user/user_profile.html', context=context)
 
 
+
+# def user_profil_lenta(request)
 

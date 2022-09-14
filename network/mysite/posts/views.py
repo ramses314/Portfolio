@@ -42,6 +42,7 @@ def post_detail(request, id):
 @login_required
 @require_POST
 def post_like(request):
+
     post_id = request.POST.get('id')
     action = request.POST.get('action')
     loop = request.POST.get('loop')
