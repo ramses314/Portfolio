@@ -17,3 +17,4 @@ class CommentCreateForm(forms.ModelForm):
         widgets = {
             'body' : forms.TextInput()
         }
+

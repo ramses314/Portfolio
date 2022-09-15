@@ -10,7 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='media/%Y/%m/%d', blank=True, default='media/defaultr/zero_photo.jpg')
     status = models.TextField(default='Привет, я новый пользователь')
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     GENDER_CHOISES = [
         ('m', 'Парень'),

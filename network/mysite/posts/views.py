@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import JsonResponse
-from django.shortcuts import render
+from django.http import JsonResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 
 from .forms import *
@@ -18,7 +18,7 @@ def create_post(request):
             new_items = form.save(commit=False)
             new_items.user = request.user
             new_items.save()
-            return render(request, 'account/home.html')
+            return redirect('/')
     else:
         form = PostCreateForm()
 

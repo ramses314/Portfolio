@@ -7,10 +7,10 @@
 /*Общие*/
 .edit{
     background-color: white;
-    padding: 15px 30px;
+    padding: 10px 30px;
     border-radius: 20px;
     max-width: 60%;
-    margin: 25px auto;
+    margin: 10px auto;
 }
 
 .edit__title {
@@ -31,13 +31,15 @@
     background-color: #e8e3e3;
     overflow: hidden;
     border-radius: 10px;
+
+
 }
 
 .edit__current-ava{
     flex: 0 0 25%;
 
     width: 80%;
-    height: 120px;
+    height: 130px;
     border-radius: 50%;
     overflow: hidden;
 
@@ -75,15 +77,19 @@
     border-radius: 12px;
     overflow: hidden;
     margin: 0 0 10px 0;
+
+ 
 }
 
 .tags__title {
     margin: 0 0 5px 0;
+    font-weight: 600;
+    opacity: 0.75;    
 }
 
 .tags__form {
     display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
     margin: 0 0 10px 0;
 }
 
@@ -91,7 +97,7 @@
     background-color: #fcb89a;
     padding: 5px;
     border-radius: 4px;
-    margin: 0 10px 0 0;
+    margin: 0 10px 5px 0;
     position: relative;
 }
 
@@ -110,10 +116,20 @@
     display: none;
 }
 
+.tags__input {
+    width: 100%;
+}
+
 .tags__input input{
     padding: 5px;
     border-radius: 5px;
     overflow: hidden;
+    width: 100%
+
+}
+
+.tags__empty {
+    display: none;
 }
 
 /*ОСНОВНАЯ ФОРМА */

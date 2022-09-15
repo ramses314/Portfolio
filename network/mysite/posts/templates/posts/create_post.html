@@ -19,12 +19,15 @@
             <form action="." method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                {% for i in form %}
-                  <div class="post__input">
-                   
-                    {{ i }}
-                  </div>
-                {% endfor %}
+                <div class="post__image">
+                    {{ form.image }}
+                </div>
+                <div class="post__textarea">
+                    {{ form.body }}
+                </div>
+                <div class="post__error">
+                    *Для публикации нужен как минимум текст или фотография
+                </div>
                 <div class="post__button">
                     <input type="submit" value="Опубликовать">
                 </div>
@@ -32,6 +35,26 @@
 
         </div>
 </div>
+
+
+{% endblock %}
+
+
+
+
+{% block domready %}
+
+    $('.post__button').click(function(e) {
+
+        var checkOne = $.trim($('.post__textarea textarea').val());
+        var checkTwo = $('.post__image input').val();
+
+        if (!checkOne && !checkTwo) {
+            $('.post__error').slideDown()
+            e.preventDefault();
+            return false;
+        } else {}
+    })
 
 
 {% endblock %}

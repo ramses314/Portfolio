@@ -56,7 +56,7 @@ class ProfilEditForm(forms.ModelForm):
         widgets = {
             'image' : forms.FileInput(attrs={'placeholder' : 'Фото профиля'}),
             'status': forms.TextInput(attrs={}),
-            'tags': forms.TextInput(attrs={'placeholder': 'Теги'})
+            'tags': forms.TextInput(attrs={'placeholder': 'Добавь теги, через одну запятую'})
         }
         labels = {
             'status' : 'Статус'

@@ -37,7 +37,7 @@
                 <div class="edit__tags">
                     <div class="tags">
                         <div class="tags__title">
-                            Тэги (ключевые словa, чтобы находить единомышленников)
+                            Тэги (ключевые словa для поиска единомышленников)
                         </div>
                         <div class="tags__form">
                                {% for i in  tags %}
@@ -48,6 +48,9 @@
                                         </div>
                                     </div>
                                {% endfor %}
+                        </div>
+                        <div class="tags__empty">
+                                {% for i in tags %}{{ i }},{% endfor %}
                         </div>
                         <div class="tags__input">
                             {{profile_form.tags}}
@@ -157,6 +160,8 @@
             'display' : 'block',
             'opacity' : '1.0'
         })
+         $('.tags__input').removeAttr('value')
+
     },
     function(e) {
          $(this).find('.tags__cross').css({
@@ -171,8 +176,25 @@
     })
 
 
+    <!-- РАБОТА С ТЕГАМИ  -->
 
+    var currentTags = $('.tags__empty').text()
 
+    console.log(14, currentTags)
+
+    <!-- Сохранение тегов -->
+
+    $('.edit__button').on('click', function(e) { 
+        newTags = $.trim($('.tags__input input').val())
+        newCurrentTags = $('.tags__input input').val(currentTags + newTags)
+    })
+
+    <!-- удаление тегов -->
+    $('.tags__tablet').click(function(e) {
+        var forDelete = $.trim($(this).text().replace('✖', ''))
+        var cleanCurrent = $.trim(currentTags.replace('\n', '').replace('\n', ''))
+        currentTags = cleanCurrent.replace(`${forDelete},` ,'')
+    })
 
 
 
@@ -181,7 +203,8 @@
         'display' : 'none'
     })
 
-    $('.tags__input').val('')
+    $('.tags__input input').val('')
+
 
 
 

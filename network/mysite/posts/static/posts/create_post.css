@@ -1,6 +1,6 @@
 
 .post{
-	width: 80%;
+	width: 60%;
 	background-color: white;
 	border-radius: 15px;
 	margin: 20px auto;
@@ -10,9 +10,46 @@
 
 .post__title {
 	font-size: 20px;
+	padding: 0 0 20px 0;
 }
 
-.post__input textarea {
+.post__image {
+	background-color: #f9fccf;
+	padding: 15px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.post__textarea {
+	width: 100%
+
+}
+
+.post__textarea textarea {
 	border: 1px solid gray;
 	margin: 10px 0;
+	border-radius: 8px;
+	overflow: hidden;
+	padding: 5px;
+	width: 100%
+}
+
+.post__error { 
+	color: #e00000;
+	font-weight: 500;
+	opacity: 0.7;
+	margin: 0 0 5px 0;
+	display: none;
+}
+
+.post__button input {
+	padding: 5px 10px;
+	font-weight: 700;
+	color: dimgray;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.post__button:hover input {
+	color: #a6a6a6;
 }
