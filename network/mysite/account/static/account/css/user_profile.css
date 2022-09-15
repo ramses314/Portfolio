@@ -260,7 +260,52 @@
 }
 
 
+
+
+
 /******************************/
+
+
+.abs_post__desc {
+	text-align: left;
+	color: black;
+	padding: 10px;
+}
+
+
+.abs_profile__user {
+	font-weight: 600;
+	margin: 0 10px 0 0;
+}
+
+
+.abs_post__total-like {
+	text-align: left;
+	margin: 0 0 0 10px;
+
+}
+
+.abs_post__icon {
+	display: flex;
+	padding: 5px 0 0 10px;
+}
+
+
+.abs_read-comment {
+	text-align: left;
+	padding:  10px;
+}
+
+.abs_post__created {
+	text-align: left;
+	padding: 0 0 0 30px;
+}
+
+
+
+
+
+
 
 
 

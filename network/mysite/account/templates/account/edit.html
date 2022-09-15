@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'account/css/edit.css' %}">
 {% endblock %}
 
@@ -11,53 +11,186 @@
 
     <div class="edit">
         <div class="container">
-
             <form action="." method="post" enctype="multipart/form-data">
+
                 {% csrf_token %}
 
                 <div class="edit__title">
                     Редактирование профиля
                 </div>
 
-                <div class="edit__img-items">
-                    <div class="edit__currentimg">
+                <div class="edit__ava">
+                    <div class="edit__current-ava">
                         <img src="{{ user.profile.image.url }}" alt="">
                     </div>
-                    <div class="edit__change-img">
-                            <div class="loginput">
-                                {% for i in profile_form.image|slice:"-1:" %}
-                                      {{ i }}
-                                {% endfor %}
-
-                            </div>
+                    <div class="edit__change-ava">
+                        <div id='input-ava' class="field-input file">
+                            {% for i in profile_form.image|slice:"-1:" %}
+                                {{ i }}
+                            {% endfor %}
+                        </div>
+                        <div class="edit__change-password">
+                            <a href="{% url 'account:password_change' %}">Поменять пароль</a>
+                        </div>
                     </div>
                 </div>
+                <div class="edit__tags">
+                    <div class="tags">
+                        <div class="tags__title">
+                            Тэги (ключевые словa, чтобы находить единомышленников)
+                        </div>
+                        <div class="tags__form">
+                               {% for i in  tags %}
+                                    <div class="tags__tablet tablet-loop{{ forloop.counter }}">
+                                        {{ i }}
+                                        <div class="tags__cross cross-loop{{ forloop.counter }}">
+                                            <center>✖</center>
+                                        </div>
+                                    </div>
+                               {% endfor %}
+                        </div>
+                        <div class="tags__input">
+                            {{profile_form.tags}}
+                        </div>
+                    </div>
                     
-                {% for i in user_form %}
-                    {{ i.errors }}
-                    <div class="loginput">
-                       {{ i.label_tag }} {{ i }}
+                </div>
+    
+                    
+                <div class="edit__form">
+                    {% for i in user_form %}
+                    {% if i.errors %}
+                        <div class="form__errors">
+                            {{ i.errors }}
+                        </div>
+                    {% endif %}
+                    <div class="field-input">
+                        <div class="field__label">
+                            {{ i.label_tag }}     
+                        </div>
+                        <div class="field__field">
+                             {{ i }}       
+                        </div>
                     </div>
                 {% endfor %}
-                <div class="loginput">
-                       {{ profile_form.status.label_tag }} {{ profile_form.status }}
                 </div>
-                 <div class="loginput">
-                       {{ profile_form.tags }}
+                
+
+                <div class="field-input">
+                    <div class="field__label">
+                        {{ profile_form.status.label_tag }}      
+                    </div>
+                    <div class="field__field">
+                        {{ profile_form.status }}      
+                    </div>      
                 </div>
 
-
-
-
-                <div class="loginput">
-                    <input type="submit" value="обновить">
+                <div class="edit__button">
+                    <input type="submit" value="Обновить">
                 </div>
             </form>
-
-            <div class="loginput">
-                <a href="{% url 'account:password_change' %}">Поменять пароль</a>
-            </div>
         </div>
     </div>
    
 {% endblock %}
+
+
+
+
+{% block domready %}
+
+    console.log(98765, $('input[type="file"]'))
+
+    $('input[type="file"]').on('change', function (event, files, label) {
+        
+        if (this.files[0]) {
+        var fr = new FileReader();
+
+        
+
+        fr.addEventListener("load", function () {
+          $('.edit__ava').find('img').src = fr.result;
+        }, false);
+
+        console.log(444, fr.result )
+
+
+
+        fr.readAsDataURL(this.files[0]);
+      }
+
+        var preview = $('.edit__ava').find('img');
+        var file = $('#input-ava').find('input').files[0];
+        var reader  = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+            console.log(888)
+          }
+
+        if (file) {
+            reader.readAsDataURL(file);
+            console.log(999)
+          } else {
+            preview.src = "";
+            console.log(9990)
+          }
+
+        console.log(22, preview, file)
+
+    });
+
+    var a = $('#input-ava').find('input');
+
+    <!-- Ровный круг аватарки -->
+    $(window).resize(function(e) {
+        var widthAva = $('.edit__current-ava').width()
+        $('.edit__current-ava').css({
+            'height' : `${widthAva}`
+        })
+    })
+
+
+
+    $('.tags__tablet').hover(function (e) {
+        $(this).find('.tags__cross').css({
+            'display' : 'block',
+            'opacity' : '1.0'
+        })
+    },
+    function(e) {
+         $(this).find('.tags__cross').css({
+            'display' : 'none'
+        })
+    }
+    )
+
+
+    $('.tags__tablet').click(function(e) {
+        $(this).remove()
+    })
+
+
+
+
+
+
+
+<!-- Общие -->
+    $('.footer').css({
+        'display' : 'none'
+    })
+
+    $('.tags__input').val('')
+
+
+
+    
+    
+
+
+
+    
+    
+
+{% endblock %} 

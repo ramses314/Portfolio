@@ -145,9 +145,9 @@
 
               {% for i in posts %}
 
-              {% with total_likes=i.users_like.count users_like=i.users_like.all %}
+                {% with total_likes=i.users_like.count users_like=i.users_like.all %}
               
-              {% if i.image %}
+                  {% if i.image %}
               <div class="post__items">
                   <div class="post__img">
                       <img src="{{ i.image.url }}" alt=""><br>
@@ -231,11 +231,7 @@
                           
                         </div>
 
-                        
-
-                       
-                      
-                        
+      
                     </div>
                 </div>
 

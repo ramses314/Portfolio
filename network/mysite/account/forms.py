@@ -31,16 +31,20 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'email']
-        widgets = {
-            'username' : forms.TextInput(attrs={'placeholder' : 'никнейм'}),
-            'first_name' : forms.TextInput(attrs={'placeholder' : 'Имя'}),
-            'email' : forms.EmailInput(attrs={'placeholder' : 'Почта'})
-        }
+        # widgets = {
+        #     'username' : forms.TextInput(attrs={'placeholder' : 'никнейм'}),
+        #     'first_name' : forms.TextInput(attrs={'placeholder' : 'Имя'}),
+        #     'email' : forms.EmailInput(attrs={'placeholder' : 'Почта'})
+        # }
         labels = {
-            'username' : 'никнейм',
-            'first_name' : 'имя',
-            'email' : 'почта'
+            'username' : 'Никнейм',
+            'first_name' : 'Имя',
+            'email' : 'Почта'
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
 
 
 class ProfilEditForm(forms.ModelForm):
@@ -50,8 +54,15 @@ class ProfilEditForm(forms.ModelForm):
         model = Profile
         fields = ['image', 'status', 'tags']
         widgets = {
-            'image' : forms.FileInput(attrs={'placeholder' : 'фото профиля'}),
-            'status': forms.TextInput(attrs={'placeholder': 'статус'}),
-            'tags': forms.TextInput(attrs={'placeholder': 'теги'})
+            'image' : forms.FileInput(attrs={'placeholder' : 'Фото профиля'}),
+            'status': forms.TextInput(attrs={}),
+            'tags': forms.TextInput(attrs={'placeholder': 'Теги'})
         }
+        labels = {
+            'status' : 'Статус'
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
 

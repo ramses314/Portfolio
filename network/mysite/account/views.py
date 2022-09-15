@@ -98,6 +98,8 @@ def registration(request):
 @login_required
 def edit(request):
 
+    tags = request.user.profile.tags.all()
+
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user, data=request.POST)
         profile_form = ProfilEditForm(instance=request.user.profile, data=request.POST, files=request.FILES)
@@ -118,6 +120,7 @@ def edit(request):
     context = {
         'user_form' : user_form,
         'profile_form' : profile_form,
+        'tags' : tags
     }
 
     return render(request, 'account/edit.html', context=context)
@@ -149,6 +152,9 @@ def subs_list(request):
 def user_profile(request, id):
 
     profile_user = User.objects.get(id=id)
+    posts = profile_user.post_created.all()
+    comments = Comment.objects.filter(post__in=posts)
+    form = CommentCreateForm()
 
     # if request.user in profile_user.following.all():
     try:
@@ -167,6 +173,9 @@ def user_profile(request, id):
     context = {
         'profil_user' : profile_user,
         'sign' : sign,
+        'form' : form,
+        'comments' : comments
+
     }
 
     return render(request, 'account/user/user_profile.html' , context=context)
@@ -189,6 +198,7 @@ def do_follow(request):
     follow_id = request.POST.get('id')
     action = request.POST.get('action')
     print(999, follow_id, action)
+    profile_user = User.objects.get(id=follow_id)
 
     try:
         a = Contact.objects.get(user_from=request.user, user_to=profile_user)
