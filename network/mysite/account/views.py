@@ -16,6 +16,8 @@ def home(request):
 
     tags = list(request.user.profile.tags.names())
     form = CommentCreateForm()
+
+    # Это проверка нужна была при разработке, в деплое можно убрать (но проверить на всякий случай)
     try:
         mydata = request.user.profile
     except:
@@ -26,25 +28,25 @@ def home(request):
     comments = Comment.objects.filter(post__in=posts)
     followers = request.user.followers.all()
     subs = Contact.objects.filter(user_from_id=request.user.id).values_list('id')
-
-    # some1 = User.objects.filter(id__in=[subs[0][0]])
     try:
         post_from_subs = Post.objects.filter(user__in=[subs[0]])
     except:
         post_from_subs = []
-
 
     if request.method == 'POST':
         form = CommentCreateForm(request.POST)
         post_id = request.POST.get('postid')
 
         if form.is_valid():
-            a = form.save(commit=False)
-            a.nickname = request.user
-            a.post = Post.objects.get(id=post_id)
-            a.save()
+
+            # a = form.save(commit=False)
+            # a.nickname = request.user
+            # a.post = Post.objects.get(id=post_id)
+            # a.save()
+            # form = CommentCreateForm()
+            return False
         else:
-            form = CommentCreateForm(request.POST)
+            form = CommentCreateForm()
 
         context = {
             'mydata': mydata,

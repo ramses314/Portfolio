@@ -1,18 +1,4 @@
 
-// $.ajax(
-// 	'http://127.0.0.1:8000/',
-// 	{
-// 		success : function() {
-// 			console.log(44);
-// 		}
-// 	}
-// 	);
-
-
-
-
-var b = $('.news__img')
-
 $(function(){
 
 // 	$(window).resize(function(e){
@@ -50,8 +36,6 @@ $(function(){
 // 	})
 // 	.appendTo('body');
 
-
-
 // 	$('.news').slideToggle(2000);
 
 // $('.someDive').on('click', function(e){
@@ -61,9 +45,8 @@ $(function(){
 // 	modal.css('left', (window.innerWidth - modal.width()) / 2);
 // })
 
-	
 
-
+// PAGE: search__user
 // Поиск пользователей (элемент выбора пола)
 	$('.followers__gender').on('click', function(e) {
 
@@ -78,21 +61,12 @@ $(function(){
 
 		$('.gender').css({
 			'display' : 'none',
-		})
-
-	} else {
-	
-	}
+		}) } else {}
 
 
-	$('a.comment').on('click', function(e) {
-		
-		$('.post__comment-form').slideToggle()
-
-		$('#id_body').focus()
-	})
 
 
+	// PAGE: user__profile
 	// Просмотр галереи подписчиков
 
 	$('.profile__gallery').on('click', function(e) {
@@ -101,11 +75,6 @@ $(function(){
 			'display' : 'block'
 		})
 		
-		// $('.profile__gallery').addClass('profile__gallery_absolute').css(
-		// {
-		// 	// 'display' : 'none'
-		// })
-
 		$('.abs_profile__gallery').slick({
 		// infinite: true,
   // 		slidesToShow: 1,
@@ -123,6 +92,17 @@ $(function(){
 			'display' : 'none'
 		})
 	})
+
+
+	// PAGE:home (comments)
+	$('a.comment').on('click', function(e) {
+
+		var id = $(this).data('loop')
+		$(`#comment-form${id}`).slideToggle()
+		$(`#comment-form${id}`).find('#id_body').focus()
+
+	})
+
 
 
 

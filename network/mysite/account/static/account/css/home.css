@@ -344,6 +344,7 @@ body {
   display: flex;
   align-items: center;
   /*justify-content: space-around;*/
+  position: relative;
 }
 .comment__user {
   font-weight: 500;
@@ -366,6 +367,7 @@ body {
 .comment__button{
   border-radius: 10px;
   overflow: hidden;
+  
 }
 
 .comment__button input{
@@ -377,6 +379,12 @@ body {
 
 }
 
+.flood{
+  position: absolute;
+  top: -50px;
+  left: 0;
+  display: none;
+}
 
 .comment__list {}
 
@@ -430,5 +438,6 @@ body {
   padding: 10px 0 10px 0;
 }
 /****Разобрать****************/
+
 
 

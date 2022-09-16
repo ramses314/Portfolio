@@ -42,7 +42,6 @@ def post_detail(request, id):
 @login_required
 @require_POST
 def post_like(request):
-
     post_id = request.POST.get('id')
     action = request.POST.get('action')
     loop = request.POST.get('loop')
@@ -58,3 +57,22 @@ def post_like(request):
             pass
     return JsonResponse({'status' : 'ok', 'loop' : loop})
 
+@login_required
+@require_POST
+def save_comment(request):
+    post_id = request.POST.get('id')
+    query = request.POST.get('query')
+    user = request.POST.get('user')
+
+    if len(query) == 0:
+        return JsonResponse({'status' : 'nook'})
+
+    form = CommentCreateForm()
+    a = form.save(commit=False)
+    a.nickname = request.user
+    a.post = Post.objects.get(id=post_id)
+    a.body = query
+    a.save()
+    time = a.created
+
+    return JsonResponse({'status' : 'ok', 'query' : query, 'time' : time})
