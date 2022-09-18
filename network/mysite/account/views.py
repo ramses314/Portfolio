@@ -29,37 +29,37 @@ def home(request):
     followers = request.user.followers.all()
     subs = Contact.objects.filter(user_from_id=request.user.id).values_list('id')
     try:
-        post_from_subs = Post.objects.filter(user__in=[subs[0]])
+
+        post_from_subs = Post.objects.all()
+            # filter(user__in=[subs[0]])
+        # print('lol', post_from_subs)
     except:
         post_from_subs = []
 
-    if request.method == 'POST':
-        form = CommentCreateForm(request.POST)
-        post_id = request.POST.get('postid')
+    # if request.method == 'POST':
+    #     form = CommentCreateForm(request.POST)
+    #     post_id = request.POST.get('postid')
+    #
+    #     if form.is_valid():
+    #         a = form.save(commit=False)
+    #         a.nickname = request.user
+    #         a.post = Post.objects.get(id=post_id)
+    #         a.save()
+    #         form = CommentCreateForm()
+    #     else:
+    #         form = CommentCreateForm()
+    #
+    #     context = {
+    #         'mydata': mydata,
+    #         'posts': posts,
+    #         'followers': followers,
+    #         'subs': subs,
+    #         'lenta': post_from_subs,
+    #         'tags': tags,
+    #         'form': form,
+    #         'comments': comments
+    #     }
 
-        if form.is_valid():
-
-            # a = form.save(commit=False)
-            # a.nickname = request.user
-            # a.post = Post.objects.get(id=post_id)
-            # a.save()
-            # form = CommentCreateForm()
-            return False
-        else:
-            form = CommentCreateForm()
-
-        context = {
-            'mydata': mydata,
-            'posts': posts,
-            'followers': followers,
-            'subs': subs,
-            'lenta': post_from_subs,
-            'tags': tags,
-            'form': form,
-            'comments': comments
-        }
-
-        # return render(request, 'account/home.html', context=context)
 
     context = {
         'mydata': mydata,
@@ -69,7 +69,8 @@ def home(request):
         'lenta': post_from_subs,
         'tags': tags,
         'form': form,
-        'comments': comments
+        'comments': comments,
+
     }
 
     return render(request, 'account/home.html', context=context)

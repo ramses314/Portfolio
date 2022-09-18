@@ -109,15 +109,9 @@
         if (this.files[0]) {
         var fr = new FileReader();
 
-        
-
         fr.addEventListener("load", function () {
           $('.edit__ava').find('img').src = fr.result;
         }, false);
-
-        console.log(444, fr.result )
-
-
 
         fr.readAsDataURL(this.files[0]);
       }

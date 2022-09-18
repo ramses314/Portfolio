@@ -38,7 +38,7 @@
               </div>
               <div class="right__links">
                   <div class="right__link">
-                       <a onclick='document.querySelector(".content__block2").scrollIntoView(true); return false;' href="#">{{ posts.count }} публикаций</a>
+                       <a onclick='document.querySelector(".content__block2").scrollIntoView({behavior: "smooth",block: "start"});; return false;' href="#">{{ posts.count }} публикаций</a>
                   </div>
                   <div class="right__link">
 
@@ -53,9 +53,7 @@
               </div>
               <div class="right__tags">
                     {% for i in tags %}
-
                         #{{ i }}
-                     
                     {% endfor %}
               </div>
             </div>
@@ -104,24 +102,40 @@
               </div>
             {% endwith %}
             {% endfor %} -->
-
+<!-- 
             <div class="content__lenta-title">
                 Публикации друзей
-            </div>
-
-           
+            </div> -->
+        
             {% if lenta %}
               {% for i in lenta %}
+                {% if i.image %}
                 <div class="news">
                   <div class="news__img">
-                      {% if i.image %}
+                      
                         <img width="60px" src="{{ i.image.url }}" alt="">
-                      {% endif %}
+                     
                   </div>
                   <div class="news__text">
-                    {{i.user.username}} | {{ i.body }}
+                    <div class="news__ava">
+                        <a href="{% url 'account:user_profile' i.user.id %}"><!-- {{i.user.username}} --><img src="{{ i.user.profile.image.url }}" alt="">
+                        </a> 
+                    </div>
+                    <div class="news__username">
+                        {{ i.user}}
+                    </div>
+
+
+                    
                   </div>
+                  <div class="news__body">
+                    {{ i.body|truncatewords:10 }}
+                  </div>
+                  
                 </div>
+                
+                {% endif %}
+
               {% endfor %}
             {% else %}
               <div class="lenta__emplty">
@@ -131,7 +145,6 @@
             {% endif %}
 
           </div>
-
 
    
           <div class="content__pub">
@@ -404,6 +417,28 @@
       }
     )
   })
+
+
+    $(window).resize(function(e) {
+        var widthAva = $('.left__ava').width()
+        $('.left__ava').css({
+            'height' : `${widthAva}`
+        })
+    })
+
+
+    $('.news').hover(function(e) {
+      $(this).find('.news__text').css({'opacity' : '0.95'});
+      <!-- $(this).css({'margin-bottom' : '0'}) -->
+      <!-- $(this).next().slideDown(); -->
+    }, 
+    function(e) {
+      $(this).find('.news__text').css({'opacity' : '0'});
+      <!-- $(this).css({'margin-bottom' : '10px'}) -->
+      <!-- $(this).next().slideUp(); -->
+    })
+
+    
 
 
 

@@ -41,17 +41,21 @@
 					</div>
 					<div class="navbar__links">
 						{% if user.is_authenticated %}
-							<a href="{% url 'chats:plakat' %}">
-								<img width="35px" src="{% static 'account/img/message2.png' %}" alt="">
-							</a>
-							<a id='lol' href="{% url 'search:user_search' %}">
-								<img width="35px" src="{% static 'account/img/people.png.png' %}" alt="">
-							</a>
+							<div class="navbar__icons">
+								<a href="{% url 'chats:plakat' %}">
+									<img width="35px" src="{% static 'account/img/message2.png' %}" alt="">
+								</a>
+								<a id='lol' href="{% url 'search:user_search' %}">
+									<img width="35px" src="{% static 'account/img/people.png.png' %}" alt="">
+								</a>
+							</div>
 							<div class="navbar__login">
 								<span class="navbar__hello">
-								Привет, {{ user.username }}
-							</span>
-							<a href="{% url 'account:logout' %}">Выйти</a>
+									Привет, {{ user.username }}
+								</span>
+								<span class="navbar__logout">
+									<a href="{% url 'account:logout' %}">Выйти</a>
+								</span>
 						{% else %}
 							<!-- <a href="{% url 'account:login' %}">Войти</a> -->
 						{% endif %}

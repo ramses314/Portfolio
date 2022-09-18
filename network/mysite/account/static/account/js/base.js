@@ -104,6 +104,59 @@ $(function(){
 	})
 
 
+	$('.content__news').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		vertical: true,
+		verticalSwiping: true,
+        touchThreshold: true,
+        arrows: false,
+        autoplay: true,
+      	autoplaySpeed: 5000,
+        
+	})
+
+	$('.content__news').on('wheel', (function(e) {
+    e.preventDefault();
+
+    clearTimeout(scroll);
+    scroll = setTimeout(function(){scrollCount=0;}, 200);
+    if(scrollCount) return 0;
+    scrollCount=1;
+
+    if (e.originalEvent.deltaY < 0) {
+        $(this).slick('slickNext');
+    } else {
+        $(this).slick('slickPrev');
+    }
+}));
+
+
+	// const list = document.querySelector('ul');
+	// const cardCount = 52;
+
+	// const createCard = () => {
+	// 	const element = document.createElement('li');
+	// 	const card = document.createElement('div');
+	// 	card.className = 'card';
+	// 	element.appendChild(card);
+	// 	list.appendChild(element);
+	// };
+
+	// Array(cardCount).fill().forEach(() => createCard());
+	// const cards = document.querySelectorAll('li');
+
+	// const handleIntersection = (entries) => {
+	// 	for (const entry of entries) {
+	// 		entry.target.style.setProperty('--shown', entry.isIntersecting ? 1 : 0);
+	// 	}
+	// };
+
+	// const observer = new IntersectionObserver(handleIntersection);
+	// cards.forEach(card => observer.observe(card))
+
+
 
 
 
