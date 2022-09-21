@@ -65,7 +65,7 @@ def save_comment(request):
     user = request.POST.get('user')
 
     if len(query) == 0:
-        return JsonResponse({'status' : 'nook'})
+        return JsonResponse({'status' : 'no'})
 
     form = CommentCreateForm()
     a = form.save(commit=False)

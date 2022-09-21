@@ -178,8 +178,8 @@ def user_profile(request, id):
         'sign' : sign,
         'form' : form,
         'comments' : comments
-
     }
+
 
     return render(request, 'account/user/user_profile.html' , context=context)
 

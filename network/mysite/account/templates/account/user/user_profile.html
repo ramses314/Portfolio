@@ -10,6 +10,162 @@
 {% block content %}
 
 	<div class="profile">
+
+
+
+				<div class="abs__abs">
+					
+			
+
+						<div class="abs_profile__gallery">
+						{% with posts=profil_user.post_created.all %}
+						{% if posts.count > 0 %}
+							{% for i in posts %}
+							 {% with total_likes=i.users_like.count users_like=i.users_like.all  %}
+							
+								<div class="abs_gallery__items">
+									<div class="abs_gallery__item">
+
+										{% if i.image %}
+										<div class="abs_gallery__img">
+											<img width="500px" src="{{ i.image.url }}" alt="">
+										</div>
+										{% else %}
+										<div class="abs_gallery__title">
+												{{ i.body }}
+										</div>
+										{% endif %}
+										<div class="abs_gallery__actions">
+
+
+
+
+
+
+										 <div class="post__desc abs_post__desc">
+						                    <span class="abs_profile__user">@{{ profil_user.username }}</span>{{ i.body }}
+						                  </div>
+
+						                   <div class="post__total-like{{  forloop.counter }} post__total-like abs_post__total-like">
+                      Нравится: {{ total_likes }}
+                  </div>
+											
+										<div class="post__icon abs_post__icon">
+
+                    <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
+  
+                      {% if request.user in users_like %}
+                        <img  src="{% static 'account/img/heart3.png' %}" alt="">
+                      {% else %}
+                        <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                      {% endif %}
+                    
+                    </a>
+                    <a href="" onclick="return false;" class="comment" id='comment-loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}'>
+                      <img  src="{% static 'account/img/comment1.png' %}" alt="">
+                    </a>
+                  </div>
+  
+                
+                 <div class="post__comment">
+
+                    <!-- <a href="#">Читать комментарии</a> -->
+
+
+
+
+                    <div id='comment-form{{ forloop.counter }}' class="post__comment-form">
+
+                          <div class="comment__list">
+                                
+                                {% for c in comments %}
+                                  {% if c.post == i %}
+
+                                    <div class="list">
+                                      <div class="list__user">
+                                          {{ c.nickname.username }}
+                                          <span>{{ c.created }}</span>
+                                      </div>
+                                      <div class="list__body">
+                                          {{ c.body }}
+                                      </div>   
+                                    </div>
+                                    
+                                  {% endif %}
+                                {% endfor %}
+
+                            </div>
+                     
+                        <div class="comment">
+                            <div class="comment__form">
+                               <form id='form' action="." method="post">
+
+                                  {% csrf_token %}
+
+                                  <div class="comment__user">
+                                      @{{ request.user.username }}
+                                  </div>
+                                  <div class="comment__input" data-user='{{ request.user }}' data-postid='{{ i.id }}'>
+
+                                        {{ form.body }}
+
+                                        <input type="hidden" name='postid' value='{{i.id}}'>
+                                  </div>
+                                  <div class="comment__button">
+                                    <input class='comments__submit' data-loop='{{ forloop.counter }}' type='submit' onclick="return false;" value='Комментировать'>
+                                    <div class="flood">
+        <img width='200px' src="{% static 'account/img/flood.gif' %}" alt="">
+      </div>
+                                  </div>
+                                </form>
+
+                            </div>
+
+                          
+                        </div>
+
+      
+                    </div>
+                </div>
+
+          <!--       <div class="abs_post__created">
+                  {{ i.created|date:"j.m.o" }}
+                </div>
+ -->
+
+
+
+
+
+										</div>
+									</div>
+								</div>	
+
+                   
+								{% endwith %}
+							{% endfor %}
+						{% else %} 	
+						{% endif %}
+					
+					{% endwith %}
+				</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="profile__card">
 			<div class="card">
 				<div class="card__img">
@@ -18,15 +174,13 @@
 				<div class="card__text">
 					<div class="card__firstline">
 						<div class="card__nickname">
-							@{{ profil_user.username }} 
+								@{{ profil_user.username }} 
 						</div>
-
 						<div class="card__follow"  data-id='{{ profil_user.id }}' data-action="{% if request.user in profil_user.followers.all %}un{% endif %}sign">
 							{% if sign %}
 								<div id='follow-check' class="sign">
-									<a id='link-check' href="#">Отписаться</a>
+										<a id='link-check' href="#">Отписаться</a>
 								</div>
-								
 							{% else %}
 								<div id='follow-check' class="unsign">
 									<a id='link-check' href="#">Подписаться</a>
@@ -36,13 +190,13 @@
 						</div>
 					</div>
 					<div class="card__subs">
-						 <a href="card__link">
+						 <a href="#">
 						 	{{ profil_user.post_created.all.count }} Публикаций
 						 </a>
-						 <a id='follow-subs' href="card__link">
+						 <a id='follow-subs' href="#">
 						 	{{ profil_user.followers.count }} Подписчиков
 						 </a>
-						 <a  href="card__link">
+						 <a  href="#">
 						 	{{ 3 }}  Подписок
 						 </a>
 					</div>
@@ -52,7 +206,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="abs_wrapper"></div>
+		
 		<div class="profile__gallery">
 
 			{% with posts=profil_user.post_created.all %}
@@ -84,133 +238,7 @@
 			{% endwith %}
 		</div>
 			
-				<div class="abs_profile__gallery">
-					{% with posts=profil_user.post_created.all %}
-						{% if posts.count > 0 %}
-							{% for i in posts %}
-							 {% with total_likes=i.users_like.count users_like=i.users_like.all  %}
-								<div class="abs_gallery__items">
-									<div class="abs_gallery__item">
 
-										{% if i.image %}
-										<div class="abs_gallery__img">
-											<img width="500px" src="{{ i.image.url }}" alt="">
-										</div>
-										{% else %}
-										<div class="abs_gallery__title">
-												{{ i.body }}
-										</div>
-										{% endif %}
-										<div class="abs_gallery__actions">
-
-										 <div class="post__desc abs_post__desc">
-						                    <span class="abs_profile__user">@{{ profil_user.username }}</span>{{ i.body }}
-						                  </div>
-
-						                   <div class="post__total-like{{  forloop.counter }} post__total-like abs_post__total-like">
-                      Нравится: {{ total_likes }}
-                  </div>
-											
-										<div class="post__icon abs_post__icon">
-
-                    <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
-  
-                      {% if request.user in users_like %}
-                        <img  src="{% static 'account/img/heart3.png' %}" alt="">
-                      {% else %}
-                        <img  src="{% static 'account/img/heart1.png' %}" alt="">
-                      {% endif %}
-                    
-                    </a>
-                    <a href="" onclick="return false;" class="comment">
-                      <img  src="{% static 'account/img/comment1.png' %}" alt="">
-                    </a>
-                  </div>
-
-                 
-
-                 
-
-                 <div class="post__comment">
-
-                 	<div class="abs_read-comment">
-                 		 <a href="#">Читать комментарии</a>
-                 	</div>
-
-                   
-
-
-
-                    <div class="post__comment-form">
-
-                          <div class="comment__list">
-                                
-                                {% for c in comments %}
-                                  {% if c.post == i %}
-
-                                    <div class="list">
-                                      <div class="list__user">
-                                          {{ c.nickname.username }}
-                                          <span>{{ c.created }}</span>
-                                      </div>
-                                      <div class="list__body">
-                                          {{ c.body }}
-                                      </div>   
-                                    </div>
-                                    
-                                  {% endif %}
-                                {% endfor %}
-
-                            </div>
-                     
-                        <div class="comment">
-                            <div class="comment__form">
-                               <form action="." method="post">
-
-                                  {% csrf_token %}
-
-                                  <div class="comment__user">
-                                      @{{ request.user.username }}
-                                  </div>
-                                  <div class="comment__input" data-postid='{{ lolik }}'>
-
-                                        {{ form.body }}
-
-                                        <input type="hidden" name='postid' value='{{i.id}}'>
-                                  </div>
-                                  <div class="comment__button">
-                                    <input type="submit" value='Комментировать'>
-                                  </div>
-                                </form>
-
-                            </div>
-
-                          
-                        </div>
-
-      
-                    </div>
-                </div>
-
-                <div class="abs_post__created">
-                  {{ i.created|date:"j.m.o" }}
-                </div>
-
-
-
-
-
-
-										</div>
-									</div>
-								</div>	
-								{% endwith %}
-							{% endfor %}
-						{% else %} 	
-						{% endif %}
-					
-				{% endwith %}
-				</div>
 			
 	</div>
 
@@ -329,7 +357,40 @@
         }
       }
     )
+
   })
+
+
+  $('.comment__button input').on('click', function(e) {
+    var ids = $(this).parent().parent().find('.comment__input');
+    var cleanthen = ids.parent().find('.comment__input input');
+    var loop = $(this).data('loop')
+    
+    $.post(
+      '{% url "posts:save_comment" %}',
+      {id: ids.data('postid'), query: ids.find('#id_body').val(), user : ids.data('user') },
+      function(data) {
+ 
+        if (data['status'] == 'ok') {
+          var p = $('<div></div>', {'class': 'list'})
+            $(`#comment-form${loop}`).find('.comment__list').append(
+                      `<div class="list"><div class="list__user">{{ request.user }}<span> сейчас</span></div><div class="list__body">` + data['query'] + `</div></div>`).slideDown()
+            cleanthen.val('')
+            <!-- $('.flood').css({'display' : 'block'}) -->
+        } else {
+          console.log('Напишите комментарий')
+        }
+      }
+    )
+  })
+
+
+
+
+  $('.footer').css({'display'  : 'none'})
+
+
+  $('.abs_gallery__img').css({'height' : $('.abs_gallery__item').height()})
 
 
 

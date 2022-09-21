@@ -74,15 +74,56 @@ $(function(){
 		$('.abs_wrapper').css({
 			'display' : 'block'
 		})
+
+		$('.abs__abs').css({
+			'display' : 'block'
+		})
+
+		$('.abs_wrapper').css({'height' : $('.wrapper').height()})
 		
 		$('.abs_profile__gallery').slick({
 		// infinite: true,
   // 		slidesToShow: 1,
   // 		slidesToScroll: 1,
   // 		// dots: true
+
+            // prevArrow: $('.abs__prev'),
+            // nextArrow: $('.abs__next'),
 		}).slideDown()
 
+
+		$('.slick-prev').text('❮')
+		$('.slick-next').text('❯')
+
+
+
+		$(window).on('resize', function(e) {
+
+			var er = $('.content').height(); 
+			// console.log(33, er, $('.profile').height(), $('.abs_wrapper').height(), $(window).height(),
+			// 	)
+			
+			// $('.abs_wrapper').css({'height' : er})
+
+			// console.log(34, er, $('.abs_wrapper').height(), $('.profile').height(),
+			// 	$('.wrapper').height())
+			$('.abs_wrapper').css({'height' : $('.wrapper').height()})
+			// if ($(window).height() < 900) {
+			// 	$('.abs_wrapper').css({'height' : $('.content').height() + 150})
+			// } else {
+			// 	$('.abs_wrapper').css({'height' : '100%'})
+			// }
+
+			
+		})
+
+		
+
+
+
 	})
+
+
 
 
 	$('.abs_wrapper').on('click', function(e) {
@@ -91,12 +132,15 @@ $(function(){
 		$('.abs_wrapper').css({
 			'display' : 'none'
 		})
+
+		$('.abs__abs').css({
+			'display' : 'none'
+		})
 	})
 
 
 	// PAGE:home (comments)
 	$('a.comment').on('click', function(e) {
-
 		var id = $(this).data('loop')
 		$(`#comment-form${id}`).slideToggle()
 		$(`#comment-form${id}`).find('#id_body').focus()
@@ -113,7 +157,7 @@ $(function(){
         touchThreshold: true,
         arrows: false,
         autoplay: true,
-      	autoplaySpeed: 5000,
+      	autoplaySpeed: 3500,
         
 	})
 

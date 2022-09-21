@@ -81,7 +81,15 @@
 
         <div class="content__block2">
 
-          <div class="content__news">
+            <div class="content__prenews">
+
+
+            <div class="content__lenta-title">
+                Публикации друзей
+            </div>
+
+    
+              <div class="content__news">
 
            <!--  {% for i in action %}
             {% with user=i.user profile=i.user.profile %}
@@ -102,10 +110,8 @@
               </div>
             {% endwith %}
             {% endfor %} -->
-<!-- 
-            <div class="content__lenta-title">
-                Публикации друзей
-            </div> -->
+
+
         
             {% if lenta %}
               {% for i in lenta %}
@@ -129,8 +135,9 @@
                     
                   </div>
                   <div class="news__body">
-                    {{ i.body|truncatewords:10 }}
+                    {{ i.body|truncatewords:10 }} 
                   </div>
+                  <div class="news__bodyback"></div>
                   
                 </div>
                 
@@ -145,6 +152,16 @@
             {% endif %}
 
           </div>
+
+
+        <!--   <div class="content__button">
+            <input type="submit" value="сначала">
+          </div> -->
+
+          </div>
+      
+
+          
 
    
           <div class="content__pub">
@@ -320,7 +337,7 @@
                                   <div class="comment__user">
                                       @{{ request.user.username }}
                                   </div>
-                                  <div class="comment__input" data-user='{{ request.user }}' data-postid='{{ i.id }}'>
+                                  <div class="comment__input small-input" data-user='{{ request.user }}' data-postid='{{ i.id }}'>
 
                                         {{ form.body }}
 
@@ -412,7 +429,9 @@
             $(`#comment-form${loop}`).find('.comment__list').append(
                       `<div class="list"><div class="list__user">{{ request.user }}<span> сейчас</span></div><div class="list__body">` + data['query'] + `</div></div>`).slideDown()
             cleanthen.val('')
-            <!-- $('.flood').css({'display' : 'block'}) -->
+            $('.flood').css({'display' : 'block'})
+        } else {
+          console.log('Напишите комментарий')
         }
       }
     )
@@ -428,14 +447,14 @@
 
 
     $('.news').hover(function(e) {
-      $(this).find('.news__text').css({'opacity' : '0.95'});
-      <!-- $(this).css({'margin-bottom' : '0'}) -->
-      <!-- $(this).next().slideDown(); -->
+      $(this).find('.news__text').css({'opacity' : '0.90'});
+      $(this).find('.news__body').slideDown()
+      $(this).find('.news__bodyback').slideDown()
     }, 
     function(e) {
       $(this).find('.news__text').css({'opacity' : '0'});
-      <!-- $(this).css({'margin-bottom' : '10px'}) -->
-      <!-- $(this).next().slideUp(); -->
+      $(this).find('.news__body').slideUp();
+      $(this).find('.news__bodyback').slideUp()
     })
 
     
