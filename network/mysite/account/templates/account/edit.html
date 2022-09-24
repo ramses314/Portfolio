@@ -140,6 +140,10 @@
     var a = $('#input-ava').find('input');
 
     <!-- Ровный круг аватарки -->
+    var widthAva = $('.edit__current-ava').width()
+     $('.edit__current-ava').css({
+            'height' : `${widthAva}`
+        })
     $(window).resize(function(e) {
         var widthAva = $('.edit__current-ava').width()
         $('.edit__current-ava').css({

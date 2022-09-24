@@ -55,6 +55,23 @@ $(function(){
 		})
 	})
 
+	if ($(window).width() < 668) {
+		$('.gender').css({
+			'display' : 'none',
+		})
+	}
+
+	console.log(34, $(window).width())
+
+	$(window).on('resize', function() {
+			if ($(window).width() < 668) {
+		$('.gender').css({
+			'display' : 'none',
+		})
+	}
+	})
+	
+
 	selected = $('.followers__gender option:selected').text()
 	var listik = ['Парень', "Девушка"];
 	if (listik.includes($('.followers__gender option:selected').text())) {
@@ -98,6 +115,7 @@ $(function(){
 
 
 		$(window).on('resize', function(e) {
+			console.log(456)
 
 			var er = $('.content').height(); 
 			// console.log(33, er, $('.profile').height(), $('.abs_wrapper').height(), $(window).height(),
@@ -105,8 +123,8 @@ $(function(){
 			
 			// $('.abs_wrapper').css({'height' : er})
 
-			// console.log(34, er, $('.abs_wrapper').height(), $('.profile').height(),
-			// 	$('.wrapper').height())
+			console.log(34, er, $('.abs_wrapper').height(), $('.profile').height(),
+				$('.wrapper').height())
 			$('.abs_wrapper').css({'height' : $('.wrapper').height()})
 			// if ($(window).height() < 900) {
 			// 	$('.abs_wrapper').css({'height' : $('.content').height() + 150})

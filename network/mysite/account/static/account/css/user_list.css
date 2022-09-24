@@ -2,8 +2,7 @@
 
 .followers {
 	background-color: white;
-	max-width: 800px;
-
+	max-width: 70%;
 	padding: 20px;
 	margin: 40px auto;
 	border-radius: 15px;
@@ -20,7 +19,6 @@
 }
 .followers__items {
 	display: flex;
-	/*justify-content: space-between;*/
 	margin: 0 0 10px 0;
 }
 .followers__left {
@@ -28,7 +26,7 @@
 }
 
 .followers__img {
-	min-width: 100%;
+	width: 100%;
 	height: 120px;
 	position: relative;
 	border-radius: 50%;
@@ -57,6 +55,10 @@
 
 }
 
+.followers__subname {
+	margin: 5px 0 0 0;
+}
+
 .followers__subname a{
 	color: gray;
 	font-size: 15px;
@@ -77,3 +79,114 @@
 	letter-spacing: 2px;
 	font-weight: 700;
 }
+
+
+
+
+@media (max-width: 750px) {
+
+.followers {
+	max-width: 70%;
+	padding: 15px;
+	margin: 30px auto;
+}
+
+.followers__container {
+	max-width: 500px;
+}
+
+.followers__title {
+	padding: 15px 0;
+	font-size: 20px;
+}
+.followers__items {
+	display: flex;
+	margin: 0 0 10px 10px;
+}
+.followers__left {
+	flex: 0 0 120px;
+}
+
+.followers__img {
+	width: 65%;
+	height: 75px;
+
+}
+
+.followers__right {
+	flex: 0 1 40%;
+	padding: 0 0 0 20px;
+	font-size: 16px ;
+	align-self: center;
+
+}
+
+.followers__name a {
+
+}
+
+.followers__subname a{
+	font-size: 15px;
+}
+
+.footer {
+	display: none;
+}
+
+}
+
+
+
+
+
+@media (max-width: 390px) {
+
+.followers {
+	max-width: 100%;
+	padding: 10px;
+	margin: 15px auto;
+}
+
+.followers__container {
+	max-width: 500px;
+}
+
+.followers__title {
+	padding: 10px 20px;
+	font-size: 15px;
+}
+.followers__items {
+	margin: 0 0 10px 30px;
+}
+
+.followers__img {
+	width: 55%;
+	height: 65px;
+
+}
+
+.followers__right {
+	flex: 0 1 40%;
+	padding: 0 0 0 20px;
+	font-size: 16px ;
+	align-self: center;
+
+}
+
+.followers__name a {
+
+}
+
+.followers__subname a{
+	font-size: 15px;
+}
+
+.footer {
+	display: none;
+}
+
+}
+
+
+
+

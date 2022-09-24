@@ -133,9 +133,11 @@ def edit(request):
 def follower_list(request):
 
     users = request.user.followers.all()
+    title = 'Ваши подписчики'
 
     context = {
-        'users' : users
+        'users' : users,
+         'title' : title
     }
     return render(request, 'account/follower_list.html', context = context)
 
@@ -143,9 +145,13 @@ def follower_list(request):
 def subs_list(request):
 
     users = Contact.objects.filter(user_from_id=request.user.id)
+    print(users)
+    # users = request.user.followers.all()
+    title = 'Ваши подписки'
 
     context = {
-        'users' : users
+        'users' : users,
+        'title': title
     }
 
     return render(request, 'account/follower_list.html', context = context)
