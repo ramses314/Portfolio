@@ -7,26 +7,35 @@
 
 
 
-
 {% block content %}
 
+<div class="registration__wrapper">
 
-<h1>Сооздай аккаунт</h1>
+  <div class="content__registration-title">
+    <h1>Создай аккаунт</h1>
+  </div>
+  
+  <div class="content__login">
 
-<div class="content__login">
+      <form action="." method="post">
+          {% csrf_token %}
+          {% for i in form %}
+            {% if i.errors %}
+              <div class="content__error">
+                {{ i.errors }}▼
+              </div>
+            {% endif %}
+           
+    				<div class="loginput">
+    					{{ i }}
+    				</div>
+          {% endfor %}
+          <div class="content__button">
+  						<input type="submit" value="Зарегистрироваться">
+  				</div>
+      </form>
 
-                  <form action="." method="post">
-                    {% csrf_token %}
-                    {% for i in form %}
-                      {{ i.errors }}
-					  <div class="loginput">
-						  {{ i }}
-					  </div>
-                    {% endfor %}
-                    <div class="content__button">
-						<input type="submit" value="Зарегистрироваться">
-					</div>
-                  </form>
+  </div>
 </div>
 
 

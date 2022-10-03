@@ -77,16 +77,21 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 0%;
 }
 
-
-
+.content {
+  flex: 1 1 auto;
+  min-height: 100%;
+  background-color: whitesmoke;
+}
 
 .content__items {
   display: flex;
-  padding: 150px;
+  justify-content: space-between;
+  padding: 14% 7%
 }
 
 .content__text {
   flex: 0 1 60%;
+  padding: 30px 0 0 0;
 }
 
 .content__title {
@@ -103,79 +108,312 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   flex: 0 1 30%;
   border-radius: 10px;
-  padding: 30px;
-
-
+  padding: 1.8em;
 
   -webkit-box-shadow: -1px 0px 13px 0px rgba(34, 60, 80, 0.12);
--moz-box-shadow: -1px 0px 13px 0px rgba(34, 60, 80, 0.12);
-box-shadow: -1px 0px 13px 0px rgba(34, 60, 80, 0.12);
+  -moz-box-shadow: -1px 0px 13px 0px rgba(34, 60, 80, 0.12);
+  box-shadow: -1px 0px 13px 0px rgba(34, 60, 80, 0.12);
 }
 
-
-
-
+.loginput{
+  /*border: 5px solid red;*/
+}
 
 .loginput input{
   border: 1px solid gray;
   border-radius: 5px;
   padding: 5px;
+  margin: 0 0 0.8em 0;
+  width: 100%;
+}
+
+.content__button input{
+  width: 100%;
+  background-color: blue;
+  margin: 0 0 0.8em 0;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+.content__button:hover input{
+   -webkit-box-shadow: 0px 0px 24px 6px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0px 0px 24px 6px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0px 0px 24px 6px rgba(0, 0, 0, 0.2) inset;
+   transition: all 0.4s ease;
+}
+
+.passwordt{
   margin: 0 0 10px 0;
+  text-align: center;
+  font-weight: 500;
+}
 
+.passwordt a{
+  transition: all 0.5s ease;
+}
 
+.passwordt:hover a{
+  color: #beb5f5;
+  transition: all 0.3s ease;
 }
 
 .content__reg{
     margin: 0 0 10px 0;
+    width: 100%;
+    background-color: #20c744;
+    border-radius: 5px;
+    padding: 8px 5px;
+    text-align: center;
+    transition: all 0.4s ease;
 }
+
+.content__reg:hover {
+   -webkit-box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
+-moz-box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
+box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
+   transition: all 0.4s ease;
+}
+
 .content__reg a {
-  width: 90%;
-  background-color: #20c744;
+  width: 100%;
   margin: 20px 20px;
   color: white;
   border-radius: 5px;
   padding: 5px;
 }
 
-.content__button input{
-  width: 90%;
-  background-color: blue;
-  margin: 0 0 5px 0;
-  color: white;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-
 .content__gogle {
     padding: 5px;
     border: 1px solid gray;
-    border-radius: 10px;
-
+    border-radius: 7px;
+    text-align: center;
+    transition: all 0.4s ease;
 }
 
+.content__gogle:hover {
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    transition: all 0.4s ease;
+}
 
 .content__gogle img{
-    width: 45px;
+    width: 35px;
 }
 
 .content__gogle a {
     color: black;
+}
+
+
+
+
+@media (max-width: 1140px) {
+
+  .content__items {
+      display: flex;
+      justify-content: space-between;
+      padding: 8% 7%;
+  }
+
+}
+
+@media (max-width: 840px) {
+
+  .content__items {
+      display: flex;
+      justify-content: space-between;
+      padding: 3% 4%;
+  }
 
 }
 
 
-.passwordt{
-  margin: 0 0 10px 0;
+@media (max-width: 640px) {
+
+    .content__items {
+      padding: 3% 3%
+    }
+
+    .content__text {
+      display: none;
+    }
+
+    .content__login {
+      flex: 0 1 100%;
+    }
+
+
+    .loginput input{
+      margin: 0 0 0.8em 0;
+    }
+
+
+    .content__button input{
+      margin: 0 0 0.8em 0;
+    }
+
+    .content__gogle {
+        border-radius: 7px;
+    }
+
+    .footer {
+      display: none;
+    }
+
+
+
+}
+
+
+
+
+@media (max-width: 320px) {
+
+    .content__items {
+      padding: 3% 0%
+    }
+
+    .content__login {
+      border-radius: 8px;
+      padding: 0.8em;
+    }
+
+    .loginput input{
+      padding: 3px;
+      margin: 0 0 0.4em 0;
+      font-size: 12px;
+    }
+
+
+    .content__button input{
+      margin: 0 0 0.8em 0;
+      border-radius: 5px;
+      padding: 4px;
+    }
+
+    .passwordt{
+      margin: 0 0 8px 0;
+    }
+
+    .content__reg{
+        margin: 0 0 8px 0;
+        border-radius: 4px;
+        padding: 8px 5px;
+    }
+
+    .content__reg a {
+      
+
+      margin: 20px 20px;
+      color: white;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    .content__gogle img{
+        width: 30px;
+    }
+
+}
+
+
+
+
+ /*PAGE: Регистрация */
+
+ .registration__wrapper {
+  width: 40%;
   text-align: center;
+  margin: 0 auto;
+ }
+
+.content__registration-title h1{
+  font-size: 30px;
+  font-weight: 500;
+  padding: 2em 1em;
+}
+
+.content__error {
+  padding: 5px;
+  color: #f00;
+  font-weight: 700;
+  text-align: left;
 }
 
 
-.reset_done{
-    margin: 40px 100px;
+@media (max-width: 900px) {
+   .registration__wrapper {
+      width: 60%;
+ }
+
+ .content__registration-title h1{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 1em 0.5em;
+}
+}
+
+
+
+@media (max-width: 600px) {
+   .registration__wrapper {
+      width: 80%;
+ }
+
+ .content__registration-title h1{
+  font-size: 15px;
+  font-weight: 500;
+  padding: 1em 0.5em;
+}
+}
+
+
+@media (max-width: 400px) {
+   .registration__wrapper {
+      width: 90%;
+      text-align: left;
+ }
+
+ .content__registration-title h1{
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.5em 2em;
+  opacity: 0.7;
+}
+}
+
+
+
+
+
+
+/*PAGE: Региcтрация_DONE и logged_out */
+
+
+.registration__done{
+    margin: 50px 25px;
     font-size: 22px;
-    padding: 20px 60px 20px 30px;
+    padding: 20px 30px;
     border: 2px solid gray;
     border-radius: 10px;
     display: inline-block;
+    width: 80%;
 }
+
+.registration__done a {
+  font-weight: 700;
+  color: blue;
+}
+
+.registration__done-link {
+  transition: all 0.4s ease;
+}
+
+.registration__done-link:hover {
+  color: #2300b0;
+  transition: all 0.4s ease;
+}
+

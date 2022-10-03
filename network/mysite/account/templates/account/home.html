@@ -443,7 +443,24 @@
         $('.left__ava').css({
             'height' : `${widthAva}`
         })
+
+        var widthWindow = $(window).width();
+
+        if (widthWindow > 626) {
+
+          $('.content__prenews').css({
+          'flex' : '0 1 20%',
+          'padding': '20px'
+        })
+
+          console.log('lol')
+      }
+
+    
+
     })
+
+
 
 
     $('.news').hover(function(e) {
@@ -456,6 +473,11 @@
       $(this).find('.news__body').slideUp();
       $(this).find('.news__bodyback').slideUp()
     })
+
+
+
+
+
 
     
 

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 INSTALLED_APPS = [
     'social_django',
     'taggit',
-    'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'chats.apps.ChatsConfig',
     'search.apps.SearchConfig',
+    'django.contrib.admin',
 
 ]
 
