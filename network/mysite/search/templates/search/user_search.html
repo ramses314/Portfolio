@@ -32,7 +32,7 @@
 				</div>
 				<div class="followers__similar">
 
-					Единомышленники <span class="followers__checkbox">{{ form.similar }}</span>
+					По интересам <span class="followers__checkbox">{{ form.similar }}</span>
 
 				</div>
 				<div class="followers__button">
@@ -74,14 +74,16 @@
 			 </div>
 
 			 <div class="followers__more">
-			 	Смотреть дальше
+			 	Рекомендации
 			 </div>		
 				{% for i in reserve_users %}
 					<div class="followers__item">
 
 							<div class="followers__left">
 									<div class="followers__img">
+										<a href="{% url 'account:user_profile' i.id %}">
 											<img src="{{ i.profile.image.url }}" alt="">
+										</a>
 									</div>
 							</div>
 							<div class="followers__right">

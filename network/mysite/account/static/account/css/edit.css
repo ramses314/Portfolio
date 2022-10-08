@@ -5,13 +5,15 @@
     padding: 10px 30px;
     border-radius: 20px;
     max-width: 60%;
-    margin: 10px auto;
+    margin: 20px auto;
 }
+
 
 .edit__title {
     /*font-size: 20px;*/
     font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 16px);
     padding: 15px;
+    font-weight: 700;
     opacity: 0.7;
 }
 
@@ -71,14 +73,14 @@
 
     /*Общие*/
 .edit{
-    padding: 5px 10px;
+    /*padding: 5px 10px;*/
     border-radius: 20px;
-    max-width: 60%;
-    margin: 10px auto;
+    max-width: 100%;
+    margin: 25px auto;
 }
 
 .edit__title {
-    font-size: 13px;
+    /*font-size: 13px;*/
     padding: 10px;
 }
 
@@ -103,12 +105,12 @@
 .edit__change-ava {
     flex: 0 1 75%;
     align-self: center;
-    font-size: 8px;
+    /*font-size: 8px;*/
     /*border: 3px solid blue;*/
 }
 
 .edit__change-ava input{
-    font-size: 10px;
+    /*font-size: 10px;*/
     width: 100%;
     /*border: 3px solid red;*/
     margin: 0;
@@ -117,7 +119,7 @@
 }
 
 #id_image {
-    font-size: 8px;
+    /*font-size: 8px;*/
     width: 100%;
     /*border: 3px solid red;*/
     padding: 5px;
@@ -125,7 +127,7 @@
 
 .edit__change-password a{
     font-weight: 700;
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 
 }
@@ -145,7 +147,7 @@
 }
 
 .edit__title {
-    font-size: 10px;
+    /*font-size: 10px;*/
     padding: 4px;
 }
 
@@ -162,17 +164,17 @@
 }
 
 .edit__change-ava {
-    font-size: 7px;
+    /*font-size: 7px;*/
     /*border: 3px solid blue;*/
 }
 
 .edit__change-ava input{
-    font-size: 7px;
+    /*font-size: 7px;*/
     width: 100%;
 }
 
 #id_image {
-    font-size: 5px;
+    /*font-size: 5px;*/
     padding: 3px;
 }
 
@@ -261,7 +263,7 @@
 .tags__title {
     margin: 0 0 5px 0;
     font-weight: 600; 
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .tags__form {
@@ -273,7 +275,7 @@
     padding: 4px;
     border-radius: 4px;
     margin: 3px ;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .tags__cross {
@@ -294,7 +296,7 @@
     padding: 4px;
     border-radius: 5px;
     width: 100%;
-    font-size: 10px;
+    /*font-size: 10px;*/
 
 }
 
@@ -319,7 +321,7 @@
 .tags__title {
     margin: 0 0 4px 0;
     font-weight: 500; 
-    font-size: 8px;
+    /*font-size: 8px;*/
 }
 
 .tags__form {
@@ -421,13 +423,13 @@
     flex: 0 1 18%;
     text-align: right;
     align-self: center;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 .field__field {
     flex: 0 1 80%;
     align-self: center;
-    font-size: 10px;
+    /*font-size: 10px;*/
 }
 
 
@@ -435,15 +437,15 @@
 
 .edit__button {
     text-align: right;
-    margin: 0 5px 0 0;
+    margin: 10px 5px 5px 5px;
 }
 
 .edit__button input {
   border-radius: 4px;
-  padding: 5px 6px;
-  width: 70px;
+  padding: 8px;
+  width: 80px;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 }
@@ -466,19 +468,19 @@
   border-radius: 3px;
   padding: 2px;
   width: 80%;
-  font-size: 7px;
+  /*font-size: 7px;*/
 }
 
 .field__label {
     flex: 0 0 25%;
     text-align: right;
     align-self: center;
-    font-size: 8px;
+    /*font-size: 8px;*/
 }
 
 .field__field {
     flex: 0 1 70%;
-    font-size: 4px;
+    /*font-size: 4px;*/
 }
 
 
@@ -486,7 +488,7 @@
 
 .edit__button {
     text-align: right;
-    margin: 0 4% 0 0;
+    /*margin: 0 4% 0 0;*/
 }
 
 .edit__button input {
@@ -494,7 +496,7 @@
   padding: 3px 3px;
   width: 65px;
   font-weight: 600;
-  font-size: 7px;
+  /*font-size: 7px;
 }
-
+*/
 }

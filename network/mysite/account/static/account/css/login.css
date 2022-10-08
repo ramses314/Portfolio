@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 
+
 :focus, :active {
   outline: none;
 }
@@ -79,9 +80,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
   flex: 1 1 auto;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: whitesmoke;
 }
+
 
 .content__items {
   display: flex;
@@ -234,15 +236,18 @@ box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
 @media (max-width: 640px) {
 
     .content__items {
-      padding: 3% 3%
+      padding: 3% 3%;
+      flex-direction: column;
     }
 
     .content__text {
-      display: none;
+      /*display: none;*/
+      padding: 5vh 8px 0vh 8px;
     }
 
     .content__login {
       flex: 0 1 100%;
+      margin: 5vh 0 0 0;
     }
 
 
@@ -350,10 +355,11 @@ box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
  }
 
  .content__registration-title h1{
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 500;
-  padding: 1em 0.5em;
+  padding: 1em 0.5em 0.5em 0.5em;
 }
+
 }
 
 
@@ -364,25 +370,25 @@ box-shadow: 4px 4px 100px 0px rgba(37, 94, 43, 0.2) inset;
  }
 
  .content__registration-title h1{
-  font-size: 15px;
-  font-weight: 500;
-  padding: 1em 0.5em;
+  /*font-size: 15px;*/
+  /*font-weight: 500;*/
+  /*padding: 1em 0.5em;*/
 }
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
    .registration__wrapper {
       width: 90%;
-      text-align: left;
+      /*text-align: left;*/
  }
 
  .content__registration-title h1{
-  font-size: 13px;
-  font-weight: 500;
-  padding: 0.5em 2em;
-  opacity: 0.7;
-}
+  /*font-size: 13px;*/
+  /*font-weight: 500;*/
+  /*padding: 0.5em 2em;*/
+  opacity: 0.9;
+
 }
 
 

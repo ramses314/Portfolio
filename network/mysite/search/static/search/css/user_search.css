@@ -6,6 +6,7 @@
 	margin: 40px auto;
 }
 
+
 .followers__filter{
 	flex: 0 1 20%;
 	background-color: white;
@@ -176,8 +177,9 @@
 
 
 .followers {
-	padding: 10px;
-	margin: 15px auto;
+	max-width: 100%;
+	padding: 10px 0px;
+	margin: 10px auto;
 }
 
 .followers__filter{
@@ -195,14 +197,14 @@
 	padding: 4px;
 	border-radius: 3px;
 	width: 100%;
-	font-size: 10px;
+	/*font-size: 10px;*/
 }
 
 .followers__gender select {
 	padding: 4px;
 	border-radius: 3px;
 	background-color: #f5f5f5;
-	font-size: 10px;
+	/*font-size: 10px;*/
 }
 
 .followers__gender{
@@ -227,7 +229,7 @@
 	align-self: center;
 	flex: 0 1 36%;
 	padding: 0 0 0 0px;
-	font-size: 10px;
+	/*font-size: 10px;*/
 }
 
 .followers__similar input {	
@@ -247,7 +249,7 @@
 .followers__button input{
 	padding: 4px;
 	border-radius: 3px;
-	font-size: 10px;
+	/*font-size: 10px;*/
 }
 
 }
@@ -257,15 +259,16 @@
 @media (max-width: 430px) {
 
 .followers {
-	padding: 5px;
-	margin: 5px auto;
+
+	/*padding: 5px;*/
+	/*margin: 5px auto;*/
 }
 
 .followers__filter{
 	flex: 0 1 20%;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 0 0 8px 0;
+	/*border-radius: 10px;*/
+	/*padding: 5px;*/
+	/*margin: 0 0 8px 0;*/
 }
 
 .followers__input {
@@ -273,14 +276,14 @@
 }
 
 .followers__input input{
-	padding: 3px;
+	/*padding: 3px;*/
 	width: 100%;
-	font-size: 8px;
+	/*font-size: 8px;*/
 }
 
 .followers__gender select {
-	padding: 3px;
-	font-size: 8px;
+	/*padding: 3px;*/
+	/*font-size: 8px;*/
 }
 
 .followers__gender{
@@ -296,7 +299,7 @@
 	height: 100%;
 	background-color: #f5f5f5;
 	border-radius: 3px;
-	padding: 5px;
+	/*padding: 5px;*/
 	pointer-events: none;
 }
 
@@ -311,8 +314,8 @@
 }
 
 .followers__button input{
-	padding: 3px;
-	font-size: 8px;
+	/*padding: 3px;*/
+	/*font-size: 8px;*/
 }
 
 }
@@ -428,7 +431,7 @@
 .followers__right {
 	flex: 0 1 40%;
 	padding: 0 0 0 30px;
-	font-size: 14px ;
+	/*font-size: 14px ;*/
 	align-self: center;
 
 }
@@ -456,17 +459,17 @@
 
 
 .followers__items {
-	padding: 10px;
-	border-radius: 15px;
+	/*padding: 10px;*/
+	/*border-radius: 15px;*/
 }
 
 .followers__item {
-	margin: 0 0 5px 0;
+	/*margin: 0 0 5px 0;*/
 }
 
 .followers__title {
-	padding: 15px 0;
-	font-size: 14px;
+	/*padding: 15px 0;*/
+	/*font-size: 14px;*/
 }
 
 .followers__left {
@@ -480,20 +483,20 @@
 
 .followers__right {
 	flex: 0 1 40%;
-	padding: 0 0 0 20px;
-	font-size: 10px ;
+	/*padding: 0 0 0 20px;*/
+	/*font-size: 10px ;*/
 }
 
 .followers__empty {
 	opacity: 0.7;
-	padding: 5px 15px;
-	font-size: 8px;
+	/*padding: 5px 15px;*/
+	/*font-size: 8px;*/
 }
 
 .followers__more{
-	margin: 0px 10px 10px 10px ;
+	/*margin: 0px 10px 10px 10px ;*/
 	border-bottom: 1px solid gray;
-	font-size: 8px;
+	/*font-size: 8px;*/
 }
 
 

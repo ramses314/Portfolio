@@ -59,16 +59,27 @@ $(function(){
 		$('.gender').css({
 			'display' : 'none',
 		})
+
 	}
 
-	console.log(34, $(window).width())
 
 	$(window).on('resize', function() {
 			if ($(window).width() < 668) {
 		$('.gender').css({
 			'display' : 'none',
 		})
+
 	}
+
+
+		if ($(window).width() < 626) {
+
+			console.log(666)
+	
+			
+
+	} 
+
 	})
 	
 
@@ -166,17 +177,53 @@ $(function(){
 	})
 
 
+	$(window).on('resize', function() {
+			
+
+		if ($(window).width() < 626) {
+			
+			 } else {
+
+
+
+
+				
+
+
+
+			} 
+
+	})
+
+
 	$('.content__news').slick({
 		infinite: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		vertical: true,
-		verticalSwiping: true,
+		verticalSwiping: false,
         touchThreshold: true,
         arrows: false,
         autoplay: true,
-      	autoplaySpeed: 3500,
-        
+      	autoplaySpeed: 3000,
+
+      	responsive: [
+			    {
+			      breakpoint: 626,
+			      settings: {
+			        infinite: true,
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					vertical: false,
+					verticalSwiping: false,
+
+			        touchThreshold: true,
+			        arrows: false,
+			        autoplay: true,
+			      	autoplaySpeed: 3000,
+			      }
+			    },
+  ]
 	})
 
 	$('.content__news').on('wheel', (function(e) {
@@ -193,38 +240,6 @@ $(function(){
         $(this).slick('slickPrev');
     }
 }));
-
-
-	// const list = document.querySelector('ul');
-	// const cardCount = 52;
-
-	// const createCard = () => {
-	// 	const element = document.createElement('li');
-	// 	const card = document.createElement('div');
-	// 	card.className = 'card';
-	// 	element.appendChild(card);
-	// 	list.appendChild(element);
-	// };
-
-	// Array(cardCount).fill().forEach(() => createCard());
-	// const cards = document.querySelectorAll('li');
-
-	// const handleIntersection = (entries) => {
-	// 	for (const entry of entries) {
-	// 		entry.target.style.setProperty('--shown', entry.isIntersecting ? 1 : 0);
-	// 	}
-	// };
-
-	// const observer = new IntersectionObserver(handleIntersection);
-	// cards.forEach(card => observer.observe(card))
-
-
-
-
-
-	
-
-
 
 
 

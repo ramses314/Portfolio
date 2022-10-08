@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e36bcd85-2e0b-4769-85ee-297bc7e807f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/account/static/account/css/change_pass.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/network.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/network.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/edit.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/css/user_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/css/user_profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/static/account/js/base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/register_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/register_done.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/account/templates/account/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/account/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/registration/logged_out.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/account/templates/registration/password_change_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/registration/password_change_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/account/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/account/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/posts/static/posts/create_post.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/posts/static/posts/create_post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/search/static/search/css/user_search.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/search/static/search/css/user_search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/search/templates/search/user_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/search/templates/search/user_search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/huston/network&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -31,6 +31,7 @@
             </div>
           </div>
 
+
           <div class="content__right">
             <div class="right__items">
               <div class="right__nickname">
@@ -59,17 +60,22 @@
             </div>
           </div>
           <div class="content__third">
-            <div class="">
-              <a href="{% url 'search:user_search' %}">
-                <img width="60px" src="{% static 'account/img/last8.png' %}" alt="">
-              </a>
+            <div class="third__items">
               
-            </div>
-            <div class="">
-              <img width="60px" src="{% static 'account/img/last2.png' %}" alt="">
-            </div>
-            <div class="">
-              <img width="60px" src="{% static 'account/img/last3.png' %}" alt="">
+              <a href="{% url 'search:user_search' %}">
+                <img width="60px" src="{% static 'account/img/icon_search.png' %}" alt="">
+              </a>
+
+              <a href="">
+                <img width="60px" src="{% static 'account/img/icon_message.png' %}" alt="">
+              </a>
+     
+              <a href="">
+                 <img width="60px" src="{% static 'account/img/icon_tools.png' %}" alt="">
+              </a>
+             
+            
+
             </div>
            <!--  <div class="">
               Уведомления
@@ -204,15 +210,12 @@
                   </div>
 
                   <div class="post__desc">
-                    <a href="">{{ i.body }}</a>
+                    <a href="#" onclick="return false" >{{ i.body }}</a>
                   </div>
 
                  <div class="post__comment">
 
                     <!-- <a href="#">Читать комментарии</a> -->
-
-
-
 
                     <div id='comment-form{{ forloop.counter }}' class="post__comment-form">
 

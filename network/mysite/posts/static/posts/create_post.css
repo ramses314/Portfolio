@@ -68,14 +68,14 @@
 
 
 .post{
-	width: 80%;
+	width: 95%;
 	border-radius: 15px;
-	margin: 15px auto;
-	padding: 15px;
+	margin: 13vh auto 15px auto;
+	padding: 25px 15px;
 }
 
 .post__title {
-	font-size: 16px;
+	/*font-size: 16px;*/
 	padding: 0 0 15px 0;
 }
 
@@ -93,7 +93,7 @@
 	border-radius: 8px;
 	padding: 4px;
 	width: 100%;
-	height: 95px;
+	height: 195px;
 }
 
 .post__error { 
@@ -108,7 +108,7 @@
 	padding: 4px 8px;
 	font-weight: 700;
 	border-radius: 5px;
-	font-size: 14px;
+	/*font-size: 14px;*/
 }
 
 .post__button:hover input {
@@ -131,7 +131,7 @@
 }
 
 .post__title {
-	font-size: 10px;
+	/*font-size: 10px;*/
 	padding: 0 0 5px 0;
 }
 
@@ -155,7 +155,7 @@
 	padding: 3px;
 	width: 100%;
 	height: 45px;
-	font-size: 5px;
+	/*font-size: 5px;*/
 }
 
 .post__error { 
@@ -169,7 +169,7 @@
 	padding: 4px;
 	font-weight: 600;
 	border-radius: 3px;
-	font-size: 5px;
+	/*font-size: 5px;*/
 }
 
 .post__button:hover input {
