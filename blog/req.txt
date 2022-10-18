@@ -1,0 +1,8 @@
+asgiref
+Django
+django-ckeditor
+django-js-asset
+django-taggit 
+Pillow              
+sqlparse
+tzdata

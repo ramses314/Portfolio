@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6141665d-9e61-4bd7-9263-e49310048bcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../network/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/collect_tag.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/detail2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/css/youtube.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/css/youtube.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/static/blog/js/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/static/blog/some.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/collect_tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/collect_tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/templates/blog/youtube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../network/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../network/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

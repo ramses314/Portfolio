@@ -4,20 +4,23 @@
 	<head>
 		<title>Мой первый проект</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style2.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail2.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/search.css' %}">
+		
+		{% block head %}{% endblock %}
 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="{% static 'blog/img/log.jpg' %}">
-
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-
 		<div class="wrapper">
-
 			<nav class="nav">
 				<div class="container">
 					<div class="nav__items">
@@ -25,111 +28,114 @@
 							<a href="{% url 'blog:home' %}">
 								<img  src="{% static 'blog/img/logo3.png' %}" alt="">
 							</a>
-
 						</div>
 						<div class="nav__links">
 							<div class="nav__link">
 									<a class="nav__special" href="{% url 'blog:home' %}">Главная</a>
 									<a class="nav__special" href="{% url 'blog:search' %}">Поиск</a>
-									<a class="nav__special" href="{% url 'blog:youtube' %}">Что на YouTube?</a>
-									<a class="nav__special" href="" onclick='document.querySelector(".contact").scrollIntoView(true); return false;'>Контакты</a>
+									<a class="nav__special" href="{% url 'blog:youtube' %}" >Что на YouTube?</a>
+									<a class="nav__special nav__delete" href="" onclick='document.querySelector(".contact").scrollIntoView(true); return false;'>Контакты</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</nav>
 
+
             <div class="search">
-        <div class="container">
-            <div class="search__title">
-                Поиск по сайту
-            </div>
-             <div class="search__form">
-                <form action="." method="get">
-                    <div class="search__field">
-                        {{ search_form.query }}<input class='search__button' type="submit" value="Поиск">
-                    </div>   
-                </form>
-             </div>
+		        <div class="container">
+		            <div class="search__title">
+		                Поиск по сайту
+		            </div>
+		             <div class="search__form">
+		                <form action="." method="get">
+		                    <div class="search__field">
+		                        {{ search_form.query }}<input class='search__button' type="submit" value="Поиск">
+		                    </div>   
+		                </form>
+		             </div>
 
-             <div class="search__results">
-                 
-                {% if results %}
+		             <div class="search__results">  
+		                {% if results %}
+		                    <div class="results">
+		                        <div class="results__total">{{ results.count }} Результата(-ов)</div>
+		                    </div>
+		                    {% for i in results %}
+		                        <div class="results__items">
+		                            <div class="results__img">
+		                            	<a href="{{ i.get_absolute_url }}">
+		                            		<img src="{{ i.image.url }}" alt="">
+		                            	</a>
+		                            </div>
+		                            <div class="results__text">
+		                            	<div class="results__publish">
+		                                    {{ i.created }}
+		                                </div>
+		                                <div class="results__title">
+		                                	<a href="{{ i.get_absolute_url }}">
+		                                		{{ i.title|safe }}
+		                                	</a>
+		                                </div>
+		                                <div class="results__body">
+		                                	<a href="{{ i.get_absolute_url }}">
+		                                		{{ i.body|truncatewords:10|safe }}
+		                                	</a>
+		                                </div>  
+		                            </div>
+		                        </div> 
+		                    {% endfor %}
+		                {% else %}
+		                    <div class="search__empty">
+		                        Нет результатов {% if query %} <span>по запросу "-{{ query }}-" </span>  {% endif %}
+		                    </div>     
+		                {% endif %}
+		             </div>
+		        </div>
+		    </div>
 
-                    <div class="results">
-                        <div class="results__total">{{ results.count }} Результата(-ов)</div>
-                    </div>
-                    {% for i in results %}
-                        <div class="results__items">
-                            <div class="results__img">
-                            	<a href="{{ i.get_absolute_url }}">
-                            		<img src="{{ i.image.url }}" alt="">
-                            	</a>
-                            </div>
-                            <div class="results__text">
-                            	<div class="results__publish">
-                                    {{ i.created }}
-                                </div>
-                                <div class="results__title">
-                                	<a href="{{ i.get_absolute_url }}">
-                                		{{ i.title }}
-                                	</a>
-                                </div>
-                                <div class="results__body">
-                                	<a href="{{ i.get_absolute_url }}">
-                                		{{ i.body|truncatewords:30 }}
-                                	</a>
-                                </div>  
-                            </div>
-                        </div>
-                        
-                    {% endfor %}
-
-                {% else %}
-                    <div class="search__empty">
-                        Нет результатов
-                    </div>     
-                {% endif %}
-             </div>
-        </div>
-    </div>
-
-            		<div class="contact">
+            <div id='contact' class="contact">
 				<div class="container">
 					<div class="container__else">
-
-								<div class="contact__title">Контакты</div>
-
-					<div class="contact__container">
-						<div class="contact__left">
-							<div class="contact__subtitle">
-								Наши контакты
-							</div>
-							<div class="contact__links">
-								<div class="contact__link">Позвонить: <a href="#">+7 523-244-65-34</a></div>
-								<div class="contact__link">Написать: <a href="#">forwork31415@gmail.com</a></div>
-							</div>
-
-
+						<div class="contact__title">
+							Контакты
 						</div>
-						<div class="contact__right">
-							<div class="contact__subtitle">
-								Мы в сети
-							</div>
-							<div class="contact__links">
-								<div class="contact__link">Общаться: <a href="#">Telegram</a></div>
-							<div class="contact__link">Подпистаься: <a href="#">Youtube</a></div>
-							<div class="contact__link">Смотреть: <a href="#">Some</a></div>
-							</div>
 
+						<div class="contact__container">
+							<div class="contact__left">
+								<div class="contact__subtitle">
+									Наши контакты
+								</div>
+								<div class="contact__links">
+									<div class="contact__link">
+										Позвонить: <a href="#">+7 523-244-65-34</a>
+									</div>
+									<div class="contact__link">
+										Написать: <a href="#">forwork31415@gmail.com</a>
+									</div>
+								</div>
+							</div>
+							<div class="contact__right">
+								<div class="contact__subtitle">
+									Мы в сети
+								</div>
+								<div class="contact__links">
 
+									<div class="contact__link">
+										Общаться: <a href="#">Telegram</a>
+									</div>
+									<div class="contact__link">
+										Подпистаься: <a href="#">Youtube</a>
+									</div>
+									<div class="contact__link">
+										Смотреть: <a href="#">Some</a>
+									</div>
+
+								</div>
+							</div>
 						</div>
-					</div>
-
 					</div>
 				</div>
 			</div>
-
 
 			<footer class="footer">
 				<div class="container">
@@ -141,13 +147,14 @@
 							<a class="footer__link" href="{% url 'blog:home' %}">Главная</a>
 							<a class="footer__link" href="{% url 'blog:search' %}">Поиск</a>
 							<a class="footer__link" href="{% url 'blog:youtube' %}">Что на ютуб?</a>
-							<a class="footer__link" href="">Контакты</a>
 						</div>
 						<div class="footer__search">
 							<span class="footer__input">
 								<form action="." method="get">
 									{{ search_form.query }}
-									<input  type="submit" value="найти">
+									<span class='footer__alsoinput' >
+										<input type="submit" value="найти">
+									</span>
 								</form>
 							</span>
 						</div>
@@ -156,8 +163,28 @@
 			</footer>
 		</div>
 
+		<script src="{% static 'blog/js/base.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<script>
+	 		var csrftoken = Cookies.get('csrftoken');
+	 		function csrfSafeMethod(method) {
+			 return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+			 }
+			 $.ajaxSetup({
+			 beforeSend: function(xhr, settings) {
+			 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+			 xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				}
+			}
+		});
+			$(document).ready(function(){
+			 		{% block domready %}{% endblock %}
+			 });
+		</script>
 
-	<script src="{% static 'blog/js/base.js' %}"></script>
-
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		
 	</body>
 </html>

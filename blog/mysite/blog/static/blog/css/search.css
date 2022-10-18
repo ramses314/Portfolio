@@ -1,91 +1,10 @@
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-:focus, :active {
-  outline: none;
-}
-
-a:focus, a:active {
-  outline: none;
-}
-
-nav, footer, header, aside {
-  display: block;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-input, button, textarea {
-  font-family: inherit;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: 400;
-}
-
-
-
-
-
-
-
-
 
 
 .search {
   margin: 30px;
   min-height: 50vh;
-
-
-
 }
+
 
 .search__title{
   font-size: 35px;
@@ -95,23 +14,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .search__field { 
-/*background-color: #f2f2f2;*/
-/*padding: 10px;*/
  }
 
 .search__field input[type=text]{
-  border: 0px solid #70898c;
+  border: 1px solid #70898c;
   padding: 7px;
-  /*border-radius: 6px;*/
-  /*margin: 0 20px;*/
   background-color: #f2f2f2;
-/*-webkit-box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;
--moz-box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;
-box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;*/
-
 }
 
 .search__button{
+  border: 1px solid #70898c;
   padding: 7px;
   background-color: #c7c7c7;
   color: whitesmoke;
@@ -130,10 +42,43 @@ box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;*/
   margin: 0 10px;
 }
 
+.search__empty span{
+  font-size: 14px;
+  color: red;
+
+}
+
+@media (max-width: 767px) {
+
+  .search__title {
+    margin: 0 20px;
+  }
+
+  .search__form {
+    margin: 0 20px;
+  }
+}
+
+
+@media (max-width: 360px) {
+.search {
+  margin: 20px;
+  min-height: 50vh;
+}
+
+.search__title{
+  font-size: 32px;
+  font-weight: 700;
+  padding: 15px 0;
+  color: #008394;
+}
+
+}
 
 
 
 .results {}
+
 .results__total {
   font-weight: 700;
   padding: 0 0 0 1em;
@@ -143,36 +88,33 @@ box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;*/
   display: flex;
   margin: 15px 0;
   background-color: #679399;
-
-  /*border-top-left-radius: 10px;*/
-  /*border-bottom-left-radius: 10px;*/
   border-radius: 15px;
   overflow: hidden;
-
-
+  width: 75%;
 }
+
 .results__img {
-  flex: 0 1 15%;
-
+  flex: 0 1 25%;
   width: 100%;
-  height: 100%;
-  
+  height: 150px;
+  position: relative;
   overflow: hidden;
-  /*border: 3px solid red;*/
-
 }
+
 .results__img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  
 }
+
 .results__text {
   flex: 0 1 85%;
-
   padding: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-
   color: whitesmoke;
   font-weight: 700;
 }
@@ -205,9 +147,199 @@ box-shadow: 2px 0px 7px 0px rgba(74, 98, 116, 0.2) inset;*/
 }
 
 
+@media (max-width: 991px) {
+
+    .results__total {
+      font-weight: 700;
+      padding: 0 0 0 1em;
+    }
+
+    .results__items {
+      display: flex;
+      margin: 15px 0;
+
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .results__img {
+      flex: 0 1 15%;
+
+      width: 100%;
+      min-height: 100%;
+    }
+
+    .results__img img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .results__text {
+      flex: 0 1 85%;
+
+      padding: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+
+      color: whitesmoke;
+      font-weight: 700;
+    }
+
+    .results__publish {
+      font-weight: 300;
+      color: #afd6db;
+    }
+
+    .results__title a{
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+    .results__title:hover a{
+      color: #b8ced1;
+    }
+
+    .results__title {
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+    .results__body a {
+      color: #89edfa;
+    }
+
+    .results__body:hover a {
+      color: #00d1ed;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .search {
+      margin: 15px 5px;
+      min-height: 50vh;
+    }
 
 
+   .results__total {
+      font-weight: 700;
+      padding: 0 0 0 1em;
+    }
+
+    .results__items {
+      display: flex;
+      margin: 15px 0;
+
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .results__img {
+      flex: 0 1 35%;
+
+      width: 100%;
+      min-height: 100%;
+    }
+
+    .results__img img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .results__text {
+      flex: 0 1 65%;
+
+      padding: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+
+      color: whitesmoke;
+      font-weight: 700;
+    }
+
+    .results__publish {
+      font-weight: 300;
+      color: #afd6db;
+    }
+
+    .results__title a{
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+    .results__title:hover a{
+      color: #b8ced1;
+    }
+
+    .results__title {
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+    .results__body a {
+      color: #89edfa;
+    }
+
+    .results__body:hover a {
+      color: #00d1ed;
+    }
+
+}
+
+@media (max-width: 360px) {
+
+  .search {
+      margin: 15px 5px;
+      min-height: 65vh;
+    }
 
 
+   .results__total {
+      font-weight: 700;
+      padding: 0 0 0 1em;
+    }
 
+    .results__items {
+      display: flex;
+      margin: 15px 0;
+
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .results__img {
+      flex: 0 1 35%;
+
+      width: 100%;
+      height: 140px;
+    }
+
+    .results__img img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .results__text {
+      flex: 0 1 65%;
+
+      padding: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+
+      color: whitesmoke;
+      font-weight: 700;
+    }
+
+    .results__title a{
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+    .results__title {
+      color: #e4f3f5;
+      margin: 5px 0;
+    }
+
+}
 
