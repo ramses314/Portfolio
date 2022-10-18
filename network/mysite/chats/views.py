@@ -4,7 +4,4 @@ from django.shortcuts import render
 
 
 def plakat(request):
-
-    print(1111)
-
     return render(request, 'chats/plakat.html')

@@ -6,103 +6,93 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_profile.css' %}">
 {% endblock %}
 
+
 {% block content %}
 
 	<div class="followers">
 		<div class="followers__container">
-
 			<div class="followers__title">
 				{{ title }}
 			</div>
+
 			{% for i in users %}
-
 			{% if i.user_to %}
-
 				<div class="followers__items">
 					<div class="followers__left">
-							<div class="followers__img">
-								<a href="{% url 'account:user_profile' i.user_to.id %}">
-									<img src="{{ i.user_to.profile.image.url }}" alt="">
-								</a>
-							</div>
+						<div class="followers__img">
+							<a href="{% url 'account:user_profile' i.user_to.id %}">
+								<img src="{{ i.user_to.profile.image.url }}" alt="">
+							</a>
+						</div>
 					</div>
 					<div class="followers__right">
-							<div class="followers__name">
-									<a href="{% url 'account:user_profile' i.user_to.id %}">
-									@{{ i.user_to }}</a>
-									<div class="followers__subname">
-										<a href="{% url 'account:user_profile' i.user_to.id %}">
-										{{ i.user_to.first_name }}</a>
-									</div> 
-								
-							</div>
+						<div class="followers__name">
+							<a href="{% url 'account:user_profile' i.user_to.id %}">
+							@{{ i.user_to }}</a>
+							<div class="followers__subname">
+								<a href="{% url 'account:user_profile' i.user_to.id %}">
+								{{ i.user_to.first_name }}</a>
+							</div> 
+						</div>
 					</div>
-
-
 			{% else %}
 
 			<div class="followers__items">
-					<div class="followers__left">
-							<div class="followers__img">
-								<a href="{% url 'account:user_profile' i.id %}">
-									<img src="{{ i.profile.image.url }}" alt="">
-								</a>
-							</div>
+				<div class="followers__left">
+					<div class="followers__img">
+						<a href="{% url 'account:user_profile' i.id %}">
+							<img src="{{ i.profile.image.url }}" alt="">
+						</a>
 					</div>
-					<div class="followers__right">
-							<div class="followers__name">
-									<a href="{% url 'account:user_profile' i.id %}">
-									@{{ i }}</a>
-									<div class="followers__subname">
-										<a href="{% url 'account:user_profile' i.id %}">
-										{{ i.first_name }}</a>
-									</div> 
-								
-							</div>
+				</div>
+				<div class="followers__right">
+					<div class="followers__name">
+						<a href="{% url 'account:user_profile' i.id %}">
+						@{{ i }}</a>
+						<div class="followers__subname">
+							<a href="{% url 'account:user_profile' i.id %}">
+							{{ i.first_name }}</a>
+						</div> 
 					</div>
-
+				</div>
 			{% endif %}
 
 
 
 
-					<div class="followers__subs">
-						<!-- <a href="">Подписаться</a> -->
-					<!-- 	<div class="card__follow"  data-id='{{ i.id }}' data-action="{% if request.user in i.followers.all %}un{% endif %}sign">
-							{% if sign %}
-								<div id='follow-check' class="sign">
-										<a id='link-check' href="#">Отписаться</a>
-								</div>
-							{% else %}
-								<div id='follow-check' class="unsign">
-									<a id='link-check' href="#">Подписаться</a>
-								</div>
-
-							{% endif %}			
-						</div> -->
-
-
-					<!-- 	<div class="card__follow"  data-id='{{ profil_user.id }}' data-action="{% if request.user in profil_user.followers.all %}un{% endif %}sign">
-							{% if sign %}
-								<div id='follow-check' class="sign">
+			<div class="followers__subs">
+					<!-- <a href="">Подписаться</a> -->
+				<!-- 	<div class="card__follow"  data-id='{{ i.id }}' data-action="{% if request.user in i.followers.all %}un{% endif %}sign">
+						{% if sign %}
+							<div id='follow-check' class="sign">
 									<a id='link-check' href="#">Отписаться</a>
-								</div>
-								
-							{% else %}
-								<div id='follow-check' class="unsign">
-									<a id='link-check' href="#">Подписаться</a>
-								</div>
+							</div>
+						{% else %}
+							<div id='follow-check' class="unsign">
+								<a id='link-check' href="#">Подписаться</a>
+							</div>
 
-							{% endif %}			
-						</div> -->
+						{% endif %}			
+					</div> -->
 
-					</div>
+
+				<!-- 	<div class="card__follow"  data-id='{{ profil_user.id }}' data-action="{% if request.user in profil_user.followers.all %}un{% endif %}sign">
+						{% if sign %}
+							<div id='follow-check' class="sign">
+								<a id='link-check' href="#">Отписаться</a>
+							</div>
+							
+						{% else %}
+							<div id='follow-check' class="unsign">
+								<a id='link-check' href="#">Подписаться</a>
+							</div>
+
+						{% endif %}			
+					</div> -->
 			</div>
-	 	 
-
+		</div>
 	  {% endfor %}
-	  </div>
 	</div>
+</div>
 	
-
 {% endblock %}

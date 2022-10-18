@@ -6,61 +6,56 @@
 {% endblock %}
 
 {% block content %}
-		<div class="content_inner">
-			<div class="content__items">
-				<div class="content__text">
-					<div class="content__title">
-						COPYRKA
-					</div>
-					<div class="content__subtitle">
-						помогает вам окунуться в посредственность. Быть как все. Разве это не чудесно?
-					</div>
+	<div class="content_inner">
+		<div class="content__items">
+			<div class="content__text">
+				<div class="content__title">
+					COPYRKA
 				</div>
-				<div class="content__login">
+				<div class="content__subtitle">
+					помогает вам окунуться в посредственность. Быть как все. Разве это не чудесно?
+				</div>
+			</div>
+			<div class="content__login">
 
-                  {% if form.errors %}
-                    <p>{{ form.error }}</p>
-                  {% else %}
-                    <p></p>
-                  {% endif %}
+              {% if form.errors %}
+                <p>{{ form.error }}</p>
+              {% else %}
+                <p></p>
+              {% endif %}
 
-
-                  <form action="." method="post">
-                    {% csrf_token %}
-                    {% for i in form %}
-                      {{ i.errors }}
+                <form action="." method="post">
+	                {% csrf_token %}
+	                {% for i in form %}
+	                  {{ i.errors }}
 					  <div class="loginput">
-						  {{ i }}
+						 {{ i }}
 					  </div>
-                    {% endfor %}
-                    <input type="hidden" name="text" value="{{ next }}" />
-                    <div class="content__button">
+	                {% endfor %}
+	                <input type="hidden" name="text" value="{{ next }}" />
+	                <div class="content__button">
 						<input type="submit" value="Войти">
 					</div>
-                  </form>
-
-					<div class="passwordt">
-						<a class='passwordt' href="">Забыли пароль?</a>
-					</div>
-
-					<div class="content__reg">
-						<a href="{% url 'account:registration' %}">Зарегистрироваться</a>
-					</div>
-					<div class="content__gogle">
-						<img src="{% static 'account/img/goo.png' %}" alt="">
-						<a href="{% url 'social:begin' 'google-oauth2' %}">Войти через google</a>
-					</div>
+                </form>
+				<div class="passwordt">
+					<a class='passwordt' href="">Забыли пароль?</a>
+				</div>
+				<div class="content__reg">
+					<a href="{% url 'account:registration' %}">Зарегистрироваться</a>
+				</div>
+				<div class="content__gogle">
+					<img src="{% static 'account/img/goo.png' %}" alt="">
+					<a href="{% url 'social:begin' 'google-oauth2' %}">Войти через google</a>
 				</div>
 			</div>
 		</div>
+	</div>
 
 {% endblock %}
-
 
 
 {% block domready %}
 
 	<!-- $('.footer').css({'display':'none'}) -->
-
 
 {% endblock %}

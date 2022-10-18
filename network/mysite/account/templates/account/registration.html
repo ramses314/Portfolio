@@ -1,24 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block head %}
   <link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}">
 {% endblock %}
 
 
-
-
 {% block content %}
+  <div class="registration__wrapper">
 
-<div class="registration__wrapper">
-
-  <div class="content__registration-title">
-    <h1>Создай аккаунт</h1>
-  </div>
-  
-  <div class="content__login">
-
-      <form action="." method="post">
+    <div class="content__registration-title">
+      <h1>Создай аккаунт</h1>
+    </div>
+    
+    <div class="content__login">
+        <form action="." method="post">
           {% csrf_token %}
           {% for i in form %}
             {% if i.errors %}
@@ -26,18 +23,16 @@
                 {{ i.errors }}▼
               </div>
             {% endif %}
-           
+             
     				<div class="loginput">
     					{{ i }}
     				</div>
-          {% endfor %}
+            {% endfor %}
           <div class="content__button">
   						<input type="submit" value="Зарегистрироваться">
   				</div>
       </form>
-
+    </div>
   </div>
-</div>
-
 
 {% endblock %}

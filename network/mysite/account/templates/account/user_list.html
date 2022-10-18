@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'account/css/user_search.css' %}">
 {% endblock %}
 
+
 {% block content %}
 
 	<div class="followers">
@@ -16,24 +17,20 @@
 		{% for i in users %}
 
 		<div class="followers__items">
-				<div class="followers__left">
-						<div class="followers__img">
-								<img src="{{ i.profile.image.url }}" alt="">
-						</div>
+			<div class="followers__left">
+				<div class="followers__img">
+						<img src="{{ i.profile.image.url }}" alt="">
 				</div>
-				<div class="followers__right">
-					666
-						<div class="followers__name">
-							<a href="{% url 'account:user_profile' i.id %}">
-								{{ i }} {{ i.id }}
-							</a>
-						</div>
+			</div>
+			<div class="followers__right">
+				<div class="followers__name">
+					<a href="{% url 'account:user_profile' i.id %}">
+						{{ i }} {{ i.id }}
+					</a>
 				</div>
+			</div>
 		</div>
- 	 
-
-  {% endfor %}
+  		{% endfor %}
 	</div>
-	
 
 {% endblock %}

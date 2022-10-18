@@ -8,11 +8,9 @@
 
 
 {% block content %}
-
     <div class="edit">
         <div class="container">
             <form action="." method="post" enctype="multipart/form-data">
-
                 {% csrf_token %}
 
                 <div class="edit__title">
@@ -40,14 +38,14 @@
                             Тэги (ключевые словa для поиска единомышленников)
                         </div>
                         <div class="tags__form">
-                               {% for i in  tags %}
-                                    <div class="tags__tablet tablet-loop{{ forloop.counter }}">
-                                        {{ i }}
-                                        <div class="tags__cross cross-loop{{ forloop.counter }}">
-                                            <center>✖</center>
-                                        </div>
+                           {% for i in  tags %}
+                                <div class="tags__tablet tablet-loop{{ forloop.counter }}">
+                                    {{ i }}
+                                    <div class="tags__cross cross-loop{{ forloop.counter }}">
+                                        <center>✖</center>
                                     </div>
-                               {% endfor %}
+                                </div>
+                           {% endfor %}
                         </div>
                         <div class="tags__empty">
                                 {% for i in tags %}{{ i }},{% endfor %}
@@ -55,11 +53,9 @@
                         <div class="tags__input">
                             {{profile_form.tags}}
                         </div>
-                    </div>
-                    
+                    </div>  
                 </div>
-    
-                    
+     
                 <div class="edit__form">
                     {% for i in user_form %}
                     {% if i.errors %}
@@ -67,18 +63,17 @@
                             {{ i.errors }}
                         </div>
                     {% endif %}
-                    <div class="field-input">
-                        <div class="field__label">
-                            {{ i.label_tag }}     
+                        <div class="field-input">
+                            <div class="field__label">
+                                {{ i.label_tag }}     
+                            </div>
+                            <div class="field__field">
+                                 {{ i }}       
+                            </div>
                         </div>
-                        <div class="field__field">
-                             {{ i }}       
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
                 </div>
                 
-
                 <div class="field-input">
                     <div class="field__label">
                         {{ profile_form.status.label_tag }}      
@@ -100,9 +95,8 @@
 
 
 
+<!-- JAVASCRIPTCODE: НА БУДУЩЕЕ : ПЕРЕНЕСТИ В ОТДЕЛЬНЫЙ ФАЙЛ -->
 {% block domready %}
-
-    console.log(98765, $('input[type="file"]'))
 
     $('input[type="file"]').on('change', function (event, files, label) {
         
@@ -122,19 +116,13 @@
 
         reader.onloadend = function () {
             preview.src = reader.result;
-            console.log(888)
           }
 
         if (file) {
             reader.readAsDataURL(file);
-            console.log(999)
           } else {
             preview.src = "";
-            console.log(9990)
           }
-
-        console.log(22, preview, file)
-
     });
 
     var a = $('#input-ava').find('input');
@@ -178,8 +166,6 @@
 
     var currentTags = $('.tags__empty').text()
 
-    console.log(14, currentTags)
-
     <!-- Сохранение тегов -->
 
     $('.edit__button').on('click', function(e) { 
@@ -202,16 +188,5 @@
     })
 
     $('.tags__input input').val('')
-
-
-
-
-    
-    
-
-
-
-    
-    
 
 {% endblock %} 

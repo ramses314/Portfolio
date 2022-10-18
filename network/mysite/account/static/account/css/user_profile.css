@@ -20,6 +20,7 @@
 	position: relative;
 }
 
+
 .card__img img {
 	position: absolute;
 	top: 0;
@@ -27,7 +28,6 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-
 	border-radius: 10px;
 	overflow: hidden;
 }
@@ -37,12 +37,9 @@
 	padding: 15px 10px;
 }
 
-
 .card__firstline {
 	display: flex;
 	justify-content: space-around;
-/*	width: 85%;
-	margin: 0 auto;*/
 }
 
 .card__nickname {
@@ -55,7 +52,6 @@
 	flex: 0 1 70%;
 	align-self: center;
 	width: 90%;
-	/*border: 3px solid red;*/
 	text-align: center;
 }
 
@@ -67,16 +63,11 @@
 
 	display: inline-block;
 	width: 90%;
-	
 	text-align: center;
 	padding: 8px 10px;
-
 	border-radius: 5px;
-
 	transition: background-color 0.15s ease-in;
 }
-
-
 
 .sign a {
 	background-color: gray;
@@ -105,21 +96,18 @@
 }
 
 
-
-
 @media (max-width: 740px) {
 
 	.card__img {
-	flex: 0 0 30%;
-
-}
+		flex: 0 0 30%;
+	}
 
 	.card__nickname {
-	font-size: 40px;
-	font-weight: 600;
-}
+		font-size: 40px;
+		font-weight: 600;
+	}
 
-.card__subs {
+	.card__subs {
 		text-align: center;
 	}
 
@@ -128,13 +116,13 @@
 @media (max-width: 600px) {
 
 	.card {
-	border-radius: 17px;
-}
+		border-radius: 17px;
+	}
 
 	.card__nickname {
-	font-size: 30px;
-	font-weight: 600;
-}
+		font-size: 30px;
+		font-weight: 600;
+	}
 
 	.card__subs {
 		flex-direction: column;
@@ -147,93 +135,31 @@
 	}
 
 	.card__text {
-	flex: 0 1 70%;
-	padding: 10px 5px;
-}
-
-
-.card__follow {
-	width: 80%;
-}
-
-.card__follow a {
-	padding: 4px;
-	font-size: 14px;
-}
-
-
-.card__subs {
-	display: flex;
-	width: 90%;
-	justify-content: space-between;
-	margin: 10px auto;
-	font-size: 13px;
-}
-
-	
-}
-/*
-@media (max-width: 430px) {
-
-	.card {
-	border-radius: 10px;
-}
-
-	.card__nickname {
-	font-size: 16px;
-	font-weight: 600;
-}
-
-
-	.card__firstline {
-		flex-direction: column;
+		flex: 0 1 70%;
+		padding: 10px 5px;
 	}
 
 	.card__follow {
-		margin: 2px 0 0 0;
-		text-align: left;
-		width: 100%;
+		width: 80%;
 	}
+
 	.card__follow a {
-		font-size: 10px;
-		padding: 2px;
-		width: 70%
+		padding: 4px;
+		font-size: 14px;
 	}
 
- .card__subs {
-	width: 95%;
-	margin: 4px auto;
-	font-size: 10px;
-	display: none;
-}
-
- .card__subs a{
-	font-size: 8px;
-}
-
-.card__text {
-	padding: 5px 5px;
-}
-
-.card__status{
-	width: 100%;
-	font-size: 6px;
-	padding: 4px 0;
+	.card__subs {
+		display: flex;
+		width: 90%;
+		justify-content: space-between;
+		margin: 10px auto;
+		font-size: 13px;
+	}
 }
 
 
-}
 
-
-*/
-
-
-
-
-
-
-
-
+/*ГАЛЕРЕЯ*/
 
 .profile__gallery {
 	margin: 20px auto;
@@ -247,17 +173,13 @@
 	gap: 7px;
 }
 
-
-
 .gallery__items {
-	/*border: 5px solid red;*/
 	min-height: 100px;
 }
 
 .gallery__img {
 	position: relative;
 	min-height: 100px;
-	
 }
 
 .gallery__img img{
@@ -267,11 +189,9 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-
 }
 
 .gallery__title {
-	
 	text-align: center;
 	margin: auto 0;
 	padding: 15%;
@@ -281,116 +201,62 @@
 }
 
 
-
 @media (max-width: 768px) {
 
 	.profile__gallery {
-	margin: 16px auto;
-	padding: 8px;
-	border-radius: 11px;
-	width: 90%;
+		margin: 16px auto;
+		padding: 8px;
+		border-radius: 11px;
+		width: 90%;
+		grid-template: 1fr / 1fr 1fr 1fr 1fr;
+	}
 
-	grid-template: 1fr / 1fr 1fr 1fr 1fr;
-	gap: 7px;
-}
+	.gallery__items {
+		min-height: 100px;
+	}
 
-.gallery__items {
-	/*border: 5px solid red;*/
-	min-height: 100px;
-}
+	.gallery__img {
+		position: relative;
+		min-height: 100px;
+		
+	}
 
-.gallery__img {
-	position: relative;
-	min-height: 100px;
-	
-}
-
-.gallery__title {
-	padding: 15%;
-	font-size: 13px;
-}
-
-
+	.gallery__title {
+		padding: 15%;
+		font-size: 13px;
+	}
 
 }
-
 
 
 @media (max-width: 510px) {
 
 	.profile__gallery {
-	margin: 15px auto;
-	padding: 7px;
-	border-radius: 9px;
-	width: 90%;
+		margin: 15px auto;
+		padding: 7px;
+		border-radius: 9px;
+		width: 90%;
+		grid-template: 1fr / 1fr 1fr 1fr;
+	}
 
-	grid-template: 1fr / 1fr 1fr 1fr;
-	/*gap: 4px;*/
-}
+	.gallery__items {
+		min-height: 100px;
+	}
 
-.gallery__items {
-	min-height: 100px;
-}
+	.gallery__img {
+		min-height: 100px;
+	}
 
-.gallery__img {
-	min-height: 100px;
-}
-
-.gallery__title {
-	padding: 10%;
-	/*font-size: 8px;*/
-}
-
-
+	.gallery__title {
+		padding: 10%;
+	}
 
 }
-
-
-
-/*
-@media (max-width: 410px) {
-
-
-	.profile__gallery {
-	margin: 5px 0 0 0 ;
-	padding: 5px;
-	border-radius: 8px;
-	width: 100%;
-
-	grid-template: 1fr / 1fr 1fr 1fr;
-	gap: 3px;
-}
-
-.gallery__items {
-	min-height: 80px;
-}
-
-.gallery__img {
-	min-height: 80px;
-}
-
-.gallery__title {
-	padding: 10%;
-	font-size: 8px;
-}
-
-
-
-
-}
-*/
-
-
-
-
-
-
 
 
 
 
 /*Для абсолют*/
-
 
 .slick-prev {
 	position: absolute;
@@ -431,18 +297,13 @@
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	/*text-align: center;*/
 	z-index: 1001;
-
-	/*border: 4px solid red;*/
-	/*height: 50vh;*/
 
 	margin: 20px auto;
 	padding: 10px;
 	background-color: white;
 	border-radius: 20px;
 	width: 60vw;
-
 	display: none;	
 }
 
@@ -459,32 +320,22 @@
 	position: absolute;
 }
 
-
-
-.abs_gallery__items {
-	/*min-height: 100px;*/
-}
+.abs_gallery__items {}
 
 .abs_gallery__item {
-	/*min-height: 100px;*/
 	display: flex;
 	align-items: flex-start;
 }
 
 .abs_gallery__img {
 	flex: 0 1 50%;
-
 	position: relative;
 	min-height: 250px;
 	max-height: 45vh;
-
 	overflow: hidden;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
-
-	/*border: 3px solid red;	*/
 }
-
 
 .abs_gallery__img img{
 	position: absolute;
@@ -493,71 +344,54 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-
 }
 
 .abs_gallery__title {
-
 	flex: 0 1 50%;
-	
 	text-align: center;
-	/*margin: 0 auto;*/
 	padding: 35px 60px;
 
 	background-color: #f5f5f5;
 	min-height: 250px;
 	max-height: 250px;
 	font-size: 25px;
-
 	overflow: hidden;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 }
 
 
-
 @media (max-width: 768px) {
 
 	.abs_gallery__img {
-	
-
 		position: relative;
 		min-height: 200px;
 		max-height: 45vh;
-
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
 	}
 
-
 	.abs_gallery__title {
-
 		margin: auto 0;
 		padding: 10%;
-
 		min-height: 200px;
 		max-height: 200px;
 		font-size: 20px;
-
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
-
 		font-size: 14px;
-}
-
+	}
 
 	.abs__abs {
-	top: 5vh;
-	left: 0;
-	right: 0;
+		top: 5vh;
+		left: 0;
+		right: 0;
+		margin: 20px auto;
+		padding: 10px;
+		border-radius: 20px;
+		width: 70vw;
 
-	margin: 20px auto;
-	padding: 10px;
-
-	border-radius: 20px;
-	width: 70vw;
-
-}
+	}
 
 	.post__comment {
 		font-size: 13px;
@@ -566,10 +400,7 @@
 		font-size: 13px;
 	}
 
-
 }
-
-
 
 
 @media (max-width: 580px) {
@@ -585,110 +416,33 @@
 
 
 	.abs_gallery__title {
-
 		margin: auto 0;
 		padding: 10%;
-
 		min-height: 150px;
 		max-height: 150px;
-		/*font-size: 15px;*/
-
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
-
-		/*font-size: 14px;*/
-}
+	}
 
 
 	.abs__abs {
-	top: 5vh;
-	left: 0;
-	right: 0;
+		top: 5vh;
+		left: 0;
+		right: 0;
 
-	margin: 15vh auto;
-	padding: 10px;
+		margin: 15vh auto;
+		padding: 10px;
 
-	border-radius: 20px;
-	width: 75vw;
+		border-radius: 20px;
+		width: 75vw;
 
-}
-
-	.post__comment {
-		/*font-size: 10px;*/
 	}
-	.post__comment a {
-		/*font-size: 10px;*/
-	}
-
 
 	.comment {
 		display: none;
 	}
 
 }
-
-
-
-/*
-@media (max-width: 360px) {
-
-		.abs__abs {
-			top: 2vh;
-
-			margin: 10px auto;
-			padding: 10px;
-
-			border-radius: 15px;
-			width: 60vw;
-}
-
-
-	.abs_gallery__img {
-		min-height: 90px;
-		max-height: 45vh;
-
-		border-top-left-radius: 10px;
-		border-bottom-left-radius: 10px;
-	}
-
-
-	.abs_gallery__title {
-
-		margin: auto 0;
-		padding: 5px;
-
-		min-height: 90px;
-		max-height: 90px;
-		font-size: 10px;
-
-		border-top-left-radius: 10px;
-		border-bottom-left-radius: 10px;
-
-}
-
-.abs_gallery__actions {
-	padding: 0;
-	margin: 0;
-	text-align: left;
-}
-
-	.post__comment {
-		font-size: 8px;
-	}
-	.post__comment a {
-		font-size: 8px;
-	}
-
-
-
-
-}
-
-
-*/
-
-
-
 
 
 .abs_gallery__actions {
@@ -730,87 +484,48 @@
 	padding:  10px;
 }
 
-/*.abs_post__created {
-	text-align: left;
-	padding: 0 0 0 30px;
-}*/
-
-
 
 @media (max-width: 768px){
 
 	.abs_post__desc {
 		padding: 5px;
 		font-size: 10px;
-}
+	}
 
 	.abs_profile__user {
-	font-weight: 600;
-	margin: 0 10px 0 0;
-	font-size: 10px;
+		font-weight: 600;
+		margin: 0 10px 0 0;
+		font-size: 10px;
+	}
+
+	.abs_post__total-like {
+		text-align: left;
+		margin: 0 0 0 10px;
+		font-size: 10px;
+	}
 }
-
-
-.abs_post__total-like {
-	text-align: left;
-	margin: 0 0 0 10px;
-	font-size: 10px;
-
-}
-
-}
-
-
-
-
-/*@media (max-width: 580px){
-
-	.abs_post__desc {
-		padding: 3px;
-		font-size: 7px;
-}
-
-	.abs_profile__user {
-	font-weight: 600;
-	margin: 0 5px 0 0;
-	font-size: 7px;
-}
-
-
-.abs_post__total-like {
-	text-align: left;
-	margin: 0 0 0 5px;
-	font-size: 7px;
-
-}
-
-}
-
-*/
-
-
 
 
 @media (max-width: 360px){
 
 	.slick-prev {
 		left: -35px;
-}
+	}
 
 	.slick-next {
 		right: -35px;
-}
+	}
 
 	.slick-arrow{
 	   height: 32px;
 	   width: 32px;
 	   font-size: 14px;
-}  
+	}  
 
 	.abs__abs {
 		padding: 4px;
 		border-radius: 14px;
-}
+	}
 
 	.abs_gallery__actions {
 		padding: 4px;
@@ -819,49 +534,39 @@
 	.post__desc {
 		padding: 0;
 		margin: 0;
-}
+	}
 
 	.abs_post__desc {
 		text-align: left;
 		color: black;
 		padding: 0px;
-		/*font-size: 4px;*/
-}
+	}
 
-.abs_profile__user {
-	margin: 0 0 0 0;
-	/*font-size: 4px;*/
-}
+	.abs_profile__user {
+		margin: 0 0 0 0;
+	}
 
-.abs_post__total-like {
-	margin: 3px 0 0 -15px;
-	/*font-size: 4px;*/
-}
+	.abs_post__total-like {
+		margin: 3px 0 0 -15px;
+	}
 
-.post__icon {
-	padding: 3px 0;
-	margin: 0;
-}
+	.post__icon {
+		padding: 3px 0;
+		margin: 0;
+	}
 
-.abs_post__icon img{
-	width: 25px;
-	height: 25px;
-}
-
-
+	.abs_post__icon img{
+		width: 25px;
+		height: 25px;
+	}
 
 }
 
 
 
 
-
-
-
-
-
-
-
+/*************РАЗОБРАТЬ**********/
+/*************РАЗОБРАТЬ**********/
 
 .profile__emptypost {
 	margin: 20px 0;
@@ -875,9 +580,6 @@
 	opacity: 0.6;
 }
 
-
-
-
 .lol {
 	background-color: black;
 	position: absolute;
@@ -888,3 +590,6 @@
 	opacity: 0.6;
 	display: none;
 }
+
+/*************РАЗОБРАТЬ**********/
+/*************РАЗОБРАТЬ**********/

@@ -7,13 +7,11 @@
 {% endblock %}
 
 
-
 {% block content %}
 
-<div class="registration__done">
-    <img width='30px' src="{% static 'account/img/gal.png' %}" alt="">
-    Регистрация завершена! Можете войти в <a class='registration__done-link' href="{% url 'account:login' %}">профиль</a>
-</div>
-
+	<div class="registration__done">
+	    <img width='30px' src="{% static 'account/img/gal.png' %}" alt="">
+	    Регистрация завершена! Можете войти в <a class='registration__done-link' href="{% url 'account:login' %}">профиль</a>
+	</div>
 
 {% endblock %}

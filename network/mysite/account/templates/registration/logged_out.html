@@ -1,19 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block head %}
 	<link rel="stylesheet" type="text/css" href="{% static 'account/css/login.css' %}">
 {% endblock %}
 
-
-
 {% block content %}
-
     <div class="registration__done">
-    <img width='30px' src="{% static 'account/img/gal.png' %}" alt="">
-    Вы вышли из аккаунта! Можете снова <a class='registration__done-link' href="{% url 'account:login' %}">авторизоваться.</a>
-</div>
-
-
+	    <img width='30px' src="{% static 'account/img/gal.png' %}" alt="">
+	    Вы вышли из аккаунта! Можете снова 
+	    <a class='registration__done-link' href="{% url 'account:login' %}">авторизоваться.</a>
+	</div>
 {% endblock %}

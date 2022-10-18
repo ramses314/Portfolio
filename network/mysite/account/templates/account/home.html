@@ -7,11 +7,8 @@
 {% endblock %}
 
 
-
 {% block content %}
-
     <div class="container">
-
         <div class="content__block">
 
           <div class="content__left">
@@ -26,11 +23,9 @@
               <div class="left__edit">
                 <a href="{% url 'account:edit' %}">Редактировать профиль</a>
                 <br>
-                
               </div>
             </div>
           </div>
-
 
           <div class="content__right">
             <div class="right__items">
@@ -59,9 +54,9 @@
               </div>
             </div>
           </div>
+
           <div class="content__third">
             <div class="third__items">
-              
               <a href="{% url 'search:user_search' %}">
                 <img width="60px" src="{% static 'account/img/icon_search.png' %}" alt="">
               </a>
@@ -73,103 +68,53 @@
               <a href="">
                  <img width="60px" src="{% static 'account/img/icon_tools.png' %}" alt="">
               </a>
-             
-            
-
             </div>
-           <!--  <div class="">
-              Уведомления
-            </div> -->
           </div>
         </div>
 
-
-
         <div class="content__block2">
-
-            <div class="content__prenews">
-
+          <div class="content__prenews">
 
             <div class="content__lenta-title">
                 Публикации друзей
             </div>
 
-    
-              <div class="content__news">
+            <div class="content__news">
+              {% if lenta %}
+                {% for i in lenta %}
+                  {% if i.image %}
+                    <div class="news">
+                        <div class="news__img">
+                            <img width="60px" src="{{ i.image.url }}" alt="">
+                        </div>
+                        <div class="news__text">
+                          <div class="news__ava">
+                              <a href="{% url 'account:user_profile' i.user.id %}"><!-- {{i.user.username}} --><img src="{{ i.user.profile.image.url }}" alt="">
+                              </a> 
+                          </div>
+                          <div class="news__username">
+                              {{ i.user}}
+                          </div>
 
-           <!--  {% for i in action %}
-            {% with user=i.user profile=i.user.profile %}
-
-              {% if profile.photo %}
-              <a href="{{ user.get_absolute_url }}">
-                <img width="50px" src="{{ user.profile.photo.url }}" alt="">
-              </a>
-              {% endif %}
-              <div>
-                <span>
-                  {{ i.created }}
-                  <div>
-                    <a href="{{ user.get_absolute_url }}">{{ user.first_name }}</a>
-                    {{ i.verb }}
-                  </div>
-                </span>
-              </div>
-            {% endwith %}
-            {% endfor %} -->
-
-
-        
-            {% if lenta %}
-              {% for i in lenta %}
-                {% if i.image %}
-                <div class="news">
-                  <div class="news__img">
-                      
-                        <img width="60px" src="{{ i.image.url }}" alt="">
-                     
-                  </div>
-                  <div class="news__text">
-                    <div class="news__ava">
-                        <a href="{% url 'account:user_profile' i.user.id %}"><!-- {{i.user.username}} --><img src="{{ i.user.profile.image.url }}" alt="">
-                        </a> 
+                        </div>
+                        <div class="news__body">
+                          {{ i.body|truncatewords:10 }} 
+                        </div>
+                        <div class="news__bodyback"></div>  
                     </div>
-                    <div class="news__username">
-                        {{ i.user}}
-                    </div>
-
-
-                    
-                  </div>
-                  <div class="news__body">
-                    {{ i.body|truncatewords:10 }} 
-                  </div>
-                  <div class="news__bodyback"></div>
-                  
-                </div>
-                
-                {% endif %}
-
-              {% endfor %}
-            {% else %}
+            
+                  {% endif %}
+                {% endfor %}
+              {% else %}
               <div class="lenta__emplty">
                   У вас пока нет друзей, чтобы видеть их публикации.
                   <a href="#">Заведи новых</a> 
               </div>
             {% endif %}
-
           </div>
-
-
-        <!--   <div class="content__button">
-            <input type="submit" value="сначала">
-          </div> -->
-
-          </div>
+        </div>
       
 
-          
-
-   
           <div class="content__pub">
             <div class="post">
               <div class="post__all">
@@ -180,102 +125,88 @@
               </div>
 
               {% for i in posts %}
-
-                {% with total_likes=i.users_like.count users_like=i.users_like.all %}
-              
+              {% with total_likes=i.users_like.count users_like=i.users_like.all %}
                   {% if i.image %}
-              <div class="post__items">
-                  <div class="post__img">
-                      <img src="{{ i.image.url }}" alt=""><br>
-                  </div>
+                    <div class="post__items">
+                        <div class="post__img">
+                            <img src="{{ i.image.url }}" alt=""><br>
+                        </div>
 
-                  <div class="post__icon">
+                        <div class="post__icon">
 
-                    <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
-  
-                      {% if request.user in users_like %}
-                        <img  src="{% static 'account/img/heart3.png' %}" alt="">
-                      {% else %}
-                        <img  src="{% static 'account/img/heart1.png' %}" alt="">
-                      {% endif %}
-                    
-                    </a>
-                    <a href="" onclick="return false;" class="comment" id='comment-loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}'>
-                      <img  src="{% static 'account/img/comment1.png' %}" alt="">
-                    </a>
-                  </div>
+                          <a href="#"  class='like' id='loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like'>
+        
+                            {% if request.user in users_like %}
+                              <img  src="{% static 'account/img/heart3.png' %}" alt="">
+                            {% else %}
+                              <img  src="{% static 'account/img/heart1.png' %}" alt="">
+                            {% endif %}
+                          
+                          </a>
+                          <a href="" onclick="return false;" class="comment" id='comment-loop{{forloop.counter}}' data-loop='{{ forloop.counter }}' data-id='{{ i.id }}'>
+                            <img  src="{% static 'account/img/comment1.png' %}" alt="">
+                          </a>
+                        </div>
 
-                  <div class="post__total-like{{  forloop.counter }} post__total-like">
-                      Нравится: {{ total_likes }}
-                  </div>
+                        <div class="post__total-like{{  forloop.counter }} post__total-like">
+                            Нравится: {{ total_likes }}
+                        </div>
 
-                  <div class="post__desc">
-                    <a href="#" onclick="return false" >{{ i.body }}</a>
-                  </div>
+                        <div class="post__desc">
+                          <a href="#" onclick="return false" >{{ i.body }}</a>
+                        </div>
 
-                 <div class="post__comment">
+                        <div class="post__comment">
+                          <div id='comment-form{{ forloop.counter }}' class="post__comment-form">
+                            <div class="comment__list">
+                                  
+                                  {% for c in comments %}
+                                    {% if c.post == i %}
 
-                    <!-- <a href="#">Читать комментарии</a> -->
-
-                    <div id='comment-form{{ forloop.counter }}' class="post__comment-form">
-
-                          <div class="comment__list">
-                                
-                                {% for c in comments %}
-                                  {% if c.post == i %}
-
-                                    <div class="list">
-                                      <div class="list__user">
-                                          {{ c.nickname.username }}
-                                          <span>{{ c.created }}</span>
+                                      <div class="list">
+                                        <div class="list__user">
+                                            {{ c.nickname.username }}
+                                            <span>{{ c.created }}</span>
+                                        </div>
+                                        <div class="list__body">
+                                            {{ c.body }}
+                                        </div>   
                                       </div>
-                                      <div class="list__body">
-                                          {{ c.body }}
-                                      </div>   
-                                    </div>
-                                    
-                                  {% endif %}
-                                {% endfor %}
+                                      
+                                    {% endif %}
+                                  {% endfor %}
 
                             </div>
                      
-                        <div class="comment">
-                            <div class="comment__form">
-                               <form id='form' action="." method="post">
-
-                                  {% csrf_token %}
-
-                                  <div class="comment__user">
-                                      @{{ request.user.username }}
-                                  </div>
-                                  <div class="comment__input" data-user='{{ request.user }}' data-postid='{{ i.id }}'>
-
-                                        {{ form.body }}
-
-                                        <input type="hidden" name='postid' value='{{i.id}}'>
-                                  </div>
-                                  <div class="comment__button">
-                                    <input class='comments__submit' data-loop='{{ forloop.counter }}' type='submit' onclick="return false;" value='Комментировать'>
-                                    <div class="flood">
-        <img width='200px' src="{% static 'account/img/flood.gif' %}" alt="">
-      </div>
-                                  </div>
-                                </form>
-
+                            <div class="comment">
+                                <div class="comment__form">
+                                   <form id='form' action="." method="post">
+                                      {% csrf_token %}
+                                      <div class="comment__user">
+                                          @{{ request.user.username }}
+                                      </div>
+                                      <div class="comment__input" data-user='{{ request.user }}' data-postid='{{ i.id }}'>
+                                            {{ form.body }}
+                                            <input type="hidden" name='postid' value='{{i.id}}'>
+                                      </div>
+                                      <div class="comment__button">
+                                        <input class='comments__submit' data-loop='{{ forloop.counter }}' type='submit' onclick="return false;" value='Комментировать'>
+                                        <div class="flood">
+                                          <img width='200px' src="{% static 'account/img/flood.gif' %}" alt="">
+                                        </div>
+                                      </div>
+                                    </form>
+                                </div>
                             </div>
-
-                          
-                        </div>
-
-      
-                    </div>
-                </div>
+                          </div>
+                      </div>
 
                 <div class="post__created">
                   {{ i.created|date:"j.m.o" }}
                 </div>
 
               </div>
+
               {% else %}
 
               <div class="post__items noimg">
@@ -285,7 +216,6 @@
                   </div>
 
                   <div class="post__icon small-icon">
-
                        <a class='like' id='loop{{forloop.counter}}' href="#" data-id='{{ i.id }}' data-action='{% if request.user in users_like %}un{% endif %}like' data-loop='{{ forloop.counter }}'>
                             {% if request.user in users_like %}
                               <img  src="{% static 'account/img/heart3.png' %}" alt="">
@@ -303,33 +233,22 @@
                   </div>
 
                 <div class="post__comment">
-
-                    <!-- <a href="#">Читать комментарии</a> -->
-
-
-
-
                     <div id='comment-form{{ forloop.counter }}' class="post__comment-form">
-
-                          <div class="comment__list">
-                                
-                                {% for c in comments %}
-                                  {% if c.post == i %}
-
-                                    <div class="list">
-                                      <div class="list__user">
-                                          {{ c.nickname.username }}
-                                          <span>{{ c.created }}</span>
-                                      </div>
-                                      <div class="list__body">
-                                          {{ c.body }}
-                                      </div>   
-                                    </div>
-                                    
-                                  {% endif %}
-                                {% endfor %}
-
-                            </div>
+                        <div class="comment__list">
+                            {% for c in comments %}
+                              {% if c.post == i %}
+                                <div class="list">
+                                  <div class="list__user">
+                                      {{ c.nickname.username }}
+                                      <span>{{ c.created }}</span>
+                                  </div>
+                                  <div class="list__body">
+                                      {{ c.body }}
+                                  </div>   
+                                </div>  
+                              {% endif %}
+                            {% endfor %}
+                        </div>
                      
                         <div class="comment">
                             <div class="comment__form">
@@ -349,41 +268,33 @@
                                   <div class="comment__button">
                                     <input class='comments__submit' data-loop='{{ forloop.counter }}' type='submit' onclick="return false;" value='Комментировать'>
                                     <div class="flood">
-        <img width='200px' src="{% static 'account/img/flood.gif' %}" alt="">
-      </div>
+                                      <img width='200px' src="{% static 'account/img/flood.gif' %}" alt="">
+                                    </div>
                                   </div>
                                 </form>
-
-                            </div>
-
-                          
+                            </div>                
                         </div>
-
-      
                     </div>
                 </div>
-
 
                 <div class="post__created">
                   {{ i.created|date:"j.m.o" }}
                 </div>
-
               </div>
-
-              {% endif %}
-          {% endwith %}
-      {% endfor %}
-            </div>
-          </div>
+            {% endif %}
+        {% endwith %}
+    {% endfor %}
         </div>
-
       </div>
+    </div>
+  </div>
 
 {% endblock %}
 
 
 
 
+<!-- JAVASCRIPT CODE:  НУЖНО ПЕРЕНЕСТИ В ОТДЕЛЬНЫЙ ФАЙЛ -->
 {% block domready %}
 
   <!-- ЛАЙК -->
@@ -440,30 +351,25 @@
     )
   })
 
+  $(window).resize(function(e) {
+      var widthAva = $('.left__ava').width()
+      $('.left__ava').css({
+          'height' : `${widthAva}`
+      })
 
-    $(window).resize(function(e) {
-        var widthAva = $('.left__ava').width()
-        $('.left__ava').css({
-            'height' : `${widthAva}`
-        })
+      var widthWindow = $(window).width();
 
-        var widthWindow = $(window).width();
+      if (widthWindow > 626) {
 
-        if (widthWindow > 626) {
+        $('.content__prenews').css({
+        'flex' : '0 1 20%',
+        'padding': '20px'
+      })
 
-          $('.content__prenews').css({
-          'flex' : '0 1 20%',
-          'padding': '20px'
-        })
-
-          console.log('lol')
-      }
-
-    
+        console.log('lol')
+    }
 
     })
-
-
 
 
     $('.news').hover(function(e) {
@@ -475,15 +381,8 @@
       $(this).find('.news__text').css({'opacity' : '0'});
       $(this).find('.news__body').slideUp();
       $(this).find('.news__bodyback').slideUp()
+
     })
-
-
-
-
-
-
-    
-
 
 
 {% endblock %}

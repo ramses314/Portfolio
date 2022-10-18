@@ -8,18 +8,15 @@
 
 
 {% block content %}
-
-<div class="post">
+    <div class="post">
 
         <div class="post__title">
             Создание записи
-        </div>
-        
-        <div class="post_form">
+        </div>  
 
+        <div class="post_form">
             <form action="." method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-
                 <div class="post__image">
                     {{ form.image }}
                 </div>
@@ -33,14 +30,9 @@
                     <input type="submit" value="Опубликовать">
                 </div>
             </form>
-
         </div>
-</div>
-
-
+    </div>
 {% endblock %}
-
-
 
 
 {% block domready %}
@@ -56,6 +48,5 @@
             return false;
         } else {}
     })
-
 
 {% endblock %}
