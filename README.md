@@ -1,6 +1,6 @@
 Привет, меня зовут Лев и эя начинающий python разработчик. Обучаюсь и делаю мини проекты, иногда беру заказы на фрилансе чуть около полтора года. Это мое портфолио оно состоит из 3 pet-проектов:
 
-<h1 align="left"> Pet-project #01 - Социальная сеть [этой ссылке](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate).
+<h1 align="left"> Pet-project #01 - Социальная сеть  <a href="#-tecnologias">COPYRKA</a>.
 
  </h1>
 
