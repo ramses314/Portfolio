@@ -1,21 +1,16 @@
 Привет, меня зовут Лев и эя начинающий python разработчик. Обучаюсь и делаю мини проекты, иногда беру заказы на фрилансе чуть около полтора года. Это мое портфолио оно состоит из 3 pet-проектов:
 
-<h1 align="center"> Pet-project #01 - Социальная сеть [copyrka](http://cw19145.tmweb.ru/)
+<h1 align="left"> Pet-project #01 - Социальная сеть [copyrka](http://cw19145.tmweb.ru/)
  </h1>
 
-<p align="center">
+<p align="left">
 Социальная сеть с имеющая все минимальные необходимый функционал, характерный для соц. сети
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Технологии</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">О проекте</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
-
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
 <br>
@@ -39,11 +34,7 @@ O Rocketpay é um componente que simula o formulário de preenchimento de cartã
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
-
-## :memo: Licença
-
-Esse projeto está sob a licença MIT.
+Вы можете просмотреть макет проекта по [этой ссылке](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate).
 
 
 
