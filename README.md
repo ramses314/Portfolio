@@ -1,5 +1,8 @@
 Привет, меня зовут Лев и эя начинающий python разработчик. Обучаюсь и делаю мини проекты, иногда беру заказы на фрилансе чуть около полтора года. Это мое портфолио оно состоит из 3 pet-проектов:
 
+<br>
+<br>
+
 <h1 align="center"> Pet-project #01 - социальная сеть COPYRKA
 
  </h1>
@@ -10,7 +13,42 @@
 
 <p align="center">
   <a href="#-Technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-About Project">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-AboutProject">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
+<br>
+
+## 🚀 Technology
+
+В проекте используются следующие технологии:
+
+- HTML e CSS
+- JavaScript e JSON
+- Postgres
+- Dgango
+
+## 💻 AboutProject
+
+O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
+
+## 🔖 Layout
+
+Вы можете просмотреть проект по [этой ссылке](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). Сайт развернут на хостинге Timeweb.
+
+<br><br>
+
+<h1 align="center"> Pet-project #02 - сайт-блог ABOUTCINEMA
+
+ </h1>
+
+<p align="center">
+Блог в котором публикуются статьи о фильмах, режиссерах и других интересных вещах.
+</p>
+
+<p align="center">
+  <a href="#-Technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-AboutProject">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-Layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -33,40 +71,7 @@ O Rocketpay é um componente que simula o formulário de preenchimento de cartã
 
 Вы можете просмотреть проект по [этой ссылке](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). Сайт развернут на хостинге Timeweb.
 
-
-<h1 align="center"> Pet-project #02 - сайт-блог ABOUTCINEMA
-
- </h1>
-
-<p align="center">
-Блог в котором публикуются статьи о фильмах, режиссерах и других интересных вещах.
-</p>
-
-<p align="center">
-  <a href="#-tecnologias">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
-
-<br>
-
-## 🚀 Technology
-
-В проекте используются следующие технологии:
-
-- HTML e CSS
-- JavaScript e JSON
-- Postgres
-- Dgango
-
-## 💻 About Project
-
-O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
-
-## 🔖 Layout
-
-Вы можете просмотреть проект по [этой ссылке](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). Сайт развернут на хостинге Timeweb.
-
+<br><br>
 
 <h1 align="center"> Pet-project #03 - телеграмм-бот для знакомств Mitty
 
@@ -77,9 +82,9 @@ O Rocketpay é um componente que simula o formulário de preenchimento de cartã
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Technology">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-AboutProject">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
