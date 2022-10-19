@@ -9,14 +9,14 @@
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Технологии</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">О проекте</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Technology</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">About Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
 
-## 🚀 Tecnologias
+## 🚀 Technology
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Postgres
 - Dgango
 
-## 💻 Projeto
+## 💻 About Project
 
 O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
 
