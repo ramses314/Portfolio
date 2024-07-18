@@ -1,0 +1,606 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+  </head>
+  <body
+    style="
+      background-color: #dfdfdf;
+      font-size: 20px;
+      color: #252f3f;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 20px;
+    "
+  >
+    <table
+      class="tg"
+      style="
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: auto;
+        background: url({{ images.image_ticket_left.url }}) left 30px top 30px
+            no-repeat,
+          url({{ images.image_ticket_right.url }}) right 30px top 70px no-repeat,
+          #ffffff;
+        background-size: auto;
+        border-radius: 10px;
+        box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+      "
+    >
+      <thead>
+        <tr class="tg-top-bottom" style="height: 50px">
+          <th
+            colspan="5"
+            style="
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 16px;
+              font-weight: normal;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+              text-align: center;
+            "
+          ></th>
+        </tr>
+        <tr>
+          <th
+            class="tg-left-right"
+
+
+            style="
+              width: 12.5%;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 16px;
+              font-weight: normal;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+              text-align: center;
+            "
+          ></th>
+          <th
+            class="tg-main"
+            colspan="3"
+            style="
+              text-align: center;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 16px;
+              font-weight: normal;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+            <a
+              href="{{ front_url }}"
+              target="_blank"
+              style="color: #edb800; text-decoration: none"
+              ><img class="logo" src="{{ images.image_logo.url }}"
+            /></a>
+          </th>
+          <th
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 16px;
+              font-weight: normal;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+              text-align: center;
+            "
+          ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+          <td
+            colspan="3"
+            class="tg-main"
+            style="
+              text-align: center;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+
+            <p class="gracias" style="font-size: 20px; color: #3b3b3b">
+              <b>
+                ¡Hola
+                <span style="color: #edb800;"
+                  >{{ object.name }}!
+                </span></b>
+            </p>
+
+            <p>
+              Gracias por ser parte de Ticket Crush y participar por:
+              <span style="color: #edb800;">
+                {% for event in main_json %} {{event.title}} {% if not loop.last and main_json|length > 1 %},{% endif %}{% endfor %}.
+              </span>
+
+              A continuación encontrarás tus Tickets digitales.
+            </p>
+          </td>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+        <tr class="section-header">
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+
+        {% for event in main_json %}
+        <tr>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 5px;
+              word-break: normal;
+            "
+          ></td>
+          <td
+            colspan="3"
+            style="
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+            <ul
+              class="detalles"
+              style="
+                box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                list-style: none;
+                text-align: center;
+                width: auto;
+                padding: 5px 25px 20px 25px;
+                margin: 5px 10px 5px 10px;
+                background: #ffffff;
+                border-radius: 15px;
+              "
+            >
+                          <li
+                class="total"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 0 0 0 0;
+                  font-size: 20px;
+                  display: block;
+                  padding-bottom: 15px;
+                  border-color: transparent;
+                  border-bottom: #ebdba2;
+                  border-style: solid;
+                  border-width: 1px;
+                  color: black;
+                "
+              >
+                {% if forloop.first %}
+
+                  CANTIDAD TOTAL DE LA ORDEN: {{ amount|floatformat:2 }} MXN
+
+                {% endif %}
+
+              </li>
+              <li style="padding: 0 0 0 0; margin: 0 0 0 0">
+                <h1 class="loteria">
+                  <a
+                    href="{{ front_url }}/events/{{ event.slug }}"
+                    style="color: #edb800; text-decoration: none"
+                    >{{ event.title }}
+                  </a
+                  >
+                </h1>
+              </li>
+
+              <li
+                class="total-description"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 35px 0px 5px 0px;
+                  font-weight: bold;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                ">
+                PRECIO DE COMPRA
+              </li>
+              <li
+                class="total"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 0 0 0 0;
+                  font-size: 20px;
+                  display: block;
+                  padding-bottom: 15px;
+                  border-color: transparent;
+                  border-bottom: #ebdba2;
+                  border-style: solid;
+                  border-width: 1px;
+                "
+              >
+                por cada: {{ event.price|floatformat:2 }} MXN
+              </li>
+              <li
+                class="tickets-description"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 15px 0px 5px 0px;
+                  font-weight: bold;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                "
+              >
+                Tus boletos:
+              </li>
+              <li
+                class="tickets"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 0 0 0 0;
+                  font-size: 20px;
+                  display: block;
+                  padding-bottom: 15px;
+                  border-color: transparent;
+                  border-bottom: #ebdba2;
+                  border-style: solid;
+                  border-width: 1px;
+                "
+              >
+                  {{ event.numbers|join:", " }}
+              </li>
+              <li
+                class="tickets-description"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 15px 0px 5px 0px;
+                  letter-spacing: 2px;
+                "
+              >
+                Te recordamos que el sorteo será el día <span style="font-weight: bold;letter-spacing: 2px;text-transform: uppercase;">{{ event.expired|date:"d/m/Y H:i" }}</span> y lo podrás ver a través del siguiente enlace:
+              </li>
+              <li
+                class="tickets"
+                style="
+                  padding: 0 0 0 0;
+                  margin: 10px 0 0 0;
+                  font-size: 20px;
+                  display: block;
+                  padding-bottom: 0px;
+                ">
+                <a href="{{ event.link }}" style="background-color: #282828; text-decoration: none; color: white; border-radius: 8px; padding: 10px; display: block">
+                    TRANSMISIÓN ONLINE DEL SORTEO
+                </a>
+              </li>
+
+              {% endfor %}
+
+              <li
+                style="
+                  margin: 0 0 0 0;
+                  font-size: 25px;
+                  display: block;
+                  padding: 15px 0 0px 0;
+                  border-bottom: none;
+                  border-style: none;
+                "
+              >
+                <a
+                  href="{{ check_link }}"
+                  style="background-color: #edb800; text-decoration: none; color: white; border-radius: 10px; padding: 5px 8px; display: block;"
+                  >CONSULTA TU PEDIDO PARA GANAR</a
+                >
+              </li>
+
+               <p
+            style="
+              text-align: center;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 25px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+              O a través de nuestras redes sociales:
+
+                <div>
+                  <a href="https://instagram.com/ticket_crush?igshid=MzRlODBiNWFlZA==" style="text-decoration: none;">
+                    <img src="https://i.postimg.cc/tTWLgBT8/1491580635-yumminkysocialmedia26-83102.png" alt="Instagram" style="width: 40px; height: 40px; margin: 0 10px;">
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=100083394829094" style="text-decoration: none;">
+                    <img src="https://i.postimg.cc/yYjC9pPH/1491579586-yumminkysocialmedia21-83091.png" alt="Facebook" style="width: 40px; height: 40px;">
+                  </a>
+              </div>
+
+            </p>
+
+               <p
+            style="
+              text-align: center;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 25px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+            ¡Mucha suerte!
+          </p>
+
+            </ul>
+          </td>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+        <tr class="section-header">
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+        <tr>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+        <tr>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+          <td
+            colspan="3"
+            class="tg-main"
+            style="
+              text-align: center;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          >
+           <iframe
+              class="translation"
+              width="560"
+              height="315"
+              src="{{ youtube_link }}"
+              frameborder="0"
+              style="
+                box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0px -0px 13px 2px rgba(0, 0, 0, 0.2);
+                padding: 25px;
+                margin: 5px 10px 15px 10px;
+                background: #ffffff;
+                border-radius: 15px;
+              "
+            ></iframe>
+          </td>
+          <td
+            class="tg-left-right"
+            style="
+              width: 12.5%;
+              border-color: none;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              overflow: hidden;
+              padding: 10px 5px;
+              word-break: normal;
+            "
+          ></td>
+        </tr>
+      </tbody>
+      <tfoot style="text-align: center; background-color: #edb800">
+        <td
+          colspan="5"
+          class="footer"
+          style="
+            border-color: none;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            overflow: hidden;
+            padding: 10px 25px;
+            word-break: normal;
+          "
+        >
+          <p>
+            Recibió este correo electrónico porque realizó una compra en nuestro
+            sitio web de lotería. Para conocer las reglas detalladas del evento,
+            haga clic
+            <a
+              href="{{ front_url }}/about"
+              style="color: #edb800; text-decoration: none"
+              >aquí</a
+            >. Si tiene alguna pregunta, contáctenos en WhatsApp +102398012938.
+          </p>
+
+          <p>
+            <a
+              href="{{ front_url }}"
+              target="_blank"
+              style="color: #edb800; text-decoration: none"
+              ><img
+                class="logo-sm"
+                src="{{ images.image_logo.url }}"
+                style="padding-top: 10px; height: 30px"
+            /></a>
+          </p>
+
+          <p class="small" style="font-size: 12px">© TicketCrush, 2023</p>
+        </td>
+      </tfoot>
+    </table>
+  </body>
+</html>

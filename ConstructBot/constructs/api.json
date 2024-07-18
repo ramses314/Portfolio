@@ -1,0 +1,305 @@
+{
+    "bh_utm": {
+        "is_delete_all": true,
+        "is_delete_keyboard": false,
+        "start": {
+            "send_after_min":null,
+            "reminder": "reminder_quotex_reg",
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": true,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "/start: send quotex reg link",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [
+                "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+            ],
+            "videos": [],
+            "photos": [],
+            "texts": [
+                "✅To get access to *VIP CHANNEL WITH FREE SIGNALS AND MAKE $500 daily* 💵 you should create *NEW QUOTEX* \n\n ⛔️*ATTENTION*⛔️  *If you ALREADY HAVE Quotex account, you need to CLOSE IT and register a NEW ONE* \n\n⚠️⚠️⚠️*YOU MUST USE REGISTRATION BUTTON BELOW*👇👇👇"
+
+            ],
+            "keyboards": [
+                {
+                    "utm": {
+                        "utm_source": "click_id",
+                        "utm_tg": "id"
+                    },
+                    "➡\uFE0FREGISTER NEW ACCOUNT\uD83D\uDD25": "https://broker-qx.pro/sign-up/?lid=482118"
+                }
+            ]
+        },
+        "is_check_quotex_register": {
+            "send_after_min": 5,
+            "reminder": null,
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": true,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "lid are register in quotex",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [
+                "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+            ],
+            "videos": [],
+            "photos": [],
+            "texts": [
+                "✅*You've registered Quotex account! Congratulate you on starting way to financial independence*\uD83D\uDD25  \n\n* \uD83D\uDE80For getting access to the VIP CHANNEL WITH FREE 8-10 SIGNALS PER DAY just text me \"VIP SIGNALS\" in direct message\uD83D\uDC49@Olivia_Trader_Direct*"
+            ],
+            "keyboards": [
+                {
+                    "➡\uFE0FTEXT ME DIRECT MESSAGE \uD83D\uDD25": "https://t.me/Olivia_Trader_Direct"
+                }
+            ]
+        },
+        "reminder_quotex_reg_1": {
+            "send_after_min":5,
+            "reminder": null,
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": false,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "remoind 1 ",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [],
+            "videos": [],
+            "photos": [
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ",
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ",
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ"
+            ],
+            "texts": [
+                "\uD83D\uDCB8*This is the results of the trading session of my VIP CHANNEL members* \uD83D\uDD25 \n\n Congratulations to everyone who traded with me today and made money\uD83E\uDD11  *✅If you want to get the same result you should be the member of VIP CHANNEL WITH FREE SIGNALS. So you need to create NEW QUOTEX* \n\n   ⛔\uFE0F*ATTENTION*⛔\uFE0F  *If you ALREADY HAVE Quotex account, you need to CLOSE IT and register a NEW ONE* \n\n  ⚠\uFE0F⚠\uFE0F⚠\uFE0F*YOU MUST USE REGISTRATION BUTTON BELOW*\uD83D\uDC47\uD83D\uDC47\uD83D\uDC47"
+            ],
+            "keyboards": [
+                {
+                    "utm": {
+                        "utm_source": "click_id",
+                        "utm_tg": "id"
+                    },
+                    "➡\uFE0FREGISTER NEW ACCOUNT\uD83D\uDD25": "https://broker-qx.pro/sign-up/?lid=482118"
+                }
+            ]
+        },
+        "reminder_quotex_reg_3": {
+            "send_after_min":12,
+            "reminder": null,
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": false,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "remoind 3",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [],
+            "videos": [],
+            "photos": [
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ",
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ",
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ",
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ"
+            ],
+            "texts": [
+                "\uD83D\uDCF9Look through *several video reviews* out of thousands that my subscribers send every day \n\n  *If you want to join our community and make $500\uD83D\uDCB8 every day, YOU SHOULD REGISTER NEW QUOTEX ACCOUNT RIGHT NOW\uD83D\uDCB8 \n\n  ⛔\uFE0FATTENTION⛔\uFE0F  If you ALREADY HAVE Quotex account, you need to CLOSE IT and register a NEW ONE   ⚠\uFE0F⚠\uFE0F⚠\uFE0FYOU MUST USE REGISTRATION BUTTON BELOW*\uD83D\uDC47\uD83D\uDC47\uD83D\uDC47"
+            ],
+            "keyboards": [
+                {
+                    "utm": {
+                        "utm_source": "click_id",
+                        "utm_tg": "id"
+                    },
+                    "➡\uFE0FREGISTER NEW ACCOUNT\uD83D\uDD25": "https://broker-qx.pro/sign-up/?lid=482118"
+                }
+            ]
+        },
+        "reminder_quotex_reg_2": {
+            "send_after_min":7,
+            "reminder": null,
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": false,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "remoind 2",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [
+                "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+            ],
+            "videos": [],
+            "photos": [
+                "AgACAgIAAxkBAAIc8mVFNTMT1hS5KecLq1Shct-f1mAUAALHzzEbx6UxSrHJvKOa6qZCAQADAgADcwADMwQ"
+            ],
+            "texts": [
+                "The trading session is over, congratulations to all members of the *Private Club* with a profit! \uD83C\uDF89\uD83C\uDF89  \n\n* ✅AUD/CAD - UP ⬇\uFE0F 2 MIN / +$591 \n\n ✅NZD/CHF - DOWN ⬆\uFE0F 4 MIN / +$789 \n\n ✅EUR/GBR - UP ⬇\uFE0F 1 MIN / +$376 \n\n ✅NZD/CHF - DOWN ⬇\uFE0F 3 MIN / +$252* \n\n   \uD83E\uDD11*I've JUST MADE $2008* \uD83D\uDD25 \n You missed the Trading Session again \uD83D\uDE12 \n\n*  I'll give you one last chance to register NEW QUOTEX ACCOUNT* \n\n  ⛔\uFE0F*ATTENTION*⛔\uFE0F  *If you ALREADY HAVE Quotex account, you need to CLOSE IT and register a NEW ONE* \n\n   ⚠\uFE0F⚠\uFE0F⚠\uFE0F*YOU MUST USE REGISTRATION BUTTON BELOW*\uD83D\uDC47\uD83D\uDC47\uD83D\uDC47"
+            ],
+            "keyboards": [
+                {
+                    "utm": {
+                        "utm_source": "click_id",
+                        "utm_tg": "id"
+                    },
+                    "➡\uFE0FREGISTER NEW ACCOUNT\uD83D\uDD25": "https://broker-qx.pro/sign-up/?lid=482118"
+                }
+            ]
+        },
+        "callback_finish": {
+            "send_after_min":null,
+            "reminder": null,
+            "is_autorequest": false,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": false,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "metrics_info": "finish",
+            "construct": [
+                "video_notes",
+                "gallery",
+                "texts"
+            ],
+            "video_notes": [
+                "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+            ],
+            "videos": [],
+            "photos": [],
+            "texts": [
+                "aaaaa"
+            ],
+            "keyboards": [
+                {
+                    "utm": {
+                        "utm_source": "tg_name_1",
+                        "utm_tg": "id"
+                    },
+                    "link": "https://www.google.com/?utm_source=tg_name_1&utm_tg=id"
+                },
+                {
+                    "utm": {
+                        "utm_source": "tg_name_2",
+                        "utm_tg": "username"
+                    },
+                    "link": "https://www.google.com/"
+                },
+                {
+                    "clean": "callback_1"
+                },
+                {
+                    "clean": "callback_2"
+                }
+            ]
+        },
+        "reminder_free_channel_1":
+            {
+                "send_after_min": 5,
+                "reminder": null,
+                "is_autorequest": false,
+                "is_check_free_channel": false,
+                "is_check_user_wrote": false,
+                "is_photos_group": true,
+                "is_videos_group": true,
+                "metrics_info": "reminder",
+                "construct": [
+                    "video_notes",
+                    "gallery",
+                    "texts"
+                ],
+                "video_notes": [
+                    "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+                ],
+                "videos": [],
+                "photos": [],
+                "texts": [
+                    "aaaaa. Это ремандер 1"
+                ],
+                "keyboards": [
+                    {
+                        "utm": {
+                            "utm_source": "tg_name_1",
+                            "utm_tg": "id"
+                        },
+                        "link": "https://www.google.com/?utm_source=tg_name_1&utm_tg=id"
+                    },
+                    {
+                        "clean": "callback_1"
+                    }
+                ]
+            },
+        "remider_free_channel_2":
+            {
+                "send_after_min": 2,
+                "reminder": null,
+                "is_autorequest": true,
+                "is_check_free_channel": false,
+                "is_check_user_wrote": false,
+                "is_photos_group": true,
+                "is_videos_group": true,
+                "metrics_info": "/start",
+                "construct": [
+                    "video_notes",
+                    "gallery",
+                    "texts"
+                ],
+                "video_notes": [
+                    "DQACAgIAAxkBAAILZmUyBl5iBhhvCTiqpJuGCxfjFRzBAAL1MQAC0b0pSWIkcCPBvSHPMAQ"
+                ],
+                "videos": [],
+                "photos": [],
+                "texts": [
+                    "aaaaa"
+                ],
+                "keyboards": [
+                    {
+                        "utm": {
+                            "utm_source": "tg_name_1",
+                            "utm_tg": "id"
+                        },
+                        "link": "https://www.google.com/?utm_source=tg_name_1&utm_tg=id"
+                    },
+                    {
+                        "clean": "callback_1"
+                    }
+                ]
+            },
+        "is_check_user_wrote": {
+            "send_after_min":5,
+            "reminder": null,
+            "metrics_info": "/start: send quotex reg link",
+            "is_autorequest": true,
+            "is_check_free_channel": false,
+            "is_check_user_wrote": false,
+            "is_photos_group": true,
+            "is_videos_group": true,
+            "construct": ["texts"],
+            "video_notes": [],
+            "videos": [],
+            "photos": [],
+            "texts": [
+                "Это пирограм еп"
+            ],
+            "keyboards": []
+        }
+    }
+}

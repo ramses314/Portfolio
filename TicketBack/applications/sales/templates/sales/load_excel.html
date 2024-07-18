@@ -1,0 +1,129 @@
+{% extends 'admin/base.html' %}
+
+{% block extrahead %}
+    <title>{% block title %}{% endblock %} | My Custom Admin Title66</title>
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 style="margin: 0 auto; opacity: 0.65;">Export orders data in Excel format</h1>
+
+    <div class="btn-around" style="width: 100%; margin: 5% auto;">
+        <div style="width: 100%; display: flex; justify-content: space-around;">
+          <button onclick="allOrders()" style="width:25%; background-color: #007BFF; color: #fff; border: none; border-radius: 5px; font-size: 2em; font-weight: bold; padding: 12px 24px; cursor: pointer; box-shadow: 0 0 5px rgba(63, 81, 181, 0.5); transition: box-shadow 0.3s ease-in-out;">Load all orders</button>
+          <button onclick="openModal()" style="width:25%; background-color: #00cc33; color: #fff; border: none; border-radius: 5px; font-size: 2em; font-weight: bold; padding: 12px 24px; cursor: pointer; box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); transition: box-shadow 0.3s ease-in-out;">Load user orders</button>
+        </div>
+
+         <div id="myModal" style="display:none; margin: 25px">
+          <form onsubmit="submitForm(); return false;" style="background-color:#fff;padding:20px;width:50%;margin:auto;border-radius:5px;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" style="padding:5px;margin:5px 0;width:100%;border-radius:3px;">
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" style="padding:5px;margin:5px 0;width:100%;border-radius:3px;">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" style="padding:5px;margin:5px 0;width:100%;border-radius:3px;">
+
+            <input type="submit" value="Отправить" style="background-color:#2ecc71;border:none;color:#fff;padding:10px 20px;margin-top:10px;border-radius:3px;cursor:pointer;">
+          </form>
+        </div>
+
+         <div id="myLink" style="margin: 70px 20px; display: none;">
+            <a id="loadLink" href="{{ settings.MEDIA_URL }}example4.xlsx" download style="display: inline-block; text-align: center; font-size: 24px; margin: 10px 0;">
+              <img src="https://i.postimg.cc/5N1ggx3S/png-clipart-cloud-computing-technology-cloud-storage-internet-cloud-computing-blue-computer.png" alt="Download" style="width:30px; vertical-align: middle; margin-right: 10px;">load file
+            </a>
+        </div>
+    </div>
+
+     <div id="error" style="margin: 20px 40px; background-color: red; font-size: 20px; padding: 10px; font-weight:700; color: #FFF; opacity: 0.75; border-radius:5px; display: none;">
+        User does not exist
+     </div>
+
+
+
+    <script>
+
+          function openModal() {
+            $('#myModal').slideDown(250);
+            $('#myLink').slideUp(250)
+          }
+
+          function updateLink(fileName) {
+             var newUrl = '{{ settings.STATIC_URL }}' + 'orders_excel/' + fileName + '.xlsx';
+             console.log(newUrl)
+             const loadLink = $('#loadLink');
+             loadLink.attr('href', newUrl);
+          }
+
+          function createSpinner() {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = `
+              .spinner {position: fixed; top: 40%; left: 50%; transform: translate(-50%, -50%); border: 5px solid rgba(0, 0, 0, 0.1); border-top-color: #3498db; border-radius: 50%; width: 70px; height: 70px; animation: spin 1s linear infinite;}
+              @keyframes spin {from { transform: rotate(0deg); }to { transform: rotate(360deg); }}`;
+            document.head.appendChild(style);
+            var spinner = document.createElement('div');
+            spinner.classList.add('spinner');
+            document.body.appendChild(spinner);
+          }
+
+          function doAjax(data) {
+            $.ajax({
+              url: '/api/v1/users/load_excel/',
+              method: 'POST',
+              data: JSON.stringify(data),
+              contentType: 'application/json',
+              success: function(response) {
+                var spinner = document.querySelector('.spinner');
+                updateLink(data.file);
+                setTimeout(function() {if (spinner) {spinner.parentNode.removeChild(spinner);}
+                    $('#myLink').slideDown(250);
+                }, 1000);
+              },
+            error: function(respopnse) {
+                var spinner = document.querySelector('.spinner');
+                setTimeout(function() {if (spinner) {spinner.parentNode.removeChild(spinner);}}, 1000);
+                setTimeout(function() {$('#error').slideDown(500);}, 1000);
+                setTimeout(function() {$('#error').slideUp(250);}, 5000);
+            }
+          });
+        }
+
+          function closeModal() {
+            $('#myModal').slideUp();
+            createSpinner()
+            var date = new Date().getTime();
+            var data = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              file: 'user_orders' + date
+            };
+            doAjax(data);
+          }
+
+          function allOrders() {
+            $('#myLink').slideUp(250)
+            createSpinner()
+            var date = new Date().getTime();
+            var data = {
+              file: 'all_orders_' + date
+            };
+            doAjax(data);
+          }
+
+          function submitForm() {
+            closeModal();
+          }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+{% endblock %}
+
+{% block sidebar %}
+    {{ block.super }}
+    <p>My Custom Sidebar Content</p>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="imagetoolbar" content="no">
+	<meta name="msthemecompatible" content="no">
+	<meta name="cleartype" content="on">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>{% block full_title %}{% block title %}{% endblock %}{% endblock full_title %}</title>
+
+	<link rel="canonical" href="{{ request.path }}">
+
+	{% block head %}{% endblock head %}
+
+	{{ preference.header_html|safe }}
+
+</head>
+<body>
+	{% block content %}{% endblock content %}
+
+	{% block footer_js %}{% endblock footer_js %}
+
+	{{ preference.footer_html|safe }}
+</body>
+</html>

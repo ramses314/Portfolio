@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generic Api Consumer</title>
+</head>
+<body>
+
+<button id="get_method_one_event">Event method 1</button>
+<button id="get_method_two_event">Event method 2</button>
+<button id="incorrect_method_event">Event incorrect method</button>
+<button id="get_method_one_ticket">Ticket method 1</button>
+<button id="get_method_two_ticket">Ticket method 2</button>
+<button id="get_method_one_order">Order method 1</button>
+<button id="get_method_two_order">Order method 2</button>
+<button id="incorrect_method_ticket">Ticket incorrect method</button>
+<button id="echo">ECHO</button>
+<button id="ping">PING</button>
+
+<pre id="response"></pre>
+
+<script>
+    const ws = new WebSocket("ws://127.0.0.1:8000/ws/connect")
+    const request_id = new Date().getTime()
+
+    ws.onmessage = function (e) {
+        document.getElementById("response").textContent = JSON.stringify(JSON.parse(e.data), undefined, 2);
+        console.log(e.data)
+    }
+
+    document.querySelector('#get_method_one_event').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 's',
+            params: {"channel":"event"}
+        }))
+    };
+
+    document.querySelector('#get_method_two_event').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 'us',
+            params: {"channel":"event"}
+        }))
+    }
+
+    document.querySelector('#incorrect_method_event').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 3434,
+            params: {"channel":"event"}
+        }))
+    }
+
+    document.querySelector('#get_method_one_ticket').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 's',
+            params: {"channel":"ticket"}
+        }))
+    };
+
+    document.querySelector('#get_method_two_ticket').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 'us',
+            params: {"channel":"ticket"}
+        }))
+    }
+
+    document.querySelector('#incorrect_method_ticket').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 3434,
+            params: {"channel":"ticket"}
+        }))
+    }
+
+    document.querySelector('#get_method_one_order').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 's',
+            params: {"channel":"order"}
+        }))
+    };
+
+    document.querySelector('#get_method_two_order').onclick = function (e) {
+        ws.send(JSON.stringify({
+            action: "send",
+            request_id: request_id,
+            method: 'us',
+            params: {"channel":"order"}
+        }))
+    }
+
+    document.querySelector('#ping').onclick = function (e) {
+        ws.send(JSON.stringify({
+            request_id: request_id,
+            method: 'ping',
+            params: {"channel":"ping"}
+        }))
+    }
+
+    document.querySelector('#echo').onclick = function (e) {
+        ws.send(JSON.stringify({
+            request_id: request_id,
+            method: 'i',
+            params: {"channel":"echo", "echo": {'111': '22222'}}
+        }))
+    }
+</script>
+</body>
+</html>

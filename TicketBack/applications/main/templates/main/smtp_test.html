@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Пример формы с AJAX</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+        <h1>smtp email check validation (for really exist)</h1>
+		<h2>Исходные данные:</h2>
+		<h3>хост - {{smtp}}, email - {{ email }}, {{ email2 }}</h3>
+		<form id="myForm">
+			<div class="form-group">
+				<label for="email">Введите адрес электронной почты:</label>
+				<input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Отправить</button>
+		</form>
+		<div id="result"></div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			function createSpinner() {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = `
+              .spinner {position: fixed; top: 40%; left: 50%; transform: translate(-50%, -50%); border: 5px solid rgba(0, 0, 0, 0.1); border-top-color: #3498db; border-radius: 50%; width: 70px; height: 70px; animation: spin 1s linear infinite;}
+              @keyframes spin {from { transform: rotate(0deg); }to { transform: rotate(360deg); }}`;
+            document.head.appendChild(style);
+            var spinner = document.createElement('div');
+            spinner.classList.add('spinner');
+            document.body.appendChild(spinner);
+          }
+
+
+			$('#myForm').submit(function(event) {
+				event.preventDefault();
+				createSpinner()
+
+				var formData = {
+					'email': $('#email').val()
+				};
+
+				$.ajax({
+					type: 'POST',
+					url: '/api/v1/test_smtp/',
+					data: formData,
+					dataType: 'json',
+					encode: true,
+				})
+				.done(function(data) {
+					console.log(44, data, data.message)
+
+					if (data) {
+						var spinner = document.querySelector('.spinner');
+                		if (spinner) {spinner.parentNode.removeChild(spinner);}
+						$('#result').html('<div style="margin: 25px" class="alert alert-success">' + 'full: ' + data.status.valid_full + ', only_mx: ' + data.status.valid_only_mx + ', only_verify: ' + data.status.valid_only_verify + '</div>');
+					}
+
+				})
+				.fail(function(data) {
+					$('#result').html('<div class="alert alert-danger">Ошибка отправки данных на сервер!</div>');
+				});
+			});
+		});
+	</script>
+</body>
+</html>

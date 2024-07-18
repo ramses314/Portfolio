@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  api_general:
+    container_name: api_general
+    hostname: general
+    build: .
+    command: bash -c "alembic upgrade head & python main.py"
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS}
+    volumes:
+      - .:/var/api_general/
+    depends_on:
+      - db
+    networks:
+      - network
+    env_file:
+      - .env
+  db:
+    image: postgres
+    container_name: db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    env_file:
+      - .env
+    networks:
+      - network
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - nginx_data:/app/static/
+    networks:
+      - network
+
+networks:
+  network:
+    name: network
+
+volumes:
+  nginx_data:
+  db_data:
